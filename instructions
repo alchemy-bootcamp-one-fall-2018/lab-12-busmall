@@ -1,0 +1,11 @@
+products.api -- getAll() --> product-app.js
+                    ||
+                    \/
+                display.js
+
+Pull full list of products from products api
+Pick 3 random items
+Hand 3 items to display.js
+display.js tells product-app which item was clicked
+all three items are then "spliced" into the "hold array"
+after a new product is clicked, those three items will "pop" back to the splice array and the new three items will replace them
