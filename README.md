@@ -1,0 +1,1 @@
+This is a product-selection tallying app for the market research company serving BusMall Magazine LLC. Participants (subjects) are presented with 3 products randomly selected from a preset list, and asked to select their favorite. Process repeats for 25 cycles, and then the option to click to view results on a separate page appears.
