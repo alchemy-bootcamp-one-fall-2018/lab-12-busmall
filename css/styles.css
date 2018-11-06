@@ -1,0 +1,17 @@
+body {
+    text-align: center;
+    margin: auto;
+}
+
+/* #takeSurvey {
+    height: 5vh;
+    margin-top: 50vh;
+} */
+
+#images {
+    border: 2px solid black;
+    width: 80%;
+    margin: auto;
+    margin-top: 5%;
+    padding: 2%;
+}
