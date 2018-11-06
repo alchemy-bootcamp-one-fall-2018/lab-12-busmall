@@ -8,10 +8,18 @@ body {
     margin-top: 50vh;
 } */
 
-#images {
+#imageSection {
     border: 2px solid black;
-    width: 80%;
+    width: 90%;
     margin: auto;
     margin-top: 5%;
-    padding: 2%;
+}
+
+img {
+    width: 150px;
+    margin: 1%;
+}
+
+img:hover {
+    border: 1px solid blue;
 }
