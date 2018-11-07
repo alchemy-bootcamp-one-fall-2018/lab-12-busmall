@@ -31,7 +31,7 @@ class ImageDisplay {
         // console.log('hola', products);
         const dom = makeTemplate();
     
-        console.log(dom)
+        // console.log(dom)
 
         const product1 = dom.getElementById('product1');
         const product2 = dom.getElementById('product2');
