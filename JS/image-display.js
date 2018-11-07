@@ -3,7 +3,7 @@ import html from './html.js';
 
 let products = productApi.getAll();
 function makeTemplate() {
-    return html `
+    return html`
     <section>
         <div>
         <img id="product1" src=$() >
@@ -41,7 +41,22 @@ class ImageDisplay {
         // product2.src = `$[]`
         // product3.src = `$[]`
 
-        dom.addEventListener('click', event => {
+        product1.addEventListener('click', () => {
+            product: product.name,
+            image: product.image
+        },
+
+        product2.addEventListener('click', () => {
+            product: product.name,
+            image: product.image
+        },
+
+        product3.addEventListener('click', () => {
+            product: product.name,
+            image: product.image
+        },
+
+
 
             event.preventDefault();
 
@@ -51,7 +66,7 @@ class ImageDisplay {
                 const index = Math.floor(Math.random() * 19);
                 this.products = [index];
                 this.randomImages.push(products);  
-         
+                console.log(randomImages);
                   
             }
 
