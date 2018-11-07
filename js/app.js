@@ -16,5 +16,5 @@ display.render();
 const chosen = new Chosen;
 // chosen.render();
 
-const summary = new UserSummary(productApi.getAll());
+const summary = new UserSummary();
 // summary.render();

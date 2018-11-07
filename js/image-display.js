@@ -1,6 +1,6 @@
 // import productApi from './product-api.js';
 import Chosen from './chosen.js';
-// import UserSummary from './user-sum?mary.js';
+import UserSummary from './user-summary.js';
 
 let lastImageSet = [];
 let count = 0;
@@ -22,7 +22,6 @@ class DisplayImage {
     }
     
     render() {
-        console.log('image count', count);
         const imageSection = document.getElementById('imageSection');
         let imageSet = [];
         
@@ -42,22 +41,19 @@ class DisplayImage {
                     } else {
                         this.displayedProducts.views = 1;
                     }
-    
-                    // console.log(this.displayedProducts);
                 }
             }
             
             lastImageSet = imageSet;
-            imageSection.innerHTML = makeTemplate(imageSet);
+            if(imageSection) {
+                imageSection.innerHTML = makeTemplate(imageSet);
+            }
             const chosen = new Chosen;
             chosen.render();
             count++;
 
         } else {
-            console.log('done with image');
-            // console.log(this.displayedProducts);
             // let summary = new UserSummary([1, 2, 3, 4]);
-            // console.log('summary', summary);
             // summary.render();
         }
     }

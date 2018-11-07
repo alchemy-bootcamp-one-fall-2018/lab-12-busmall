@@ -4,9 +4,9 @@ function makeTemplate(results) {
 
     results.forEach(result => {
         html += `
-            <li>Product Name: ${result.name}<br>
-            Views: ${result.views}<br>
-            Clicks: ${result.clicks}</li>
+            <li>Product Name: ${result.name}
+            <li>Views: ${result.views}</li>
+            <li>Clicks: ${result.clicks}</li>
             </ul>
         `;
     });
@@ -15,17 +15,23 @@ function makeTemplate(results) {
 }
 
 class UserSummary {
-    constructor(results) {
-        this.results = results;
-        console.log('results in summary', this.results);
+    constructor() {
+        // this.results = results;
+        
+        const resultsHtml = document.getElementById('resultsHtml');
+        console.log('summary render called');
+        
+        if(resultsHtml){
+            const storedResults = JSON.parse(localStorage.getItem('results'));
+            console.log('storedResults', storedResults);
+            resultsHtml.innerHTML = makeTemplate(storedResults);
+        }
     }
     
     render() {
-        console.log(makeTemplate(this.results));
         window.location = '../html/user-summary.html';
-
-        
     }
 }
+
 
 export default UserSummary;

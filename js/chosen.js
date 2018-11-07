@@ -1,6 +1,5 @@
 import productApi from './product-api.js';
 import DisplayImage from './image-display.js';
-// import surveyApi from './survey-api.js';
 import UserSummary from './user-summary.js';
 
 let count = 0;
@@ -19,11 +18,11 @@ class Chosen {
     }
     
     render() {
-        console.log('chosen count', count);
         if(count < 4){
             this.surveyItems.forEach(item => {
                 item.addEventListener('click', event => {
                     if(count < 4) {
+                        console.log('chosen count', count);
                         this.index = this.products.findIndex(product => {
                             return product.name === event.target.name;
                         });
@@ -36,15 +35,11 @@ class Chosen {
                             this.selectedProduct.clicks = 1;
                         }
         
-                        makeTemplate();
-                        console.log('selectedProduct', this.selectedProduct);
                         results.push(this.selectedProduct);
-                        console.log('results', results);
+                        makeTemplate();
                     } else {
-                        console.log('done with chosen');
-                        console.log('results in else', results);
-                        let summary = new UserSummary(results);
-                        // console.log('summary', summary);
+                        localStorage.setItem('results', JSON.stringify(results));
+                        let summary = new UserSummary();
                         summary.render();
                     }
                 });
