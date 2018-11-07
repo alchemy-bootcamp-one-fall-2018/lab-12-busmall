@@ -16,6 +16,10 @@ while(display.length < 3) {
     }
 }
 
+
+
+// once you have the display of 3 images, you can save that as the usedArray
+
 function makeTemplate() {
     return html`
     <h1>Pick a product:</h1>

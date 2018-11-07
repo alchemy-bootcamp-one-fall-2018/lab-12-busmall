@@ -1,3 +1,4 @@
+
 import productsApi from './products-api.js';
 import Header from './display.js';
 
