@@ -1,0 +1,9 @@
+#root-image-display{
+    display:flex;
+    flex-direction: row;
+
+}
+
+#product1, #product2, #product3 {
+    width: 100px;
+}
