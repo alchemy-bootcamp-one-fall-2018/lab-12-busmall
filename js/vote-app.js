@@ -1,24 +1,13 @@
-import productsApi from './product-list.js';
-import html from './html.js';
-
-const products = productsApi.getAll();
-
 function makeTemplate() {
     return html`
+    <div class="app">
         <header>
-            Pick One!
+            <h1>This is the Vote App</h1>
         </header>
-        <li>
-            <img src=${products.img} style="width: 100px">
-            <button class="vote">VOTE</button>
-        </li>
-    `;
-    
-}
-makeTemplate();
-class displayApp {
-    render() {
 
-    }
+        <main>
+            <p>I'm the paragraph tag</p>
+        </main>
+    </div>
+`;
 }
-displayApp();
