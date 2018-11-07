@@ -37,7 +37,7 @@
         ],
         "globals":{
             "Chart": false
-        }
+        },
         "new-cap": "error",
         "no-redeclare": [
             "error",
