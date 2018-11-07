@@ -1,31 +1,30 @@
-'use strict';
-
-let product = [
+export default [
 
     {
         name: 'bag',
-        image: 'assets.bag.jpg'
+        image: './assets.bag.jpg'
+        // clicks: 0,
+        // views: 0
     },
 
 
     {
         name: 'banana',
-        image: '.assets.banana.jpg'
+        image: './assets.banana.jpg'
     },
 
 
     {
         name: 'bathroom',
-        image: 'assets.bathroom.jpg'
+        image: './assets.bathroom.jpg'
     },
 
 
     {
-        
+
         name: 'boots',
         image: '../boots.boots.jpg'
-    },
-
+    },    
 
     {
         name: 'breakfast',
