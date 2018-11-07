@@ -21,7 +21,6 @@ class Chosen {
         this.surveyItems.forEach(item => {
             item.addEventListener('click', event => {
                 count++;
-                console.log('chosen count', count);
                 this.index = this.products.findIndex(product => {
                     return product.name === event.target.name;
                 });
@@ -39,7 +38,7 @@ class Chosen {
                 if(count > 24){
                     localStorage.setItem('results', JSON.stringify(results));
                     let summary = new UserSummary();
-                    summary.render();
+                    summary.render(true);
                 }
             });
         });

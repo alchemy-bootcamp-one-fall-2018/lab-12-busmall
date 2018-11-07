@@ -1,6 +1,4 @@
-// import productApi from './product-api.js';
 import Chosen from './chosen.js';
-import UserSummary from './user-summary.js';
 
 let lastImageSet = [];
 let count = 0;
@@ -52,12 +50,8 @@ class DisplayImage {
             chosen.render();
             count++;
 
-        } else {
-            // let summary = new UserSummary([1, 2, 3, 4]);
-            // summary.render();
         }
     }
-
 }
 
 export default DisplayImage;
