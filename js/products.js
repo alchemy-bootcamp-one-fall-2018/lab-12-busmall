@@ -3,19 +3,19 @@ var products = [
 
     {
         name: 'bag',
-        image: '../assets.bag.jpg'
+        image: '../assets/bag.jpg'
     },
     {
         name: 'banana',
-        image: '../assets.banana.jpg'
+        image: '../assets/banana.jpg'
     },
     {
         name: 'bathroom',
-        image: '../assets.bathroom.jpg'
+        image: '../assets/bathroom.jpg'
     },
     {
         name: 'boots',
-        image: '../assets.boots.jpg'
+        image: '../assets/boots.jpg'
     },
     {
         name: 'breakfast',
@@ -43,7 +43,7 @@ var products = [
     },
     {
         name: 'sweep',
-        image: '../assets/sweep.jpg'
+        image: '../assets/sweep.png'
     },
     {
         name: 'tauntaun',
@@ -79,7 +79,7 @@ var products = [
     },
     {
         name: 'wine-glass',
-        image: '../assets/wine-glass'
+        image: '../assets/wine-glass.jpg'
     }];
 
 export default products;

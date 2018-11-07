@@ -1,4 +1,10 @@
+import productsApi from './products-api.js';
+import Header from './display.js';
 
-import productApi from './products-api.js';
+const products = productsApi.getAll();
 
-const products = productApi.getAll();
+console.log(products);
+
+const header = new Header();
+const root = document.getElementById('root');
+root.appendChild(header.render());
