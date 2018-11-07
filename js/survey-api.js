@@ -1,9 +1,9 @@
-import productApi from './product-api.js';
+// import productApi from './product-api.js';
 
 
 const surveyApi = {
     init() {
-        let products = productApi.getAll();
+        // let products = productApi.getAll();
     },
 
     store(newProducts) {
