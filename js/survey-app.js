@@ -1,6 +1,6 @@
 import html from './html.js';
-import productApi from './product-api.js';
-import surveyApi from './survey-api.js';
+import productApi from '../api/product-api.js';
+import surveyApi from '../api/survey-api.js';
 import ProductSelector from './product-selector.js';
 
 const products = productApi.getAll();
@@ -9,7 +9,6 @@ function makeTemplate() {
     return html`
         <header>
             <div>
-                <img class="logo" src="assets/logo.png">
                 <h1>BusMall</h1>
             </div>
             <nav>

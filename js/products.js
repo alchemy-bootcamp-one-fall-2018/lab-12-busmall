@@ -1,121 +1,121 @@
 export default [
     {
-        product: 'bag',
-        image: './assets/bag.jpg',
-        voted: '',
+        name: 'bag',
+        image: '../bag.jpg',
+        voted: '0',
     },
 
     {
-        product: 'banana',
-        image: './assets/banana.jpg',
-        voted: '',
+        name: 'banana',
+        image: '../banana.jpg',
+        voted: '0',
     },
 
     {
-        product: 'bathroom',
-        image: './assets/bathroom.jpg',
-        voted: '',
+        name: 'bathroom',
+        image: '../bathroom.jpg',
+        voted: '0',
     },
 
     {
-        product: 'boots',
-        image: './assets/boots.jpg',
-        voted: '',
+        name: 'boots',
+        image: '../boots.jpg',
+        voted: '0',
     },
 
     {
-        product: 'breakfast',
-        image: './assets/breakfast.jpg',
-        voted: '',
+        name: 'breakfast',
+        image: '../breakfast.jpg',
+        voted: '0',
     },
 
     {
-        product: 'bubblegum',
-        image: './assets/bubblegum.jpg',
-        voted: '',
+        name: 'bubblegum',
+        image: '../bubblegum.jpg',
+        voted: '0',
     },
 
     {
-        product: 'chair',
-        image: './assets/chair.jpg',
-        voted: '',
+        name: 'chair',
+        image: '../chair.jpg',
+        voted: '0',
     },
 
     {
-        product: 'cthulhu',
-        image: './assets/cthulhu.jpg',
-        voted: '',
+        name: 'cthulhu',
+        image: '../cthulhu.jpg',
+        voted: '0',
     },
 
     {
-        product: 'dog-duck',
-        image: './assets/dog-duck.jpg',
-        voted: '',
+        name: 'dog-duck',
+        image: '../dog-duck.jpg',
+        voted: '0',
     },
 
     {
-        product: 'dragon',
-        image: './assets/dragon.jpg',
-        voted: '',
+        name: 'dragon',
+        image: '../dragon.jpg',
+        voted: '0',
     },
 
     {
-        product: 'pen',
-        image: './assets/pen.jpg',
-        voted: '',
+        name: 'pen',
+        image: '../pen.jpg',
+        voted: '0',
     },
 
     {
-        product: 'pet-sweep',
-        image: './assets/pet-sweep.jpg',
-        voted: '',
+        name: 'pet-sweep',
+        image: '../pet-sweep.jpg',
+        voted: '0',
     },
 
     {
-        product: 'scissors',
-        image: './assets/scissors.jpg',
-        voted: '',
+        name: 'scissors',
+        image: '../scissors.jpg',
+        voted: '0',
     },
 
     {
-        product: 'shark',
-        image: './assets/shark.jpg',
-        voted: '',
+        name: 'shark',
+        image: '../shark.jpg',
+        voted: '0',
     },
 
     {
-        product: 'sweep',
-        image: './assets/sweep.png',
-        voted: '',
+        name: 'sweep',
+        image: '../sweep.png',
+        voted: '0',
     },
 
     {
-        product: 'tauntaun',
-        image: './assets/tauntaun.jpg',
-        voted: '',
+        name: 'tauntaun',
+        image: '../tauntaun.jpg',
+        voted: '0',
     },
 
     {
-        product: 'unicorn',
-        image: './assets/unicorn.jpg',
-        voted: '',
+        name: 'unicorn',
+        image: '../unicorn.jpg',
+        voted: '0',
     },
 
     {
-        product: 'usb',
-        image: './assets/usb.gif',
-        voted: '',
+        name: 'usb',
+        image: '../usb.gif',
+        voted: '0',
     },
 
     {
-        product: 'water-can',
-        image: './assets/water-can.jpg',
-        voted: '',
+        name: 'water-can',
+        image: '../water-can.jpg',
+        voted: '0',
     },
 
     {
-        product: 'wine-glass',
-        image: './assets/wine-glass.jpg',
-        voted: '',
+        name: 'wine-glass',
+        image: '../wine-glass.jpg',
+        voted: '0',
     },
 ];
