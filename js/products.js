@@ -92,7 +92,7 @@ export default [
     },
     {
         name: 'tauntaun',
-        image: 'tauntaun.png',
+        image: 'tauntaun.jpg',
         clicks: 0,
         views: 0,
     }
