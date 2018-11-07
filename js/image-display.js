@@ -1,11 +1,12 @@
 // import productApi from './product-api.js';
 import Chosen from './chosen.js';
+// import UserSummary from './user-sum?mary.js';
 
 let lastImageSet = [];
 let count = 0;
 
 function makeTemplate(imageList) {
-    let html = '';
+    let html = '<h1>Choose Wisely, you cannot go back!</h1>';
     
     imageList.forEach(item => {
         html += `
@@ -21,11 +22,11 @@ class DisplayImage {
     }
     
     render() {
-        console.log(count);
+        console.log('image count', count);
         const imageSection = document.getElementById('imageSection');
         let imageSet = [];
         
-        if(count < 3) {
+        if(count < 4) {
             while(imageSet.length < 3) {
                 let randomIndex = Math.floor(Math.random() * this.imageList.length);
                 
@@ -34,27 +35,30 @@ class DisplayImage {
                 } else {
                     imageSet.push(this.imageList[randomIndex]);
     
-                    let displayedProducts = this.imageList[randomIndex];
+                    this.displayedProducts = this.imageList[randomIndex];
     
-                    if(displayedProducts.views > 0) {
-                        displayedProducts.views = displayedProducts.views + 1;
+                    if(this.displayedProducts.views > 0) {
+                        this.displayedProducts.views = this.displayedProducts.views + 1;
                     } else {
-                        displayedProducts.views = 1;
+                        this.displayedProducts.views = 1;
                     }
     
-                    console.log(displayedProducts);
+                    // console.log(this.displayedProducts);
                 }
             }
             
             lastImageSet = imageSet;
-            console.log(lastImageSet);
             imageSection.innerHTML = makeTemplate(imageSet);
             const chosen = new Chosen;
             chosen.render();
-
             count++;
+
         } else {
-            window.location = '../html/user-summary.html';
+            console.log('done with image');
+            // console.log(this.displayedProducts);
+            // let summary = new UserSummary([1, 2, 3, 4]);
+            // console.log('summary', summary);
+            // summary.render();
         }
     }
 
