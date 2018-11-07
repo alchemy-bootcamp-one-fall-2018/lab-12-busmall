@@ -1,0 +1,37 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    margin: 0;
+    padding: 15px;
+    background-color: black;
+    color: white;
+    text-align: center;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    border-right:10px solid #737373;
+    border-left: 10px solid #737373;
+    border-top: 10px solid #737373;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+}
+
+img {
+    max-width: 250px;
+    border: 2px solid #737373;
+}
+
+li {
+    list-style-type: none;
+    display: inline-block;
+    padding: 15px;
+}
+
+ul {
+    border: 10px solid #737373;
+    background-color: #f2f2f2;
+}

@@ -1,4 +1,4 @@
-import products from './product-list.js';
+import products from './home/product-list.js';
 
 const productsApi = {
     getAll() {

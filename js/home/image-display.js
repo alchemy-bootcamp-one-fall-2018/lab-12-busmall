@@ -1,5 +1,5 @@
 /*eslint-disable no-console*/
-import html from './html.js';
+import html from '../html.js';
 'use strict';
 
 function makeTemplate() {
@@ -27,11 +27,13 @@ class ImageDisplay {
         
         for(var i = 0; i < 3; i++) {
             listItem.src = this.selectedProducts[i].image;
+            this.selectedProducts[i].views++;
             console.log('hullo', this.selectedProducts[i].name);
             console.log(this.selectedProducts[i].views);
             
             if(this.onSelect) {
-                listItem.addEventListener('click', () => {
+                const li = dom.querySelector('li');
+                li.addEventListener('click', () => {
                     this.selectedProducts[i].views++;
                     this.selectedProducts[i].clicks++;
                     console.log('hi', this.selectedProducts);
