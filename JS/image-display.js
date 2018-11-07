@@ -1,8 +1,7 @@
-import productApi from 'js/product-api.js';
-import html from 'js/html.js';
+import productApi from './product-api.js';
+import html from './html.js';
 
 let products = productApi.getAll();
-
 function makeTemplate() {
     return html `
     <section>
@@ -28,32 +27,40 @@ class ImageDisplay {
         this.products = products;
         this.randomImages = [];
     }
-}
     render() {
 
         // const imageSelection = document.getElementById('')
-        const dom = makeTemplate();
+        const dom = makeTemplate(this.products);
 
-        const product1 = dom.querySelector(#product1);
-        const product2 = dom.querySelector(#product2);
-        const product3 = dom.querySelector(#product3);
+
+        const product1 = dom.getElementByID('product1');
+        const product2 = dom.getElementByID('product2');
+        const product3 = dom.getElementByID('product3');
+
+        // product1.src = `$[]`
+        // product2.src = `$[]`
+        // product3.src = `$[]`
 
         dom.addEventListener('click', event => {
 
             event.preventDefault();
 
-            //display image events
+            //display three images
 
             for(let i = 0; i < 3; i ++){
                 const index = Math.floor(Math.random() * 19);
-                this.products = randomImages[index];
-
-        
+                this.products = [index];
+                this.randomImages.push(products);  
+         
+                  
             }
 
 
-        })
+
+        });
 
     }
+}
 
-    export default ImageDisplay;
+
+export default ImageDisplay;
