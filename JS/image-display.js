@@ -1,20 +1,20 @@
-import productApi from './product-api.js';
+// import productApi from './product-api.js';
 import html from './html.js';
 
-let products = productApi.getAll();
+
 function makeTemplate() {
     return html`
     <section>
         <div>
-        <img id="product1" src=$() >
+        <img id="product1">
         </div>
 
         <div>
-        <img id="product2" src=$() >
+        <img id="product2">
         </div>
 
         <div>
-        <img id="product2" src=$() >
+        <img id="product3">
         </div>
 
     </section>
@@ -28,54 +28,49 @@ class ImageDisplay {
         this.randomImages = [];
     }
     render() {
+        // console.log('hola', products);
+        const dom = makeTemplate();
+    
+        console.log(dom)
 
-        // const imageSelection = document.getElementById('')
-        const dom = makeTemplate(this.products);
+        const product1 = dom.getElementById('product1');
+        const product2 = dom.getElementById('product2');
+        const product3 = dom.getElementById('product3');
 
+        this.getImage();
 
-        const product1 = dom.getElementByID('product1');
-        const product2 = dom.getElementByID('product2');
-        const product3 = dom.getElementByID('product3');
+        //render the three random images
+        product1.src = `${this.randomImages[0].image}`;
+        product2.src = `${this.randomImages[1].image}`;
+        product3.src = `${this.randomImages[2].image}`;
 
-        // product1.src = `$[]`
-        // product2.src = `$[]`
-        // product3.src = `$[]`
+        //event listeners for click
 
         product1.addEventListener('click', () => {
-            product: product.name,
-            image: product.image
-        },
-
-        product2.addEventListener('click', () => {
-            product: product.name,
-            image: product.image
-        },
-
-        product3.addEventListener('click', () => {
-            product: product.name,
-            image: product.image
-        },
-
-
-
-            event.preventDefault();
-
-            //display three images
-
-            for(let i = 0; i < 3; i ++){
-                const index = Math.floor(Math.random() * 19);
-                this.products = [index];
-                this.randomImages.push(products);  
-                console.log(randomImages);
-                  
-            }
-
-
-
+            product1.views++;
+            product1.clicks++;
         });
 
+        product2.addEventListener('click', () => {
+            product2.views++;
+            product2.clicks++;
+        });
+
+        product3.addEventListener('click', () => {
+            product3.views++;
+            product3.clicks++;
+        });
+
+        return dom;
+    }
+
+    getImage() {
+        for(let i = 0; i < 3; i++) {
+            const index = Math.floor(Math.random() * 19);
+            this.randomImages.push(this.products[index]);
+        }
     }
 }
-
-
+        
+          
 export default ImageDisplay;

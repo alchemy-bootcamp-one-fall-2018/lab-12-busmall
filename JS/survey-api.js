@@ -2,15 +2,15 @@
 // import productApi from './product-api.js';
 // import html from './html.js';
 
-function makeTemplate() {
-    return html`
-    <ul class="products"></ul>
-    `;
-}
+// function makeTemplate() {
+//     return html`
+//     <ul class="products"></ul>
+//     `;
+// }
 
-class ImageDisplay {
-    constructor
-}
+// class ImageDisplay {
+//     constructor
+// }
 
 
 
