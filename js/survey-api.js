@@ -1,13 +1,22 @@
-// import productApi from './product-api.js';
-
-
 const surveyApi = {
-    init() {
-        // let products = productApi.getAll();
+
+    init(){
+        // this.store([]);
     },
 
-    store(newProducts) {
-        localStorage.setItem('products', JSON.stringify(newProducts));
+    store(newSurveys) {
+        let surveys = JSON.parse(localStorage.getItem('surveys'));
+
+        if(surveys){
+            surveys.push(newSurveys);
+        } else {
+            surveys = [newSurveys];
+        }
+        localStorage.setItem('surveys', JSON.stringify(surveys));
+    },
+
+    getSurveys() {
+        return JSON.parse(localStorage.getItem('surveys'));
     }
 };
 

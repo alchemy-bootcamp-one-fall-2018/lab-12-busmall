@@ -1,6 +1,7 @@
 import productApi from './product-api.js';
 import DisplayImage from './image-display.js';
 import UserSummary from './user-summary.js';
+import surveyApi from './survey-api.js';
 
 let count = 0;
 let results = [];
@@ -35,10 +36,11 @@ class Chosen {
 
                 results.push(this.selectedProduct);
                 makeTemplate();
-                if(count > 24){
+                if(count > 3){
                     localStorage.setItem('results', JSON.stringify(results));
                     let summary = new UserSummary();
                     summary.render(true);
+                    surveyApi.store(results);
                 }
             });
         });
