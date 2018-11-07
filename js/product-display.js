@@ -18,7 +18,7 @@ function makeTemplate() {
     `; 
 }
 
-class productDisplay {
+class ProductDisplay {
 
     constructor(products) {
         this.products = products; 
@@ -59,14 +59,14 @@ class productDisplay {
         return dom;
     }
 
-    getProduct() {
+    getImage() {
         for(let i = 0; i < 3; i++) {
             const index = Math.floor(Math.random() * 19);
-            this.randomImages.push(this.products[index]); 
+            this.randomProducts.push(this.products[index]); 
            
 
         }
     } 
 }
 
-export default productDisplay; 
+export default ProductDisplay; 

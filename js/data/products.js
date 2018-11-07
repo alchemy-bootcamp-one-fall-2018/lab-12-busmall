@@ -4,23 +4,24 @@ let product = [
 
     {
         name: 'bag',
-        image: '../assets.beg.jpg'
+        image: 'assets.bag.jpg'
     },
 
 
     {
         name: 'banana',
-        image: '../assets.banana.jpg'
+        image: '.assets.banana.jpg'
     },
 
 
     {
         name: 'bathroom',
-        image: '../assets.bathroom.jpg'
+        image: 'assets.bathroom.jpg'
     },
 
 
     {
+        
         name: 'boots',
         image: '../boots.boots.jpg'
     },
