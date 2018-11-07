@@ -2,6 +2,7 @@
 import Chosen from './chosen.js';
 
 let lastImageSet = [];
+let count = 0;
 
 function makeTemplate(imageList) {
     let html = '';
@@ -20,34 +21,41 @@ class DisplayImage {
     }
     
     render() {
+        console.log(count);
         const imageSection = document.getElementById('imageSection');
         let imageSet = [];
         
-        while(imageSet.length < 3) {
-            let randomIndex = Math.floor(Math.random() * this.imageList.length);
-            
-            if(imageSet.includes(this.imageList[randomIndex]) || lastImageSet.includes(this.imageList[randomIndex])) {
-                randomIndex = Math.floor(Math.random() * this.imageList.length);
-            } else {
-                imageSet.push(this.imageList[randomIndex]);
-
-                let displayedProducts = this.imageList[randomIndex];
-
-                if(displayedProducts.views > 0) {
-                    displayedProducts.views = displayedProducts.views + 1;
+        if(count < 3) {
+            while(imageSet.length < 3) {
+                let randomIndex = Math.floor(Math.random() * this.imageList.length);
+                
+                if(imageSet.includes(this.imageList[randomIndex]) || lastImageSet.includes(this.imageList[randomIndex])) {
+                    randomIndex = Math.floor(Math.random() * this.imageList.length);
                 } else {
-                    displayedProducts.views = 1;
+                    imageSet.push(this.imageList[randomIndex]);
+    
+                    let displayedProducts = this.imageList[randomIndex];
+    
+                    if(displayedProducts.views > 0) {
+                        displayedProducts.views = displayedProducts.views + 1;
+                    } else {
+                        displayedProducts.views = 1;
+                    }
+    
+                    console.log(displayedProducts);
                 }
-
-                console.log(displayedProducts);
             }
+            
+            lastImageSet = imageSet;
+            console.log(lastImageSet);
+            imageSection.innerHTML = makeTemplate(imageSet);
+            const chosen = new Chosen;
+            chosen.render();
+
+            count++;
+        } else {
+            window.location = '../html/user-summary.html';
         }
-        
-        lastImageSet = imageSet;
-        console.log(lastImageSet);
-        imageSection.innerHTML = makeTemplate(imageSet);
-        const chosen = new Chosen;
-        chosen.render();
     }
 
 }
