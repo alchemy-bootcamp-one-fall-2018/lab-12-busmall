@@ -15,7 +15,7 @@ class ImageDisplay {
     constructor(products, onSelect) {
         this.products = products;
         this.onSelect = onSelect;
-        this.randomImages = [];
+        // this.randomImages = [];
         this.selectedProducts = [];
     }
 
@@ -28,7 +28,7 @@ class ImageDisplay {
         // const products = this.products;
         
         for(var i = 0; i < 3; i++) {
-            listItem.src = `${this.randomImages[i]}`;
+            listItem.src = this.selectedProducts[i].image;
             console.log('hullo', this.selectedProducts[i].name);
             console.log(this.selectedProducts[i].views);
 
@@ -48,8 +48,8 @@ class ImageDisplay {
     getImage() {
         for(let i = 0; i < 3; i++) {
             const index = Math.floor(Math.random() * 19);
-            this.randomImages.push(this.products[index].image);
             this.selectedProducts.push(this.products[index]);
+            // this.selectedProducts.push(this.products[index]);
             console.log('hello', this.products[index]);
         }
     }
