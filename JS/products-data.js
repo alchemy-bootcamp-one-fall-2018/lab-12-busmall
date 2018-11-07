@@ -18,19 +18,19 @@ const productData = [
     },
     {
         name: 'bag',
-        image: '../assets.bag.jpg'
+        image: '../assets/bag.jpg'
     },
     {
         name: 'banana',
-        image: '../assets.banana.jpg'
+        image: '../assets/banana.jpg'
     },
     {
         name: 'bathroom',
-        image: '../assets.bathroom.jpg'
+        image: '../assets/bathroom.jpg'
     },
     {
         name: 'boots',
-        image: '../assets.boots.jpg'
+        image: '../assets/boots.jpg'
     },
     {
         name: 'dog-duck',
@@ -63,7 +63,7 @@ const productData = [
     },
     {
         name: 'wine-glass',
-        image: '../assets/wine-glass'
+        image: '../assets/wine-glass.jpg'
     },
     {
         name: 'scissors',
@@ -75,7 +75,7 @@ const productData = [
     },
     {
         name: 'sweep',
-        image: '../assets/sweep.jpg'
+        image: '../assets/sweep.png'
     },
     {
         name: 'tauntaun',
