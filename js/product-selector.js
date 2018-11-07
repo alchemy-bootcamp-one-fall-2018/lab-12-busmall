@@ -14,7 +14,7 @@ class ProductSelector {
         const dom = makeTemplate();
         this.list = dom.querySelector('ul');
 
-        for(let i = 0; i < this.products.length; i++) {
+        for(let i = 0; i < 3; i++) {
             this.add(this.products[i]);
         }
         console.log(this.products);
