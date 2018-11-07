@@ -13,11 +13,11 @@ class ProductSelector {
     render() {
         const dom = makeTemplate();
         this.list = dom.querySelector('ul');
-        console.log(this.
-            (products);
-        
+        // console.log(this.
+        //     (products);
         for(let i = 0; i < this.products.length; i++)
             return dom;
+        
     }
 }
 
