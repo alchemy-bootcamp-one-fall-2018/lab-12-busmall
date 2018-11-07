@@ -4,7 +4,7 @@ let lastImageSet = [];
 let count = 0;
 
 function makeTemplate(imageList) {
-    let html = '<h1>Choose Wisely, you cannot go back!</h1>';
+    let html = '<h1>Choose wisely, you cannot go back!</h1>';
     
     imageList.forEach(item => {
         html += `

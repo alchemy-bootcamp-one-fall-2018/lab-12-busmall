@@ -3,8 +3,7 @@ import DisplayImage from './image-display.js';
 import Chosen from './chosen.js';
 import surveyApi from './survey-api.js';
 import UserSummary from './user-summary.js';
-
-//add a store method to survey api that stores new product list.
+import DataChart from './data-chart.js';
 
 surveyApi.init();
 
@@ -16,3 +15,6 @@ chosen.render();
 
 const summary = new UserSummary();
 summary.render(false);
+
+const dataChart = new DataChart;
+dataChart.render();
