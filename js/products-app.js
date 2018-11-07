@@ -1,6 +1,6 @@
 import productApi from './products-api.js';
 import html from './html.js';
-import Header from './header.js';
+// import Header from './header.js';
 import ProductDisplay from './product-display.js';
 
 const products = productApi.getAll();
@@ -24,12 +24,12 @@ class ProductsApp {
         const dom = makeTemplate();
         
         // reference section elements
-        const headerSection = dom.querySelector('header');
+        // const headerSection = dom.querySelector('header');
         const productDisplaySection = dom.querySelector('#product-display');
         
         // header
-        const header = new Header();
-        headerSection.appendChild(header.render());
+        // const header = new Header();
+        // headerSection.appendChild(header.render());
          
         // product display
         const productDisplay = new ProductDisplay(products);
