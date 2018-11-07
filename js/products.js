@@ -1,82 +1,82 @@
 export default [
     {
         name: 'bag',
-        image: '../assets/bag.jpg'
+        image: 'bag.jpg'
     },
     {
         name: 'banana',
-        image: '../assets/banana.jpg'
+        image: 'banana.jpg'
     },
     {
         name: 'iPad toilet roll',
-        image: '../assets/bathroom.jpg'
+        image: 'bathroom.jpg'
     },
     {
         name: 'boots',
-        image: '../assets/boots.jpg'
+        image: 'boots.jpg'
     },
     {
         name: 'breakfast',
-        image: '../assets/breakfast.jpg'
+        image: 'breakfast.jpg'
     },
     {
         name: 'bubblegum',
-        image: '../assets/bubblegum.jpg'
+        image: 'bubblegum.jpg'
     },
     {
         name: 'chair',
-        image: '../assets/chair.jpg'
+        image: 'chair.jpg'
     },
     {
         name: 'cthulhu',
-        image: '../assets/cthulhu.jpg'
+        image: 'cthulhu.jpg'
     },
     {
         name: 'dog-duck',
-        image: '../assets/dog-duck.jpg'
+        image: 'dog-duck.jpg'
     },
     {
         name: 'dragon',
-        image: '../assets/dragon.jpg'
+        image: 'dragon.jpg'
     },
     {
         name: 'pen',
-        image: '../assets/pen.jpg'
+        image: 'pen.jpg'
     },
     {
         name: 'pet-sweep',
-        image: '../assets/pet-sweep.jpg'
+        image: 'pet-sweep.jpg'
     },
     {
         name: 'scissors',
-        image: '../assets/scissors.jpg'
+        image: 'scissors.jpg'
     },
     {
         name: 'shark',
-        image: '../assets/shark.jpg'
+        image: 'shark.jpg'
     },
     {
         name: 'sweep',
-        image: '../assets/sweep.png'
+        image: 'sweep.png'
     },
     {
         name: 'tauntaun',
-        image: '../assets/tauntaun.jpg'
+        image: 'tauntaun.jpg'
     },
     {
         name: 'unicorn',
-        image: '../assets/unicorn.jpg'
+        image: 'unicorn.jpg'
     },
     {
         name: 'usb',
-        image: '../assets/usb.gif'
+        image: 'usb.gif'
     },
     {
         name: 'water-can',
-        image: '../assets/water-can.jpg'
+        image: 'water-can.jpg'
     },
     {
         name: 'wine-glass',
-        image: '../assets/wine-glass.jpg'
+        image: 'wine-glass.jpg'
     },
 ];

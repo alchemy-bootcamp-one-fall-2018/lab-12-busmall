@@ -11,7 +11,6 @@ function makeTemplate() {
         <main>
             <section id="product-list">
                 <h2>Vote for your favorite</h2>
-                <p>Click on your favorite!</p>
             </section>
             <ul></ul>
         </main>
@@ -20,9 +19,9 @@ function makeTemplate() {
 class SurveyApp {
     render() {
         const dom = makeTemplate();
-        const listItem = dom.querySelector('ul');
+        const list = dom.querySelector('ul');
         const productSelector = new ProductSelector(products);
-        listItem.appendChild(productSelector.render());
+        list.appendChild(productSelector.render());
         
         return dom;
     }

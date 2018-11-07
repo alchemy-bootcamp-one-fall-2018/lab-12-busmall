@@ -1,8 +1,9 @@
 import html from './html.js';
+import Product from './product-card.js';
 
 function makeTemplate() {
     return html`
-        <li class="products">Product Selector</li>
+        <ul class="products"></ul>
     `;
 }
 class ProductSelector {
@@ -11,10 +12,17 @@ class ProductSelector {
     }
     render() {
         const dom = makeTemplate();
-        const li = dom.querySelector('li');
-        li.textContent = this.products[0].name;
+        this.list = dom.querySelector('ul');
+
+        for(let i = 0; i < this.products.length; i++) {
+            this.add(this.products[i]);
+        }
         console.log(this.products);
         return dom;
+    }
+    add(product){
+        const productCard = new Product(product);
+        this.list.appendChild(productCard.render());
     }
 }
 
