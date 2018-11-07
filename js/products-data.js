@@ -1,19 +1,19 @@
 var productsData = [
     {
         name: 'bag',
-        image: '../assets.bag.jpg'
+        image: '../assets/bag.jpg'
     },
     {
         name: 'banana',
-        image: '../assets.banana.jpg'
+        image: '../assets/banana.jpg'
     },
     {
         name: 'bathroom',
-        image: '../assets.bathroom.jpg'
+        image: '../assets/bathroom.jpg'
     },
     {
         name: 'boots',
-        image: '../assets.boots.jpg'
+        image: '../assets/boots.jpg'
     },
     {
         name: 'breakfast',

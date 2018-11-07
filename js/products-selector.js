@@ -1,4 +1,5 @@
 import productsApi from '../js/products-api.js';
+import html from '../js/html.js';
 
 let products = productsApi.getAll();
 
@@ -15,11 +16,20 @@ while(display.length < 3) {
     } 
 }
 
-console.log(display);
+function makeTemplate() {
+    return html`
+        <h1>Pick a product:<h1>
+        <section> <img src="${display[0].image}"> </section>
+        <section> <img src="${display[1].image}"> </section>
+        <section> <img src="${display[2].image}"> </section>
+    `;
+}
 
+class Header {
+    render() {
+        const dom = makeTemplate();
+        return dom;
+    }
+}
 
-// for(var i = 0; i < 3; i++) {
-//     let index = getRandomInt(products.length);
-//     let item = products.splice(index, 1);
-//     display.push(item);
-// }
+export default Header;
