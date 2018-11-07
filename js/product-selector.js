@@ -1,16 +1,6 @@
 
-import productApi from './product-api.js';
+import html from './html.js';
+import workingArray from './product-api.js';
 
-
-
-
-
-// function test() {
-//     //productApi.forEach(function(element) {
-//         console.log('array', productApi);
-//     //});
-// }
-
-// test();
-
-export default test;
+const products = workingArray;
+console.log('products', products);

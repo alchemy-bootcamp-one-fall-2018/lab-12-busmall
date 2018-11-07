@@ -1,6 +1,21 @@
-import productApi from './product-api.js'; 
-//import test from './product-selector.js';
+import html from './html.js';
+import workingArray from './product-api.js'; 
+
+function makeTemplate() {
+    return html`
+        <h1>Hello World</h1>
+    `;
+}
+
+class HelloWorld {
+    render() {
+        const dom = makeTemplate();
+        return dom;
+    }
+}
 
 
 
-console.log(productApi.getAll());
+console.log(workingArray.getAll());
+
+export default HelloWorld;

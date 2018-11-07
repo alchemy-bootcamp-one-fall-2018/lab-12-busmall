@@ -1,10 +1,10 @@
 import productList from './data.js';
 
-const productApi = {
+const workingArray = {
     getAll() {
         return productList;
     }
 };
 
 
-export default productApi;
+export default workingArray;
