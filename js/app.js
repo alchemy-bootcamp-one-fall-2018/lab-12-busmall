@@ -1,11 +1,10 @@
-import productsApi from './products-api.js';
+//import productsApi from './products-api.js';
 import Header from './display.js';
 
-const allProducts = productsApi.getAll();
+//const allProducts = productsApi.getAll();
 
-console.log(allProducts);
+//console.log(allProducts);
 
-//
 
 const header = new Header();
 const root = document.getElementById('root');
