@@ -6,5 +6,5 @@ const workingArray = {
     }
 };
 
-
+//console.log(workingArray.getAll);
 export default workingArray;
