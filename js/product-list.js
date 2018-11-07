@@ -1,4 +1,4 @@
-products = [
+let products = [
     {
         'name': 'Bag',
         'img': '../assets/bag.jpg'
@@ -81,4 +81,14 @@ products = [
     },
 ];
 
-export default products;
+const productsApi = {
+    getAll() {
+        const json = localStorage.getItem('products');
+        if(json) {
+            products = JSON.parse(json);
+        }
+        return products;
+    }
+};
+
+export default productsApi;
