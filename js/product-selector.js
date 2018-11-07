@@ -2,7 +2,7 @@ import html from './html.js';
 
 function makeTemplate() {
     return html`
-        <h3>product selector</h3>
+        <li class="products">Product Selector</li>
     `;
 }
 class ProductSelector {
@@ -11,11 +11,11 @@ class ProductSelector {
     }
     render() {
         const dom = makeTemplate();
+        const li = dom.querySelector('li');
+        li.textContent = this.products[0].name;
         console.log(this.products);
         return dom;
     }
 }
-
-
 
 export default ProductSelector;

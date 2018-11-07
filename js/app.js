@@ -13,15 +13,17 @@ function makeTemplate() {
                 <h2>Vote for your favorite</h2>
                 <p>Click on your favorite!</p>
             </section>
+            <ul></ul>
         </main>
     `;
 }
 class SurveyApp {
     render() {
         const dom = makeTemplate();
-        const mainSection = dom.querySelector('main');
+        const listItem = dom.querySelector('ul');
         const productSelector = new ProductSelector(products);
-        mainSection.appendChild(productSelector.render());
+        listItem.appendChild(productSelector.render());
+        
         return dom;
     }
 }
