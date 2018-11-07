@@ -1,9 +1,11 @@
-import products from './assets';
+import products from '../js/products.js';
 
-const pokemonApi = {
+const productApi = {
     getAll() {
-        return pokemon;
+        return products;
     }
 };
 
-export default pokemonApi;
+export default productApi;
+
+// You will need a products-api.js (only has a getAll of static data) and a survey-api.js (only needs an add())
