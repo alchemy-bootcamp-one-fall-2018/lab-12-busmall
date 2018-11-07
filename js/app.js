@@ -9,19 +9,18 @@ function makeTemplate() {
         <h1>Pick a product!</h1>
 
         <main>
-            <section id="product-list">
+            <section id="product-selector">
                 <h2>Vote for your favorite</h2>
             </section>
-            <ul></ul>
         </main>
     `;
 }
 class SurveyApp {
     render() {
         const dom = makeTemplate();
-        const list = dom.querySelector('ul');
+        const selectorSection = dom.querySelector('#product-selector');
         const productSelector = new ProductSelector(products);
-        list.appendChild(productSelector.render());
+        selectorSection.appendChild(productSelector.render());
         
         return dom;
     }

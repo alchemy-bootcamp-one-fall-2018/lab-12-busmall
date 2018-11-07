@@ -6,7 +6,17 @@ li {
     list-style: none;
 }
 
-ul {
-    display: flex;
-    justify-content: space-around;
+#root {
+    background-color: lightgray;
+}
+
+.products {
+    border: 2px dotted dodgerblue;
+    margin: 2px;
+}
+
+.product-card {
+    border: 2px solid orange;
+    background-color: white;
+    margin: 2px;
 }
