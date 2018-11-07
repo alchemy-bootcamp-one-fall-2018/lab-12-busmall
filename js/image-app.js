@@ -8,44 +8,31 @@ function makeTemplate() {
         <header></header>
         <main>
             <h2>Products</h2>
-            <ul></ul>
+            <ul class="main"></ul>
         </main>
     `;
 }
 
 class ImageApp {
+
+    constructor(products) {
+        this.products = products;
+
+    }
     render() {
-        console.log(products);
         const dom = makeTemplate();
-
-        const imageSection = dom.querySelector('ul');
-
-        const image = new Image();
-
-        // for()
-
-        imageSection.appendChild(image.render());
+        this.list = dom.querySelector('ul');
+        // const imageSection = dom.querySelector('ul');
+        
+        for(let i = 0; i < 3; i++) {
+            const image = new Image(products);
+            this.list.appendChild(image.render());
+            
+        }
         
         return dom;
     }
 }
 
-
-
-
 export default ImageApp;
  
-
-// function makeTemplate() {
-    //     return html`
-    //         <h1>Hello World</h1>
-    
-    //     `;
-    // }
-    
-    // class HelloWorld {
-    //     render() {
-    //         const dom = makeTemplate();
-    //         return dom;
-    //     }
-    // }

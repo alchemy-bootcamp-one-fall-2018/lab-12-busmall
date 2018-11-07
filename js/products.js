@@ -1,27 +1,27 @@
 export default [
     {
         name: 'Robot Luggage', 
-        image: 'bag.jpg'
+        image: 'assets/bag.jpg'
     },
     {
         name: 'Banana Slicer',
-        image: 'banana.jpg'
+        image: 'assets/banana.jpg'
     },
     {
         name: 'Toilet Paper Holder',
-        image:'bathroom.jpg'
+        image:'assets/bathroom.jpg'
     },
     {
         name: 'Duck Boots',
-        image:'boots.jpg'
+        image:'assets/boots.jpg'
     },
     {
         name: 'Breakfast Station',
-        image:'breakfast.jpg'
+        image:'assets/breakfast.jpg'
     },
     {
         name: 'Meatball Bubble Gum',
-        image:'bubblegum.jpg'
+        image:'assets/bubblegum.jpg'
     }
 ];
 
