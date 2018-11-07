@@ -1,10 +1,9 @@
 import productList from './data.js';
 
-const workingArray = {
+const products = {
     getAll() {
         return productList;
     }
 };
 
-//console.log(workingArray.getAll);
-export default workingArray;
+export default products;
