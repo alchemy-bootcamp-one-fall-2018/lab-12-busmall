@@ -25,7 +25,7 @@ class DisplayImage {
         const imageSection = document.getElementById('imageSection');
         let imageSet = [];
         
-        if(count < 4) {
+        if(count < 25) {
             while(imageSet.length < 3) {
                 let randomIndex = Math.floor(Math.random() * this.imageList.length);
                 

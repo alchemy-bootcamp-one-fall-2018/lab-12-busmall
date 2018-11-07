@@ -18,34 +18,31 @@ class Chosen {
     }
     
     render() {
-        if(count < 4){
-            this.surveyItems.forEach(item => {
-                item.addEventListener('click', event => {
-                    if(count < 4) {
-                        console.log('chosen count', count);
-                        this.index = this.products.findIndex(product => {
-                            return product.name === event.target.name;
-                        });
-        
-                        this.selectedProduct = this.products[this.index];
-        
-                        if(this.selectedProduct.clicks > 0) {
-                            this.selectedProduct.clicks = this.selectedProduct.clicks + 1;
-                        } else {
-                            this.selectedProduct.clicks = 1;
-                        }
-        
-                        results.push(this.selectedProduct);
-                        makeTemplate();
-                    } else {
-                        localStorage.setItem('results', JSON.stringify(results));
-                        let summary = new UserSummary();
-                        summary.render();
-                    }
+        this.surveyItems.forEach(item => {
+            item.addEventListener('click', event => {
+                count++;
+                console.log('chosen count', count);
+                this.index = this.products.findIndex(product => {
+                    return product.name === event.target.name;
                 });
+
+                this.selectedProduct = this.products[this.index];
+
+                if(this.selectedProduct.clicks > 0) {
+                    this.selectedProduct.clicks = this.selectedProduct.clicks + 1;
+                } else {
+                    this.selectedProduct.clicks = 1;
+                }
+
+                results.push(this.selectedProduct);
+                makeTemplate();
+                if(count > 24){
+                    localStorage.setItem('results', JSON.stringify(results));
+                    let summary = new UserSummary();
+                    summary.render();
+                }
             });
-            count++;
-        } 
+        });
     }
 }
 
