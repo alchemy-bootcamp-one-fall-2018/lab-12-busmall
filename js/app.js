@@ -13,13 +13,14 @@ function makeTemplate() {
                 <h2>Vote for your favourite</h2>
                 <p> Click on your favourite!</p>
             </section>
+            <ul> </ul>
         </main>
     `;
 }
 class SurveyApp {
     render() {
         const dom = makeTemplate();
-        const mainSection = dom.querySelector('main');
+        const mainSection = dom.querySelector('ul');
         const productSelector = new ProductSelector(products);
         mainSection.appendChild(productSelector.render());
         return dom;
