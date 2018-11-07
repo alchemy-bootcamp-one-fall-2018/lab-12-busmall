@@ -48,18 +48,23 @@ class ImageDisplay {
     }
 
     getImage() {
-        for(let i = 0; i < 3; i++) {
-            let lastNumber = 0;
-            let index = Math.floor(Math.random() * 19);
-            if(index !== lastNumber) {
-                this.images.push(this.products[index]);
-            } else {
-                index = Math.floor(Math.random() * 19);
-                this.images.push(this.products[index]);
+        let viewCount = 0;
+        let lastNumbers = [];
+        if(viewCount < 25) {
+            while(lastNumbers.length < 3){
+    
+                let index = Math.floor(Math.random() * 19);
+                if(index !== lastNumbers.indexOf(index, 1)) {
+                    this.images.push(this.products[index]);
+                } else {
+                    index = Math.floor(Math.random() * 19);
+                    lastNumbers.push(index);
+                }
             }
-            lastNumber = index;
         }
+
     }
+
 
     onSelect() {
 
