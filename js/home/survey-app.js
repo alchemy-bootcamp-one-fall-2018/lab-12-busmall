@@ -1,8 +1,9 @@
 // import surveyApi from './survey-api.js';
 import productsApi from '../products-api.js';
+import surveyApi from '../survey-api.js';
 import ProductDisplay from './ProductDisplay.js';
-
 import html from '../html.js';
+
 
 function makeTemplate() {
     return html`
@@ -19,6 +20,7 @@ function makeTemplate() {
 class BusmallApp {
     constructor() {
         this.products = productsApi.getAll();
+        this.totalRounds = 0;
     }
     
     render() {
@@ -26,12 +28,19 @@ class BusmallApp {
         this.list = dom.querySelector('section');
 
         const productDisplay = new ProductDisplay(this.products, product => {
-            product.views++;
+            this.totalRounds++;
             product.clicks++;
+            surveyApi.add(product);
             console.log(product);
+        }, product => {
+            product.views++;
         });
-        this.list.appendChild(productDisplay.render()); 
 
+        if(this.totalRounds === 25) {
+            //redirect to new html page
+        }
+
+        this.list.appendChild(productDisplay.render());
         return dom;
     }
 }

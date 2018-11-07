@@ -12,24 +12,29 @@ function makeTemplate() {
 
 class Product {
 
-    constructor(product, onSelect) {
+    constructor(product, onSelect, onView) {
         this.product = product;
         this.onSelect = onSelect;
+        this.onView = onView;
     }
-
+    
     render() {
-
-        const dom = makeTemplate();
-        const listItem = dom.querySelector('img');
         
-
-        listItem.src = this.product.image;
+        const dom = makeTemplate();
+        this.listItem = dom.querySelector('img');
+        this.listItem.src = this.product.image;
           
         const li = dom.querySelector('li');
         li.addEventListener('click', () => {
             this.onSelect(this.product);
         });
+        this.onView(this.product);
         return dom;
+    }
+
+    update(product) {
+        this.product = product;
+        this.listItem.src = this.product.image;
     }
 }
 

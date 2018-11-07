@@ -1,8 +1,14 @@
+let products = [];
+
+function saveItems() {
+    localStorage.setItem('products', JSON.stringify(products));
+}
 
 const surveyApi = {
-    // add(survey) {
-
-    // }
+    add(product) {
+        products.push(product);
+        saveItems();
+    }
 };
 
 export default surveyApi;
