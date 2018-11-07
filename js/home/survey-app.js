@@ -1,9 +1,8 @@
 // import surveyApi from './survey-api.js';
 import productsApi from '../products-api.js';
-import ImageDisplay from './image-display.js';
-import html from '../html.js';
+import ProductDisplay from './ProductDisplay.js';
 
-let products = productsApi.getAll();
+import html from '../html.js';
 
 function makeTemplate() {
     return html`
@@ -12,25 +11,27 @@ function makeTemplate() {
         <p>Please pick one image from each group of 3 that you would be most likely to purchase.</p>
     </header>
     <body>
-        <ul class="products"></ul>
+        <section class="products"></section>
     </body>
     `;
 }
 
 class BusmallApp {
-    constructor(products, onSelect) {
-        this.products = products;
-        this.onSelect = onSelect;
+    constructor() {
+        this.products = productsApi.getAll();
     }
     
     render() {
         const dom = makeTemplate();
-        this.list = dom.querySelector('ul');
+        this.list = dom.querySelector('section');
 
-        for(let i = 0; i < 3; i++) {
-            const imageDisplay = new ImageDisplay(products, this.onSelect);
-            this.list.appendChild(imageDisplay.render()); 
-        }
+        const productDisplay = new ProductDisplay(this.products, product => {
+            product.views++;
+            product.clicks++;
+            console.log(product);
+        });
+        this.list.appendChild(productDisplay.render()); 
+
         return dom;
     }
 }
