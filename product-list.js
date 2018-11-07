@@ -45,7 +45,7 @@ let products = [
     }, 
     {
         name: 'Pet Sweeper Dust Boots',
-        image: './assets/pet-sweet.jpg'
+        image: './assets/pet-sweep.jpg'
     }, 
     {
         name: 'Pizza Scissors',
