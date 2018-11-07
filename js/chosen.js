@@ -1,5 +1,6 @@
 import productApi from './product-api.js';
 import DisplayImage from './image-display.js';
+import surveyApi from './survey-api.js';
 
 function makeTemplate() {
     const display = new DisplayImage(productApi.getAll());
@@ -29,7 +30,7 @@ class Chosen {
                     this.selectedProduct.clicks = 1;
                 }
 
-                console.log(this.selectedProduct);
+                console.log(this.products);
                 makeTemplate();
             });
         });
