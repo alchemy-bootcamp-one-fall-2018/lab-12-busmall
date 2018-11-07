@@ -1,6 +1,8 @@
 
-// const surveyApi = {
-//     add(survey) {
+const surveyApi = {
+    // add(survey) {
 
-//     }
-// };
+    // }
+};
+
+export default surveyApi;

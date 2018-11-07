@@ -1,73 +1,55 @@
+/*eslint-disable no-console*/
 import html from './html.js';
 'use strict';
 
-
 function makeTemplate() {
     return html`
-    <section class="image-display">
-        <div>
-        <img id="product1">
-        </div>
-
-        <div>
-        <img id="product2">
-        </div>
-
-        <div>
-        <img id="product3">
-        </div>
-    </section>
+        <li>
+            <img class="product">
+        </li>
     `;
 }
 
 class ImageDisplay {
 
-    constructor(products) {
+    constructor(products, onSelect) {
         this.products = products;
+        this.onSelect = onSelect;
         this.randomImages = [];
+        this.selectedProducts = [];
     }
 
     render() {
-        const dom = makeTemplate();
-        console.log('hi', this.products);
-
-
-
-        const image1 = dom.getElementById('product1');
-
-        const image2 = dom.getElementById('product2');
-
-        const image3 = dom.getElementById('product3');
-
         this.getImage();
 
-        image1.src = `${this.randomImages[0]}`;
-        image2.src = `${this.randomImages[1]}`;
-        image3.src = `${this.randomImages[2]}`;
+        console.log('hi', this.products);
+        const dom = makeTemplate();
+        const listItem = dom.querySelector('img');
+        // const products = this.products;
+        
+        for(var i = 0; i < 3; i++) {
+            listItem.src = `${this.randomImages[i]}`;
+            console.log('hullo', this.selectedProducts[i].name);
+            console.log(this.selectedProducts[i].views);
 
-        image1.addEventListener('click', () => {
-            image1.views++;
-            image1.clicks++;
-        });
-
-        image2.addEventListener('click', () => {
-            image2.views++;
-            image2.clicks++;
-        });
-
-        image3.addEventListener('click', () => {
-            image3.views++;
-            image3.clicks++;
-        });
-    
+            
+            if(this.onSelect) {
+                listItem.addEventListener('click', () => {
+                    this.selectedProducts[i].views++;
+                    this.selectedProducts[i].clicks++;
+                    console.log('hi', this.selectedProducts);
+                });
+            }
+        }
+        
         return dom;
     }
-
+    
     getImage() {
-
         for(let i = 0; i < 3; i++) {
             const index = Math.floor(Math.random() * 19);
             this.randomImages.push(this.products[index].image);
+            this.selectedProducts.push(this.products[index]);
             console.log('hello', this.products[index]);
         }
     }
