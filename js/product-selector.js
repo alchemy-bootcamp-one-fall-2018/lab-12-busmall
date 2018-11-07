@@ -14,15 +14,13 @@ class ProductSelector {
         const dom = makeTemplate();
         this.list = dom.querySelector('ul');
 
-        for(let i = 0; i < 3; i++) {
-            this.add(this.products[i]);
-        }
+        this.products.forEach(product => {
+            const productCard = new Product(product);
+            this.list.appendChild(productCard.render());
+
+        });
         console.log(this.products);
         return dom;
-    }
-    add(product){
-        const productCard = new Product(product);
-        this.list.appendChild(productCard.render());
     }
 }
 

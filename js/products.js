@@ -1,82 +1,123 @@
 export default [
     {
         name: 'bag',
-        image: 'bag.jpg'
+        image: 'bag.jpg',
+        clicks: 0,
+        views: 0
     },
     {
         name: 'banana',
-        image: 'banana.jpg'
+        image: 'banana.jpg',
+        clicks: 0,
+        views: 0
+        
     },
     {
         name: 'iPad toilet roll',
-        image: 'bathroom.jpg'
+        image: 'bathroom.jpg',
+        clicks: 0,
+        views: 0
     },
     {
         name: 'boots',
-        image: 'boots.jpg'
+        image: 'boots.jpg',
+        clicks: 0,
+        views: 0
     },
     {
         name: 'breakfast',
-        image: 'breakfast.jpg'
+        image: 'breakfast.jpg',
+        clicks: 0,
+        views: 0
     },
     {
         name: 'bubblegum',
-        image: 'bubblegum.jpg'
+        image: 'bubblegum.jpg',
+        clicks: 0,
+        views: 0
     },
     {
         name: 'chair',
-        image: 'chair.jpg'
+        image: 'chair.jpg',
+        clicks: 0,
+        views: 0
     },
     {
         name: 'cthulhu',
-        image: 'cthulhu.jpg'
+        image: 'cthulhu.jpg',
+        clicks: 0,
+        views: 0
     },
     {
         name: 'dog-duck',
-        image: 'dog-duck.jpg'
+        image: 'dog-duck.jpg',
+        clicks: 0,
+        views: 0
     },
     {
         name: 'dragon',
-        image: 'dragon.jpg'
+        image: 'dragon.jpg',
+        clicks: 0,
+        views: 0
     },
     {
         name: 'pen',
-        image: 'pen.jpg'
+        image: 'pen.jpg',
+        clicks: 0,
+        views: 0
     },
     {
         name: 'pet-sweep',
-        image: 'pet-sweep.jpg'
+        image: 'pet-sweep.jpg',
+        clicks: 0,
+        views: 0
     },
     {
         name: 'scissors',
-        image: 'scissors.jpg'
+        image: 'scissors.jpg',
+        clicks: 0,
+        views: 0
     },
     {
         name: 'shark',
-        image: 'shark.jpg'
+        image: 'shark.jpg',
+        clicks: 0,
+        views: 0
     },
     {
         name: 'sweep',
-        image: 'sweep.png'
+        image: 'sweep.png',
+        clicks: 0,
+        views: 0
     },
     {
         name: 'tauntaun',
-        image: 'tauntaun.jpg'
+        image: 'tauntaun.jpg',
+        clicks: 0,
+        views: 0
     },
     {
         name: 'unicorn',
-        image: 'unicorn.jpg'
+        image: 'unicorn.jpg',
+        clicks: 0,
+        views: 0
     },
     {
         name: 'usb',
-        image: 'usb.gif'
+        image: 'usb.gif',
+        clicks: 0,
+        views: 0
     },
     {
         name: 'water-can',
-        image: 'water-can.jpg'
+        image: 'water-can.jpg',
+        clicks: 0,
+        views: 0
     },
     {
         name: 'wine-glass',
-        image: 'wine-glass.jpg'
+        image: 'wine-glass.jpg',
+        clicks: 0,
+        views: 0
     },
 ];
