@@ -27,14 +27,14 @@ class UserSummary {
         const dom = makeTemplate();
         this.body = dom.querySelector('tbody');
 
-        this.products.forEach(products => { 
-            const productsRow = new productsRow(products, selected => {
-                this.onSelect(selected);
-                this.rows.forEach(row => row.update(selected));
-            });
-            this.rows.push(productsRow);
-            this.body.appendChild(productsRow.render());
-        });
+        // this.products.forEach(products => { 
+        //     const productsRow = new productsRow(products, selected => {
+        //         this.onSelect(selected);
+        //         this.rows.forEach(row => row.update(selected));
+        //     });
+        //     this.rows.push(productsRow);
+        //     this.body.appendChild(productsRow.render());
+        // });
 
         return dom;
     }
