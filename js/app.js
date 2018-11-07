@@ -14,7 +14,7 @@ function makeTemplate() {
     <main>
         <section>
             <h2>Marketing Survey</h2>
-            <ul id="product">
+            <ul class="product">
                 <img src="">
             </ul>
         </section>
@@ -31,7 +31,7 @@ class ProductApp {
     render() {
         const dom = makeTemplate();
 
-        const productDisplay = dom.getElementById('product');
+        const productDisplay = dom.querySelector('.product');
         // const voteSection = dom.getElementById('vote');
 
         // const productList = new ProductList(products, product => {
