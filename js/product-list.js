@@ -103,7 +103,7 @@ function getRandomPic(banana) {
     // If we console log foobar, we should get 11.
     var foobar = Math.floor(Math.random() * products.length);
     console.log(foobar, 'random pics');
-    return banana[foobar];
+    return products[foobar];
 }
 console.log(getRandomPic(), 'idk what this does');
 
