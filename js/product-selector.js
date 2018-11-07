@@ -1,27 +1,27 @@
 import html from './html.js';
-import ProductCard from './product-card.js';
+import Product from './product-card.js';
 
 function makeTemplate() {
     return html`
-        <li class="products">Product Selector</li>
+        <ul class="products">Product Selector</ul>
     `;
 }
-class ProductSelector {
+export default class ProductSelector {
     constructor(products){
         this.products = products;
-        // this.image = image;
+       
     }
     render() {
         const dom = makeTemplate();
         this.list = dom.querySelector('ul');
-        // console.log(this.
-        //     (products);
-        for(let i = 0; i < this.products.length; i++)
-            return dom;
         
+        this.products.forEach(product => {
+            const productCard = new Product(product);
+            this.list.appendChild(productCard.render()); 
+        });
+    
+        return dom;
     }
-}
+}   
 
 
-
-export default ProductSelector;
