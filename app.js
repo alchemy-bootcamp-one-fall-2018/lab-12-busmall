@@ -1,6 +1,6 @@
-import html from './html.js';
-import productApi from './product-api.js';
-import ProductSelector from './product-selector.js';
+import html from './js/html.js';
+import productApi from './js/product-api.js';
+import ProductSelector from './js/product-selector.js';
 
 const products = productApi.getAll();
 

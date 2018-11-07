@@ -1,4 +1,5 @@
 import html from './html.js';
+import ProductCard from './product-card.js';
 
 function makeTemplate() {
     return html`
