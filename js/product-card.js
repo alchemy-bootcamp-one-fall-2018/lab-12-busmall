@@ -4,7 +4,7 @@ function makeTemplate(product) {
     return html`
         <li class="product-card">
             <h4 class="product-name">${product.name}</h4>
-            <img src="../assets/${product.image}">
+            <img class="product-image" src="../assets/${product.image}">
         </li>
     `;
 }
