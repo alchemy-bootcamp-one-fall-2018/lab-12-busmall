@@ -1,17 +1,7 @@
-import ProductsApi from './products-api.js';
+//import productsApi from './products-api.js';
+import survey from './survey.js';
 
-const surveyApi = {
-    add() {
-        const survey = productsMaster.map(product => {
-            return {
-                name: product.name,
-                image: product.image,
-                views: 0,
-                clicks: 0
-            };
-        });
-        return survey;
-    }
-};
+const surveyApi = [];
+surveyApi.add(survey);
 
 export default surveyApi;
