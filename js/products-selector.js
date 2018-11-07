@@ -19,9 +19,9 @@ while(display.length < 3) {
 function makeTemplate() {
     return html`
         <h1>Pick a product:<h1>
-        <section> <img src="${display[0].image}"> </section>
-        <section> <img src="${display[1].image}"> </section>
-        <section> <img src="${display[2].image}"> </section>
+        <section> <img src="${display[0].image}" class="align-image"> </section>
+        <section> <img src="${display[1].image}" class="align-image"> </section>
+        <section> <img src="${display[2].image}" class="align-image"> </section>
     `;
 }
 
