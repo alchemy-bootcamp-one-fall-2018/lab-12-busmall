@@ -1,3 +1,5 @@
+import html from './html.js';
+
 let products = [
     {
         'name': 'Bag',
@@ -80,3 +82,18 @@ let products = [
         'img': '../assets/wine-glass.jpg'
     },
 ];
+
+function makeTemplate() {
+    return html`
+    <div id="random-pics">
+        <p>Some random pictures</p>
+    </div>
+`;
+}
+
+export default class RandomPics {
+    render() {
+        console.log(products[0].name);
+        return makeTemplate();
+    }
+}
