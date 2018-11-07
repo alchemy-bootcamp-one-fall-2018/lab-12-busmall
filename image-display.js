@@ -15,6 +15,7 @@ function makeTemplate() {
 
         <div>
         <img id="product3">
+        </div>
     </section>
     `;
 }
@@ -28,6 +29,9 @@ class ImageDisplay {
 
     render() {
         const dom = makeTemplate();
+        console.log('hi', this.products);
+
+
 
         const image1 = dom.getElementById('product1');
 
@@ -41,6 +45,21 @@ class ImageDisplay {
         image2.src = `${this.randomImages[1]}`;
         image3.src = `${this.randomImages[2]}`;
 
+        image1.addEventListener('click', () => {
+            image1.views++;
+            image1.clicks++;
+        });
+
+        image2.addEventListener('click', () => {
+            image2.views++;
+            image2.clicks++;
+        });
+
+        image3.addEventListener('click', () => {
+            image3.views++;
+            image3.clicks++;
+        });
+    
         return dom;
     }
 
@@ -49,6 +68,7 @@ class ImageDisplay {
         for(let i = 0; i < 3; i++) {
             const index = Math.floor(Math.random() * 19);
             this.randomImages.push(this.products[index].image);
+            console.log('hello', this.products[index]);
         }
     }
 }

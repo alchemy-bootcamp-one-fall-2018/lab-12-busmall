@@ -1,7 +1,6 @@
-import survey from './survey-app.js';
 
-const surveyApi = {
-    add(survey) {
+// const surveyApi = {
+//     add(survey) {
 
-    }
-};
+//     }
+// };

@@ -10,3 +10,5 @@ let imageDisplay = new ImageDisplay(products);
 let app = document.getElementById('body');
 app.appendChild(imageDisplay.render());
 
+
+
