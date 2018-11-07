@@ -69,7 +69,7 @@ var productsData = [
     },
     {
         name: 'usb',
-        image: '../assets/usb.gif'
+        image: '../assets/usb.jpg'
     },
     {
         name: 'water-can',
