@@ -5,7 +5,7 @@ function makeTemplate(imageList) {
     
     imageList.forEach(item => {
         html += `
-        <img class="product" src="${item.image_url}">`;
+        <img name="${item.name}" class="product" src="${item.image_url}">`;
     });
 
     return html;
@@ -14,30 +14,25 @@ function makeTemplate(imageList) {
 class DisplayImage {
     constructor(imageList) {
         this.imageList = imageList;
-        this.temp = [];
-        
-        while(this.temp.length < 3) {
-            this.randomIndex = Math.floor(Math.random() * this.imageList.length);
+    }
+    
+    render() {
+        const imageSection = document.getElementById('imageSection');
+        let imageSet = [];
 
-            console.log(this.randomIndex);
+        while(imageSet.length < 3) {
+            let randomIndex = Math.floor(Math.random() * this.imageList.length);
             
-            if(this.temp.includes(this.randomIndex)) {
-                this.randomIndex = Math.floor(Math.random() * this.imageList.length);
+            if(imageSet.includes(this.imageList[randomIndex])) {
+                randomIndex = Math.floor(Math.random() * this.imageList.length);
             } else {
-                this.temp.push(this.randomIndex);
+                imageSet.push(this.imageList[randomIndex]);
             }
         }
 
-        console.log(this.temp);
+        imageSection.innerHTML = makeTemplate(imageSet);
     }
-
-    render() {
-        const imageSection = document.getElementById('imageSection');
-        
-        imageSection.innerHTML = makeTemplate(this.imageList);
-
-        //
-    }
+    
 }
 
 export default DisplayImage;

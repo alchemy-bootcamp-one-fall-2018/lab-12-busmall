@@ -44,7 +44,7 @@ const productList = [
         image_url: '../assets/pen.jpg'
     },
     {
-        name: 'Pet Sweep',
+        name: 'Pet-Sweep',
         image_url: '../assets/pet-sweep.jpg'
     },
     {
@@ -72,11 +72,11 @@ const productList = [
         image_url: '../assets/usb.gif'
     },
     {
-        name: 'Water Can',
+        name: 'Water-Can',
         image_url: '../assets/water-can.jpg'
     },
     {
-        name: 'Wine Glass',
+        name: 'Wine-Glass',
         image_url: '../assets/wine-glass.jpg'
     }
 ];
