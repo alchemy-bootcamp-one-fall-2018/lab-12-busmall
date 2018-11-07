@@ -1,8 +1,6 @@
 # Bus Mall Charting
 
-Your savvy marketing person has just informed you that giving them numbered data of the click percentages is not going to cut it.
-
-You need a visual representation to grab the marketeers' attention!
+Your savvy marketing person has just informed you that you need a visual representation to grab the marketeers' attention!
 
 ## Charting
 
@@ -29,6 +27,6 @@ There is a lot more that can be done!
 
 * Handle survey data correctly between survey page and report page **2pts**
 * Separate html page and app js for report page (and index js if using that) **2pts**
-* Correctly wiring app and chart components(s) **2pt**
+* Correctly wiring app and chart components(s) **2pts**
 * Chart setup (functionally correct) **2pts**
 * Chart style and visualization **2pts**
