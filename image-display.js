@@ -15,7 +15,6 @@ class ImageDisplay {
     constructor(products, onSelect) {
         this.products = products;
         this.onSelect = onSelect;
-        // this.randomImages = [];
         this.selectedProducts = [];
     }
 
@@ -25,13 +24,11 @@ class ImageDisplay {
         console.log('hi', this.products);
         const dom = makeTemplate();
         const listItem = dom.querySelector('img');
-        // const products = this.products;
         
         for(var i = 0; i < 3; i++) {
             listItem.src = this.selectedProducts[i].image;
             console.log('hullo', this.selectedProducts[i].name);
             console.log(this.selectedProducts[i].views);
-
             
             if(this.onSelect) {
                 listItem.addEventListener('click', () => {
@@ -41,7 +38,6 @@ class ImageDisplay {
                 });
             }
         }
-        
         return dom;
     }
     
@@ -49,7 +45,6 @@ class ImageDisplay {
         for(let i = 0; i < 3; i++) {
             const index = Math.floor(Math.random() * 19);
             this.selectedProducts.push(this.products[index]);
-            // this.selectedProducts.push(this.products[index]);
             console.log('hello', this.products[index]);
         }
     }

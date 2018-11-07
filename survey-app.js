@@ -23,19 +23,12 @@ class BusmallApp {
         const dom = makeTemplate();
         this.list = dom.querySelector('ul');
 
-        
-        
         for(let i = 0; i < 3; i++) {
             const imageDisplay = new ImageDisplay(products, this.onSelect);
             this.list.appendChild(imageDisplay.render()); 
         }
-        
         return dom;
     }
-
-    // add(products) {
-        
-    // }
 }
 
 const busmallApp = new BusmallApp();
