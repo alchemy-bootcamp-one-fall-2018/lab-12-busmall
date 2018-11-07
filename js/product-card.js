@@ -2,8 +2,8 @@ import html from './html.js';
 
 function makeTemplate(product) {
     return html`
-    <li class="product">
-        <img src="./assets/${product.image}">
+    <li class="product-card">
+        <img id="product" src="./assets/${product.image}">
     </li>
     `;
 }
