@@ -93,7 +93,10 @@ function makeTemplate() {
 
 export default class RandomPics {
     render() {
-        console.log(products[0].name);
+        for(var i = 0; i < products.length; i++) {
+            products[i].name;
+            console.log(products[i].name);
+        }
         return makeTemplate();
     }
 }
