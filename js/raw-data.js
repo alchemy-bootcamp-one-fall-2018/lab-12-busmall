@@ -3,7 +3,7 @@ const products = [
     
     {
         name: 'bag',
-        image: '../assets.bag.jpg'
+        image: '../assets/bag.jpg'
     },
     {
         name: 'banana',
@@ -53,6 +53,22 @@ const products = [
         name: 'pet-sweep',
         image: '../assets/pet-sweep.jpg'
     },
+    {
+        name: 'unicorn-meat',
+        image: '../assets/unicorn.jpg'
+    },
+    {
+        name: 'usb',
+        image: '../assets/usb.gif'
+    },
+    {
+        name: 'water-can',
+        image: '../assets/water-can.jpg'
+    },
+    {
+        name: 'wine-glass',
+        image: '../assets/wine-glass.jpg'
+    }
 
 
 ];

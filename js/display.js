@@ -1,5 +1,6 @@
 import html from './html.js';
 import productsApi from './products-api.js';
+import surveyApi from './survey-api.js';
 
 let products = productsApi.getAll();
 
@@ -23,10 +24,12 @@ while(display.length < 3) {
 function makeTemplate() {
     return html`
         <h1> Survey page </h1>
-        <section> <img src="${display[0].image}"> </section>
-        <section> <img src="${display[1].image}"> </section>
-        <section> <img src="${display[2].image}"> </section>
 
+        <section>
+        <div> <img src="${display[0].image}" id="imageOne"> </div>
+        <div> <img src="${display[1].image}" id="imageTwo"> </div>
+        <div> <img src="${display[2].image}" id="imageThree"> </div>
+        </section>
 
     `;
 }
@@ -41,6 +44,33 @@ class Header {
 }
 
 export default Header;
+
+
+
+// event listener for on click of image
+const itemList = document.getElementById('root');
+
+
+const surveyInfo = {
+    init(survey) {
+        for(let i = 0; i < survey.length; i++){
+            const dom = makeTemplate(survey[i]);
+            dom.addEventListener('click', function() {
+                surveyApi.add(survey[i]);
+                survey.update(survey);
+            }); 
+
+            itemList.appendChild(dom);
+        }
+    },
+    update(survey) {
+        while(itemList.lastElementChild) {
+            itemList.lastElementChild.remove();
+
+        }
+        surveyInfo.init(survey);
+    }
+};
 
 
 
