@@ -30,7 +30,7 @@ class Image {
     }
     getImage() {
         for(let i = 0; i < 3; i++) {
-            const index = Math.floor(Math.random() * 5);
+            const index = Math.floor(Math.random() * 19);
             this.randomImages.push(this.products[index]);
         }
     }
