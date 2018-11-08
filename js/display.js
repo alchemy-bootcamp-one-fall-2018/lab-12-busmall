@@ -28,7 +28,7 @@ class ImageDisplay {
         console.log('image test ', getImagesRan);
         getImagesRan.forEach(image => {
 
-            let imageComponent = new Image(image.image, this.onSelect);
+            let imageComponent = new Image(image, this.onSelect);
             console.log('image comp', imageComponent);
             displayDiv.appendChild(imageComponent.render());
         });

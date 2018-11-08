@@ -2,11 +2,9 @@ let survey = [];
 
 
 const surveyApi = {
-    saveSurvey() {
+    saveSurvey(survey) {
         localStorage.setItem('survey', JSON.stringify(survey));
     },
-
-
 
     add(product) {
 

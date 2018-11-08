@@ -24,7 +24,7 @@ export default class App {
 
         let imageSelector = new ImageDisplay(this.images, image =>{
             image.count++;
-            surveyApi.saveSurvey();
+            surveyApi.saveSurvey(image);
         });
 
         let imageViewer = dom.querySelector('.image-viewer');
