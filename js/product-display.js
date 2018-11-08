@@ -4,14 +4,14 @@ import productsApi from './products-api.js';
 const products = productsApi.getAll();
 
 function makeTemplate(product) {
+    console.log('test', product.name);
     return html`
         <li class="product-item">
-            <h1>Focus Group Product Review Results</h1>
+            <h1>product-display</h1>
             <p>${product.name}</p>
             <img src="assets/${product.image}">
         </li>
   `;      
-    console.log('test', product.name);
 }
 class ProductDisplay {
     constructor(product) {
