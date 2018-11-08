@@ -4,14 +4,16 @@ import surveyApi from './survey-api.js';
 import UserSummary from './user-summary.js';
 import DataChart from './data-chart.js';
 
-//correct extra display at end
-//correct duplicate images
+//add clicks to session
+//change summary to display session, not total
 //merge with master
 
 surveyApi.init();
 
-DisplayImage.constructor();
-DisplayImage.render();
+if(window.location.pathname === '/index.html') {
+    DisplayImage.constructor();
+    DisplayImage.render();
+}
 
 Chosen.constructor();
 

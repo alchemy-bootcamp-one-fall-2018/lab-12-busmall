@@ -16,8 +16,7 @@ function makeTemplate(results) {
 }
 
 class UserSummary {
-    constructor() {
-        
+    constructor() {        
         const resultsHtml = document.getElementById('resultsHtml');
         
         if(resultsHtml){

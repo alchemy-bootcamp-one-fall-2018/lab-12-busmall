@@ -1,5 +1,6 @@
 import Chosen from './chosen.js';
 import surveyApi from './survey-api.js';
+import productApi from './product-api.js';
 
 let count = 0;
 let lastIndex = [];
@@ -25,6 +26,14 @@ const DisplayImage = {
             return image;
         });
         surveyApi.storeDisProd(this.imageList);
+
+        this.session = productApi.getAll();
+        
+        this.session = this.session.map(product => {
+            product.views = 0;
+            return product;
+        });
+        console.log('session initial', this.session);
     },
     
     render() {
@@ -32,14 +41,11 @@ const DisplayImage = {
         let imageSet = [];
         let currentIndex = [];
         
-        console.log('last image index', lastIndex);
         if(count < 4) {
             while(imageSet.length < 3) {
                 let randomIndex = Math.floor(Math.random() * this.imageList.length);
-                console.log('randomIndex', randomIndex);
                 this.imageList = surveyApi.getDisProds();
                 
-                // if(imageSet.includes(this.imageList[randomIndex]) || lastImageSet.includes(this.imageList[randomIndex])) {
                 if(currentIndex.includes(randomIndex) || lastIndex.includes(randomIndex)){
                     randomIndex = Math.floor(Math.random() * this.imageList.length);
                 } else {
@@ -48,9 +54,10 @@ const DisplayImage = {
 
                     this.imageList[randomIndex].views = this.imageList[randomIndex].views + 1;
                     surveyApi.storeDisProd(this.imageList);
+
+                    this.session[randomIndex].views++;
                 }
             }
-            console.log('current image index', currentIndex);
             
             lastIndex = currentIndex;
             if(imageSection) {
@@ -60,6 +67,8 @@ const DisplayImage = {
             Chosen.render();
             count++;
         }
+
+        console.log('session final', this.session);
     }
 };
 
