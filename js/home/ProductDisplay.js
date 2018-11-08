@@ -29,9 +29,6 @@ class ProductDisplay {
 
         for(let i = 0; i < 3; i++) {
             let productComp = new Product(this.products[this.randomInt()], this.onSelect, this.onView);
-            // if(productComp.includes(this.products[this.randomInt()])) {
-
-            // }
             this.ul.appendChild(productComp.render());
         }
     }
@@ -40,7 +37,6 @@ class ProductDisplay {
         const index = Math.floor(Math.random() * Math.floor(19));
         return index;
     }
-
 }
 
 export default ProductDisplay;
