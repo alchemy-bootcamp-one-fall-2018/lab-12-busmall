@@ -25,6 +25,7 @@ export default class ProductSelector {
         });
     
         this.imagesPer = 3;
+        this.count = 0;
         this.rounds = 25;
     }
     
@@ -52,7 +53,8 @@ export default class ProductSelector {
                 console.log('clicked', selected);
                 selected.clicks++;
                 console.log('clicked plus', selected.clicks);
-                
+                this.count++;
+                console.log('rounds increased', this.count);
                 this.clearProducts();
                 this.showRandomProducts();
             });
