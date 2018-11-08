@@ -13,6 +13,7 @@ header {
     border-right:10px solid #737373;
     border-left: 10px solid #737373;
     border-top: 10px solid #737373;
+    font-size: 2em;
 }
 
 body {
@@ -21,22 +22,26 @@ body {
 }
 
 img {
-    width: 100%;
+    max-width: 100%;
+    width: 350px;
+    height: 330px;
     border: 2px solid #737373;
-    overflow: hidden;
 }
 
 li {
     list-style-type: none;
     display: inline-block;
-    padding: 15px;
-    width: 250px;
-    height: 200px;
+    padding: 35px;
+    min-width: 250px;
+    height: 250px;
 }
 
 ul {
     border: 10px solid #737373;
     background-color: #f2f2f2;
+    text-align: center;
+    padding-bottom: 100px;
+    padding-top: 100px;
 }
 
 .sample {
