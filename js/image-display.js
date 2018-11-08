@@ -1,49 +1,42 @@
-import html from './html.js'; 
+import html from './html.js';
+import Product from './product.js';
 
 function makeTemplate() {
     return html`
-        <li>
-        <img class="product">
-        </li>
-   
-    `; 
+        <ul class="product-list"></ul>
+    `;
 }
 
 class ImageDisplay {
-
-    constructor(product, onSelect) {
-        this.product = product; 
-        this.randomImages = []; 
-        this.onSelect = onSelect;  
+    constructor(products, onSelect, onView) {
+        this.products = products;
+        this.onSelect = onSelect;
+        this.onView = onView;
     }
 
-    render() { 
-        this.getImage(); 
-        
-        const dom = makeTemplate(this.product); 
-        const listItem = dom.querySelector('img'); 
-        listItem.addEventListener('click', () => {
-            this.onSelect(this.product); 
-        }); 
-
-
-        for(var i = 0; i < 3; i++) {
-            listItem.src = this.randomImages[i].image; 
-            this.randomImages[i].views++; 
-        }
-
+    render() {
+        const dom = makeTemplate();
+        this.ul = dom.querySelector('ul');
+        this.update();
         return dom;
     }
-    getImage() {
-<<<<<<< HEAD
-        for(let i = 0; i < 3; i++) {
-            const index = Math.floor(Math.random() * 19) + 1;
-            this.randomImages.push(this.product[index]); 
 
+    update() {
+        
+        while(this.ul.lastElementChild) {
+            this.ul.lastElementChild.remove();
         }
-    } 
-=======
->>>>>>> c70741f03e34297c46620bdf14d0e1e9d0cf8a73
+
+        for(let i = 0; i < 3; i++) {
+            let randomProduct = new Product(this.products[this.randomInt()], this.onSelect, this.onView);
+            this.ul.appendChild(randomProduct.render());
+        }
+    }
+
+    randomInt() {
+        const index = Math.floor(Math.random() * Math.floor(19));
+        return index;
+    }
 }
 
-export default ImageDisplay; 
+export default ImageDisplay;

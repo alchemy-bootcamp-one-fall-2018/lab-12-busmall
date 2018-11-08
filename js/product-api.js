@@ -89,25 +89,17 @@ let products = [
 
 const productApi = {
     getAll() {
-        return products;
-    }
-    // getSurvey() {
-    
-    //     const survey = products.map(product => {
-    //         return {
-    //             name: product.name,
-    //             image: product.image,
-    //             views: 0,
-    //             clicks: 0
-    //         };
-    //     });     
-    //     return survey;
-    // },
-    // save() {
-    //     localStorage.setItem('products', JSON.stringify(products));
-    
-    // }
+        const survey = products.map(product => {
+            return {
+                name: product.name,
+                image: product.image,
+                views: 0,
+                clicks: 0
+            };
+        });
 
+        return survey;
+    }
 };
 
 export default productApi;

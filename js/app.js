@@ -1,9 +1,7 @@
 import ImageDisplay from './image-display.js'; 
-import productApi from './product-api.js'; 
+import productApi from './product-api.js';
+import surveyApi from './survey-api.js'; 
 import html from './html.js'; 
-import ProductSelector from './product-selector.js'; 
-
-const products = productApi.getAll(); 
 
 function makeTemplate() {
     return html`
@@ -14,37 +12,37 @@ function makeTemplate() {
         <section class="product-selector"></section>
         <ul class="products"></ul>
         <h2>Which is the product you're most likely to buy?</h2>
+        <h5>(and why is it the dragon meat?)</h5>
         </main>
 
     `;
 }
 
 class ProductApp {
-    constructor(products, onSelect) {
-        this.products = products; 
-        this.onSelect = onSelect; 
+    constructor() {
         this.products = productApi.getAll();
-        this.totalCount = 0; 
+        this.totalRounds = 0;
     }
     render() {
         const dom = makeTemplate();
-        this.list = dom.querySelector('ul'); 
-        this.totalCount++; 
+        this.list = dom.querySelector('section');
+        
+        const productDisplay = new ImageDisplay(this.products, product => {
+            this.totalRounds++;
+            product.clicks++;
+            surveyApi.add(product);
 
-        let productSelector = new ProductSelector(this.products, product => {
-            product.count++;
-            this.totalCount++;
-            productApi.save();
-            let selectorSection = dom.querySelector('.product-selector');
-            selectorSection.appendChild(productSelector.render());
+            if(this.totalRounds === 25) {
+                window.location.href = '../user-summary.html';
+            }
+            productDisplay.update();
+        }, 
+
+        product => {
+            product.views++;
         });
-
-        for(let i = 0; i < 3; i++) {
-            const imageDisplay = new ImageDisplay(products, () => {
-            }); 
-            this.list.appendChild(imageDisplay.render()); 
-
-        }
+        
+        this.list.appendChild(productDisplay.render());
         return dom;
     }
 }
