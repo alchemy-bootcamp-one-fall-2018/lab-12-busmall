@@ -31,11 +31,6 @@ class Product {
         this.onView(this.product);
         return dom;
     }
-
-    update(product) {
-        this.product = product;
-        this.listItem.src = this.product.image;
-    }
 }
 
 export default Product;

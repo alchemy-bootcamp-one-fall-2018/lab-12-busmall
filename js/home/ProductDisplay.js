@@ -3,9 +3,7 @@ import Product from './Product.js';
 
 function makeTemplate() {
     return html`
-        
         <ul class="product-list"></ul>
-        <div class="sample">HELLOOOOO</div>
     `;
 }
 
@@ -30,7 +28,10 @@ class ProductDisplay {
         }
 
         for(let i = 0; i < 3; i++) {
-            let productComp = new Product(this.products[this.randomInt()], this.onSelect, this.onView, this.onUpdate);
+            let productComp = new Product(this.products[this.randomInt()], this.onSelect, this.onView);
+            // if(productComp.includes(this.products[this.randomInt()])) {
+
+            // }
             this.ul.appendChild(productComp.render());
         }
     }

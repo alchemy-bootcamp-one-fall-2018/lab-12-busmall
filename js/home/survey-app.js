@@ -1,4 +1,4 @@
-// import surveyApi from './survey-api.js';
+/*eslint-disable no-console*/
 import productsApi from '../products-api.js';
 import surveyApi from '../survey-api.js';
 import ProductDisplay from './ProductDisplay.js';
@@ -25,22 +25,25 @@ class BusmallApp {
     render() {
         const dom = makeTemplate();
         this.list = dom.querySelector('section');
-
+        
         const productDisplay = new ProductDisplay(this.products, product => {
+            console.log('total rounds', this.totalRounds);
             this.totalRounds++;
             product.clicks++;
             surveyApi.add(product);
+
+            if(this.totalRounds === 25) {
+                window.location.href = '.././user.html';
+            }
+
             console.log(product);
             productDisplay.update();
-        }, product => {
+        }, 
+
+        product => {
             product.views++;
-            console.log(product.views);
         });
-
-        if(this.totalRounds === 25) {
-            //redirect to new html page
-        }
-
+        
         this.list.appendChild(productDisplay.render());
         return dom;
     }
