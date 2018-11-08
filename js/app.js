@@ -6,22 +6,23 @@ const products = productApi.getAll();
 
 function makeTemplate() {
     return html`
-        <h1>Pick a product!</h1>
+        <header>
+            <h1>Busmall</h1>
+        </header>
 
         <main>
-            <section id="product-list">
-                <h2>Vote for your favorite</h2>
+            <section id="product-selector">
+                <h2>Vote for your favorite product!</h2>
             </section>
-            <ul></ul>
         </main>
     `;
 }
 class SurveyApp {
     render() {
         const dom = makeTemplate();
-        const list = dom.querySelector('ul');
+        const selectorSection = dom.querySelector('#product-selector');
         const productSelector = new ProductSelector(products);
-        list.appendChild(productSelector.render());
+        selectorSection.appendChild(productSelector.render());
         
         return dom;
     }

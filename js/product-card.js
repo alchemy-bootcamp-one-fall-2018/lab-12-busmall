@@ -9,11 +9,17 @@ function makeTemplate(product) {
 }
 
 class Product {
-    constructor(product){
+    constructor(product, onSelect){
         this.product = product;
+        this.onSelect = onSelect;
     }
     render() {
         const dom = makeTemplate(this.product);
+        const li = dom.querySelector('li');
+        li.addEventListener('click', () => {
+            this.onSelect(this.product);
+            console.log('I am clicked!');
+        });
 
         return dom;
 
