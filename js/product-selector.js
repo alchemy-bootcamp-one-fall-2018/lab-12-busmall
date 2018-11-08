@@ -25,7 +25,7 @@ class ProductSelector {
             };
         });
         this.imagesPer = 3;
-        this.round = 0;
+        this.round = -1;
     }
 
     getRandomProducts() {
@@ -38,6 +38,10 @@ class ProductSelector {
             copy.splice(index, 1);
             randomProducts.push(product);
             product.views++;
+            
+            if(this.round === 24){
+                window.location = 'user-summary.html';
+            }
         }
         this.round++;
         console.log(this.round);
@@ -59,13 +63,13 @@ class ProductSelector {
         } 
         );
     }
-
+    
     clearProducts() {
         while(this.list.lastElementChild) {
             this.list.lastElementChild.remove();
         }
     }
-
+    
     render() {
         const dom = makeTemplate();
         this.list = dom.querySelector('ul');
