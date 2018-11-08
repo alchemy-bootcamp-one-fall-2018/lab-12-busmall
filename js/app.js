@@ -4,7 +4,6 @@ import surveyApi from './survey-api.js';
 import UserSummary from './user-summary.js';
 import DataChart from './data-chart.js';
 
-//make chart drawing into a function
 //change limit to 25
 
 surveyApi.init();

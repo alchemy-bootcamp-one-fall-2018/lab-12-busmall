@@ -43,7 +43,7 @@ const DisplayImage = {
         let currentIndex = [];
         this.session = surveyApi.getSession();
         
-        if(count < 4) {
+        if(count < 25) {
             while(imageSet.length < 3) {
                 let randomIndex = Math.floor(Math.random() * this.imageList.length);
                 this.imageList = surveyApi.getDisProds();

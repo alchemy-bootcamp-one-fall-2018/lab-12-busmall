@@ -47,7 +47,7 @@ const Chosen = {
                 surveyApi.storeSession(this.session);
 
                 surveyApi.storeDisProd(this.products);
-                if(count > 3){
+                if(count > 24){
                     let summary = new UserSummary();
                     summary.render(true);
                 } else {
