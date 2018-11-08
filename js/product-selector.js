@@ -26,9 +26,6 @@ export default class ProductSelector {
     
         this.imagesPer = 3;
         this.rounds = 25;
-
-        // this.onSelect = onSelect;
-       
     }
     
     getRandomProducts() {
