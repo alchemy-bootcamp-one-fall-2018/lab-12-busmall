@@ -4,8 +4,7 @@ import surveyApi from './survey-api.js';
 import UserSummary from './user-summary.js';
 import DataChart from './data-chart.js';
 
-//add session chart to summary page
-//reduce size of charts
+//make chart drawing into a function
 //merge with master
 
 surveyApi.init();

@@ -24,7 +24,7 @@ class DataChart {
             
             /* eslint-disable-next-line */
             this.chartViews = new Chart(ctxViews, {
-                type: 'horizontalBar',
+                type: 'bar',
                 data: {
                     labels: products,
                     datasets: [{
@@ -50,7 +50,7 @@ class DataChart {
 
             /* eslint-disable-next-line */
             this.chartClicks = new Chart(ctxClicks, {
-                type: 'horizontalBar',
+                type: 'bar',
                 data: {
                     labels: products,
                     datasets: [{
