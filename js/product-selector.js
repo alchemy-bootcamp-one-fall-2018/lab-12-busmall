@@ -44,7 +44,11 @@ class ProductSelector {
     showRandomProducts() {
         const randomProducts = this.getRandomProducts();
         randomProducts.forEach(product => {
-            const productCard = new Product(product); 
+            const productCard = new Product(product, selected => {
+                console.log(selected);
+                this.clearProducts();
+                this.showRandomProducts();
+            }); 
             this.list.appendChild(productCard.render());
         } 
         );
