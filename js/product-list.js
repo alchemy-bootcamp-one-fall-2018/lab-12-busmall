@@ -59,7 +59,7 @@ let products = [
     },
     {
         'name': 'Sweep',
-        'img': '../assets/sweep.jpg'
+        'img': '../assets/sweep.png'
     },
     {
         'name': 'Tauntaun',
@@ -71,7 +71,7 @@ let products = [
     },
     {
         'name': 'USB',
-        'img': '../assets/usb.jpg'
+        'img': '../assets/usb.gif'
     },
     {
         'name': 'Water Can',
@@ -90,7 +90,7 @@ function makeTemplate() {
     <div id="random-pics">
         <p>Some random pictures</p>
         <div>${products[foobar].name}</div>
-        <div>${products[foobar].img}</div>
+        <img src="${products[foobar].img}" style="width: 200px">
     </div>
 `;
 }
@@ -98,19 +98,12 @@ function makeTemplate() {
 console.log(products.length, 'array length');
 function getRandomPic() {
     var foobar = Math.floor(Math.random() * products.length);
-    console.log(foobar, 'random pics');
     return products[foobar];
 }
-console.log(getRandomPic().name, '//Gets random object');
+// console.log(getRandomPic().name, '//Gets random object');
 
 export default class RandomPics {
     render() {
-        for(var i = 0; i < products.length; i++) {
-            products[i].name;
-            // console.log(products[i].name);
-        }
-        
-
         return makeTemplate();
     }
 }
