@@ -26,12 +26,7 @@ div#details {
     background-color: greenyellow;
 }
 
-div#vote {
-    background-color: lightgrey;
-    line-height: 40px;
-    /* text-align: right; */
-}
-div#photo-area {
+.products-container {
     background-color: lightsalmon;
     /* text-align: center; */
     display: flex;
@@ -43,4 +38,9 @@ div#photo-area {
 img {
     padding: 10px;
     display: flex;
+    width: 10%;
+}
+
+ul {
+    list-style: none;
 }
