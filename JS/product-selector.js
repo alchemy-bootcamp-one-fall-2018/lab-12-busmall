@@ -30,19 +30,23 @@ function makeTemplate() {
 class Header {
     render() {
         const dom = makeTemplate();
-        const imageContainer = dom.querySelector('.image-container');
+        this.imageContainer = dom.querySelector('.image-container');
 
-        let display = getProducts();
-        for(var i = 0; i < display.length; i++) {
-            const image = new Image(display[i], function(selected) {
-                console.log('image clicked', selected);
-            });
-            imageContainer.appendChild(image.render());
-            
-        }
+        this.renderImages();
         return dom;
     }
-
+    renderImages() {
+        let display = getProducts();
+        for(var i = 0; i < display.length; i++) {
+            const image = new Image(display[i], selected => {
+                while(this.imageContainer.firstChild) {
+                    this.imageContainer.removeChild(this.imageContainer.firstChild);
+                }
+                this.renderImages();
+            });
+            this.imageContainer.appendChild(image.render());
+        }
+    }
 }
 
 
