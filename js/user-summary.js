@@ -20,7 +20,7 @@ class UserSummary {
         const resultsHtml = document.getElementById('resultsHtml');
         
         if(resultsHtml){
-            const storedResults = surveyApi.getDisProds();
+            const storedResults = surveyApi.getSession();
             
             resultsHtml.innerHTML = makeTemplate(storedResults);
         }
