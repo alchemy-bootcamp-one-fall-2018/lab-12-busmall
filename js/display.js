@@ -19,11 +19,11 @@ class ImageDisplay {
         const dom = makeTemplate();
         const displayDiv = dom.querySelector('.display-div');
         const getImagesRan = getImages();
-        console.log('image test ', getImagesRan);
+
         getImagesRan.forEach(image => {
 
             let imageComponent = new Image(image, this.onSelect);
-            console.log('image comp', imageComponent);
+
             displayDiv.appendChild(imageComponent.render());
         });
         // this is where .views++ will go
