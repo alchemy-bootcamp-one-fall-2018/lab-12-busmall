@@ -46,7 +46,6 @@ class ProductSelector {
         randomProducts.forEach(product => {
             const productCard = new Product(product, selected => {
                 console.log(selected);
-                selected 
                 this.clearProducts();
                 this.showRandomProducts();
             }); 
