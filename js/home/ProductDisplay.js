@@ -17,20 +17,36 @@ class ProductDisplay {
     render() {
         const dom = makeTemplate();
         this.ul = dom.querySelector('ul');
-        this.update();
+        this.showImages();
         return dom;
     }
 
     update() {
-        
+        let randomThree = [];
+        for(let i = 0; i < 3; i++) {
+            const randomIndex = this.randomInt();
+            const products = this.products;
+            if(randomThree.includes(products[randomIndex]) === true) {
+                console.log('duplicate found');
+                i--;
+            }
+            else {
+                randomThree.push(products[randomIndex]);
+                console.log('random three is', randomThree); 
+            }
+        }
+        return randomThree;
+    }
+    
+    showImages() {
         while(this.ul.lastElementChild) {
             this.ul.lastElementChild.remove();
         }
-
-        for(let i = 0; i < 3; i++) {
-            this.productComp = new Product(this.products[this.randomInt()], this.onSelect, this.onView);
-            this.ul.appendChild(this.productComp.render());
-        }
+        let threeProducts = this.update();
+        threeProducts.forEach(product => {
+            let productComp = new Product(product, this.onSelect, this.onView);
+            this.ul.appendChild(productComp.render());
+        });
     }
 
     randomInt() {

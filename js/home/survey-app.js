@@ -32,17 +32,12 @@ class BusmallApp {
             product.clicks++;
             surveyApi.add(product);
 
-            // if(this.productDisplay.includes(product) === false) {
-            
-            // }
-
-            
             if(this.totalRounds === 26) {
-                window.location.href = '../../user.html';
+                window.location = '../../user.html';
             }
 
             console.log(product);
-            productDisplay.update();
+            productDisplay.showImages();
         }, 
 
         product => {
