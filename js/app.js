@@ -1,5 +1,4 @@
 import html from './html.js';
-import ProductDisplay from './product-card.js';
 import productApi from './data-apis/product-api.js';
 import ProductSelector from './product-selector.js';
 
@@ -16,27 +15,22 @@ function makeTemplate() {
         </main>
     `;
 }
-class App {
+class SurveyApp {
     render() {
         const dom = makeTemplate();
-        const productCardContainer = dom.querySelector('.product-display');
-        const productCard = new ProductDisplay();
-        const productCardDom = productCard.render();
-        productCardContainer.appendChild(productCardDom);
-
-        // const list = dom.querySelector('ul');
-        // const productSelector = new ProductSelector(products);
-    // list.appendChild(productSelector.render());
+        const list = dom.querySelector('ul');
+        const productSelector = new ProductSelector(products);
+        list.appendChild(productSelector.render());
         
         return dom;
     }
 }
 
-const app = new App();
+const surveyApp = new SurveyApp();
 const root = document.getElementById('root');
-root.appendChild(app.render());
+root.appendChild(surveyApp.render());
 
-export default App;
+export default surveyApp;
 
 // let productSelector = new productSelector(this.products, prodcut => {
 //     product.count ++;
