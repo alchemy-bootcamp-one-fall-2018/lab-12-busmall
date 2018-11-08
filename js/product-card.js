@@ -12,7 +12,6 @@ class Product {
     constructor(product, onSelect){
         this.product = product;
         this.onSelect = onSelect;
-        console.log(this.onSelect);
     }
     render() {
         const dom = makeTemplate(this.product);

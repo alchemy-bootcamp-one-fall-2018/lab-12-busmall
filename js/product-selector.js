@@ -36,8 +36,8 @@ class ProductSelector {
             const product = copy[index];
             copy.splice(index, 1);
             randomProducts.push(product);
+            product.views++;
         }
-        console.log('these are our products', randomProducts);
         return randomProducts;
     }
 
@@ -45,9 +45,11 @@ class ProductSelector {
         const randomProducts = this.getRandomProducts();
         randomProducts.forEach(product => {
             const productCard = new Product(product, selected => {
-                console.log(selected);
+                selected.clicks++;
                 this.clearProducts();
                 this.showRandomProducts();
+                console.log(selected);
+                console.log(randomProducts);
             }); 
             this.list.appendChild(productCard.render());
         } 
