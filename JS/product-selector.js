@@ -1,5 +1,6 @@
 import productsApi from './products-api.js';
 import html from './html.js';
+import Image from './image.js';
 
 
 let products = productsApi.getAll();
@@ -20,16 +21,22 @@ while(display.length < 3) {
 function makeTemplate() {
     return html`
     <h1>Pick a product:</h2>
-    <section> <img src="${display[0].image}" class="align-image"> </section>
-    <section> <img src="${display[1].image}" class="align-image"> </section>
-    <section> <img src="${display[2].image}" class="align-image"> </section>
+    <section class="image-container"></section>
     `;
 }
 
 class Header {
     render() {
         const dom = makeTemplate();
+        const imageContainer = dom.querySelector('.image-container');
+
+        const image = new Image(display[0], function(selected) {
+            console.log('image clicked', selected);
+        });
+        imageContainer.appendChild(image.render());
         return dom;
     }
 }
+
+
 export default Header;

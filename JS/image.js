@@ -15,7 +15,7 @@ export default class Image {
     }
 
     render() {
-        let dom = template(this.image.name);
+        let dom = template(this.image.image);
 
         let div = dom.querySelector('div');
         div.addEventListener('click', () => {
