@@ -67,7 +67,6 @@ export default class ProductSelector {
     render() {
         const dom = makeTemplate();
         this.list = dom.querySelector('ul');
-        
         this.showRandomProducts();
         
         return dom;
