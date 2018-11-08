@@ -6,9 +6,12 @@ console.log('product selector', products.getAll());
 let workingArray = products.getAll();
 
 
+//make product card clsss ProductCArd, constructor (product) tis.this=product on it's own page, sent product-selector
+
 function getRandomInt(max) {
     return Math.floor(Math.random() * Math.floor(max) + 1);
 }
+
 let index = getRandomInt(workingArray.length);
 let selectedImage = workingArray[index];
 
@@ -16,7 +19,6 @@ console.log('image', selectedImage);
 
 
 
-//console.log(getRandomInt(index));
 
 function makeTemplate() {
     return html`
@@ -27,7 +29,9 @@ function makeTemplate() {
     `;
 }
 
-export default class App {
+export default class Products {
+    
+    
     render() {
         const dom = makeTemplate();
 
