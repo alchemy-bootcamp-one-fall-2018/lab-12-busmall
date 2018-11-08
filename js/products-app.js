@@ -13,7 +13,7 @@ function makeTemplate() {
         
         <main>
             <section id="product-display">
-                <h2>Select A Product</h2>
+                <h3>Select A Product</h3>
             </section>
         </main>
     `;

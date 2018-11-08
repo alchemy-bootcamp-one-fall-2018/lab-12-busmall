@@ -3,7 +3,7 @@ import ProductCard from './product-card.js';
 
 function makeTemplate() {
     return html`
-        <ul class="products">Display Product</ul>
+        <ul class="products"></ul>
     `;    
 }
 
