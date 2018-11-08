@@ -8,7 +8,7 @@ console.log(window.location.pathname);
 
 surveyApi.init();
 
-if(window.location.pathname === '/index.html') {
+if(window.location.pathname === '/index.html' || window.location.pathname === '/lab-12-busmall/index.html') {
     DisplayImage.init();
     DisplayImage.render();
     Chosen.init();
