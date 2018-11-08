@@ -42,6 +42,7 @@ class Header {
                 while(this.imageContainer.firstChild) {
                     this.imageContainer.removeChild(this.imageContainer.firstChild);
                 }
+                console.log(selected, 'this image');
                 this.renderImages();
             });
             this.imageContainer.appendChild(image.render());
