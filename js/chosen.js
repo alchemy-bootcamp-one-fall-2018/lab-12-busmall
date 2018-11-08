@@ -1,10 +1,10 @@
-import productApi from './product-api.js';
+// import productApi from './product-api.js';
 import DisplayImage from './image-display.js';
 import UserSummary from './user-summary.js';
 import surveyApi from './survey-api.js';
 
 let count = 0;
-let results = [];
+// let results = [];
 
 function makeTemplate() {
     DisplayImage.render();

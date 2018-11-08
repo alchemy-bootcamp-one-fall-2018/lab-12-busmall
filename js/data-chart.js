@@ -1,21 +1,21 @@
 import surveyApi from './survey-api.js';
 
-function makeTemplate() {
-    let html= `
-        <canvas>
-    `;
+// function makeTemplate() {
+//     let html= `
+//         <canvas>
+//     `;
     
-    return html;
-}
+//     return html;
+// }
 
 class DataChart {
-    render() {
-        const canvas = document.querySelector('canvas');
+    constructor() {
+        const canvasViews = document.getElementById('views');
+        const canvasClicks = document.getElementById('clicks');
 
-        if(canvas) {
-            const ctx = canvas.getContext('2d');
-            let surveys = surveyApi.getSurveys()[0];
-            console.log(surveys);
+        if(canvasViews) {
+            const ctxViews = canvasViews.getContext('2d');
+            const ctxClicks = canvasClicks.getContext('2d');
     
             let disProds = surveyApi.getDisProds();
             let products = [];
@@ -23,28 +23,50 @@ class DataChart {
             let clicks = [];
     
             disProds.forEach(set => {
-                set.forEach(product => {
-                    if(!products.includes(product.name)) {
-                        console.log(product);
-                        products.push(product.name);
-                        views.push(product.views);
-                    }
-                });
+                if(!products.includes(set.name)) {
+                    products.push(set.name);
+                    views.push(set.views);
+                    clicks.push(set.clicks);
+                }
             });
             
             console.log(products);
             console.log(views);
     
-            this.chart = new Chart(ctx, {
+            this.chartViews = new Chart(ctxViews, {
                 type: 'horizontalBar',
                 data: {
                     labels: products,
                     datasets: [{
-                        label: '# of Votes',
+                        label: '# of Views',
                         data: views,
                         backgroundColor: 'rgba(54, 162, 235, 0.2)',
-                        borderColor: 'black',
-                            
+                        borderColor: 'black',                
+                        borderWidth: 1
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    scales: {
+                        yAxes: [{
+                            ticks: {
+                                beginAtZero:true
+                            }
+                        }]
+                    }
+                }
+            });
+
+            this.chartClicks = new Chart(ctxClicks, {
+                type: 'horizontalBar',
+                data: {
+                    labels: products,
+                    datasets: [{
+                        label: '# of Clicks',
+                        data: clicks,
+                        backgroundColor: 'rgba(54, 162, 235, 0.2)',
+                        borderColor: 'black',                
                         borderWidth: 1
                     }]
                 },

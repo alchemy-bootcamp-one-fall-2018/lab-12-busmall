@@ -1,3 +1,4 @@
+import surveyApi from './survey-api.js';
 
 function makeTemplate(results) {
     let html = '';
@@ -20,7 +21,7 @@ class UserSummary {
         const resultsHtml = document.getElementById('resultsHtml');
         
         if(resultsHtml){
-            const storedResults = JSON.parse(localStorage.getItem('results'));
+            const storedResults = surveyApi.getDisProds();
             
             resultsHtml.innerHTML = makeTemplate(storedResults);
         }

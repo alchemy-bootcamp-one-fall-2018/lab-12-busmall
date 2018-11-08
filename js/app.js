@@ -20,4 +20,4 @@ const summary = new UserSummary();
 summary.render(false);
 
 const dataChart = new DataChart;
-dataChart.render();
+// dataChart.render();
