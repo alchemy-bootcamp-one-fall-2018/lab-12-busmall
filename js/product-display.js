@@ -1,27 +1,65 @@
 import html from './html.js';
+import ProductCard from './product-card.js';
 
 function makeTemplate() {
     return html`
-        <img id="image-1">
-        <img id="image-2">
-        <img id="image-3">
-    `;
+        <ul class="products">Display Product</ul>
+    `;    
+}
+
+function getRandomIndex(length) {
+    return Math.floor(Math.random() * length); 
 }
 
 class ProductDisplay {
     constructor(products) {
         this.products = products;
+        this.survey = products.map(product => {
+            return {
+                name: product.name,
+                image: product.image,
+                views: 0,
+                clicks: 0
+            };
+        });
+        this.imagesPer = 3;
+    }
+
+    getRandomProducts() {
+        const copy = this.survey.slice();
+
+        const randomProducts = [];
+
+        for(let i = 0; i < this.imagesPer; i++) {
+            const index = getRandomIndex(copy.length);
+            console.log(index);
+            const product = copy[index];
+            copy.splice(index, 1);
+            randomProducts.push(product);
+        } 
+        console.log('random products selected', randomProducts);
+        return randomProducts;
+    }
+
+    showRandomProducts() {
+        const randomProducts = this.getRandomProducts();
+        randomProducts.forEach(product => {
+            const productCard = new ProductCard(product);
+            this.list.appendChild(productCard.render());
+        }
+        );
+    }
+
+    clearProduct() {
+        while(this.list.lastElementChild()) {
+            this.list.lastElementChild.remove();
+        }
     }
 
     render() {
         const dom = makeTemplate();
-        this.image1 = dom.querySelector('#image-1');
-        this.image2 = dom.querySelector('#image-2');
-        this.image3 = dom.querySelector('#image-3');
-        this.image1.src = '../../assets/bag.jpg';
-        this.image2.src = '../../assets/banana.jpg';
-        this.image3.src = '../../assets/bathroom.jpg';
-
+        this.list = dom.querySelector('.products');
+        this.showRandomProducts();
         return dom;
     }
 

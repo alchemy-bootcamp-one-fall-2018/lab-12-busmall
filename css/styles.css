@@ -1,0 +1,25 @@
+body {
+  font-family: 'Open Sans Condensed', sans-serif;
+  background-color: lightskyblue;
+}
+
+.product-card {
+  
+  height: 275px;
+  width: 275px;
+  /* border: 10px solid; */
+  color: darkkhaki;
+  border-collapse: collapse;
+}
+
+img {
+  display: inline;
+  justify-content: center;
+  max-width: 170px;
+    max-height: 170px;
+}
+
+ul {
+  display: inline;
+  justify-content: center;
+}
