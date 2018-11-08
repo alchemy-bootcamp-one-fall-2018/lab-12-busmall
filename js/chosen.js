@@ -4,12 +4,13 @@ import surveyApi from './survey-api.js';
 
 let count = 0;
 
+
 function makeTemplate() {
     DisplayImage.render();
 }
 
 const Chosen = {
-    constructor() {
+    init() {
         this.products = surveyApi.getDisProds();
         this.products = this.products.map(image => {
             if(!image.clicks) {
@@ -18,11 +19,22 @@ const Chosen = {
             return image;
         });
         surveyApi.storeDisProd(this.products);
+
+        this.session = surveyApi.getSession();
+    
+        this.session = this.session.map(survey => {
+            survey.clicks = 0;
+            return survey;
+        });
+
+        surveyApi.storeSession(this.session);
     },
     
     render() {
         this.surveyItems = document.querySelectorAll('.product');  
         this.products = surveyApi.getDisProds();
+        this.session = surveyApi.getSession();
+
         this.surveyItems.forEach(item => {
             item.addEventListener('click', event => {
                 count++;
@@ -31,6 +43,8 @@ const Chosen = {
                 });
 
                 this.products[this.index].clicks = this.products[this.index].clicks + 1;
+                this.session[this.index].clicks++;
+                surveyApi.storeSession(this.session);
 
                 surveyApi.storeDisProd(this.products);
                 if(count > 3){
@@ -41,6 +55,7 @@ const Chosen = {
                 }
             });
         });
+
     }
 };
 

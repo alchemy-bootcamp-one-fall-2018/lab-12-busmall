@@ -17,7 +17,7 @@ function makeTemplate(imageSet) {
 }
 
 const DisplayImage = {
-    constructor() {
+    init() {
         this.imageList = surveyApi.getDisProds();
         this.imageList = this.imageList.map(image => {
             if(!image.views) {
@@ -33,13 +33,15 @@ const DisplayImage = {
             product.views = 0;
             return product;
         });
-        console.log('session initial', this.session);
+        
+        surveyApi.storeSession(this.session);
     },
     
     render() {
         const imageSection = document.getElementById('imageSection');
         let imageSet = [];
         let currentIndex = [];
+        this.session = surveyApi.getSession();
         
         if(count < 4) {
             while(imageSet.length < 3) {
@@ -56,6 +58,7 @@ const DisplayImage = {
                     surveyApi.storeDisProd(this.imageList);
 
                     this.session[randomIndex].views++;
+                    surveyApi.storeSession(this.session);
                 }
             }
             
@@ -68,7 +71,6 @@ const DisplayImage = {
             count++;
         }
 
-        console.log('session final', this.session);
     }
 };
 
