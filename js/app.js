@@ -5,7 +5,7 @@ import UserSummary from './user-summary.js';
 import DataChart from './data-chart.js';
 
 //make chart drawing into a function
-//merge with master
+//change limit to 25
 
 surveyApi.init();
 

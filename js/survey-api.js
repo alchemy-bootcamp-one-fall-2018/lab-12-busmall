@@ -26,11 +26,11 @@ const surveyApi = {
     },
 
     storeDisProd(newProducts) {
-        localStorage.setItem('disProds', JSON.stringify(newProducts));
+        localStorage.setItem('allSessions', JSON.stringify(newProducts));
     },
 
     getDisProds() {
-        return JSON.parse(localStorage.getItem('disProds'));
+        return JSON.parse(localStorage.getItem('allSessions'));
     },
 
     storeSession(session) {
