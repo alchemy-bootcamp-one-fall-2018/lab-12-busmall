@@ -31,8 +31,8 @@ class BusmallApp {
             this.totalRounds++;
             product.clicks++;
             surveyApi.add(product);
-
-            if(this.totalRounds === 25) {
+            
+            if(this.totalRounds === 26) {
                 window.location.href = '../../user.html';
             }
 
@@ -46,6 +46,7 @@ class BusmallApp {
         
         this.list.appendChild(productDisplay.render());
         return dom;
+
     }
 }
 
