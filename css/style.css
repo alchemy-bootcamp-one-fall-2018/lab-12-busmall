@@ -1,0 +1,12 @@
+text {
+    font-family: 'Times New Roman', Times, serif;
+}
+
+image {
+    height: 100px;
+    width: 100px;
+}
+
+.product-card {
+    border: 2px solid red;
+}
