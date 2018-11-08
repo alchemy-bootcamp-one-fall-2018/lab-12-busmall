@@ -1,5 +1,5 @@
 text {
-    font-family: 'Times New Roman', Times, serif
+    font-family: 'Times New Roman', Times, serif;
 }
 
 image {
@@ -7,6 +7,6 @@ image {
     width: 100px;
 }
 
-.app {
+.product-card {
     border: 2px solid red;
 }
