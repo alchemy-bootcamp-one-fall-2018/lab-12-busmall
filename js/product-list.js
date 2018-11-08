@@ -91,17 +91,17 @@ function makeTemplate() {
     return html`
     <div id="random-pic-1" class="random-pics">
         <div>${products[rngPic1].name}</div>
-        <img src="${products[rngPic1].img}" style="height: 200px">
+        <img src="${products[rngPic1].img}" style="height: 150px">
     </div>
 
     <div id="random-pic-2" class="random-pics">
         <div>${products[rngPic2].name}</div>
-        <img src="${products[rngPic2].img}" style="height: 200px">
+        <img src="${products[rngPic2].img}" style="height: 150px">
     </div>
 
     <div id="random-pic-3" class="random-pics">
         <div>${products[rngPic3].name}</div>
-        <img src="${products[rngPic3].img}" style="height: 200px">
+        <img src="${products[rngPic3].img}" style="height: 150px">
     </dvi>
         `;
 }
