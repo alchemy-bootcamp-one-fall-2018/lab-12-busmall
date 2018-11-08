@@ -7,7 +7,7 @@ function makeTemplate() {
     return html`
     <header>
         <div> 
-            <h1>Select a Product</h1>
+            <h1>Please select a product</h1>
         </div>
     </header>
     <main>
