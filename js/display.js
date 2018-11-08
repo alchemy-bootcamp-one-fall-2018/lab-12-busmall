@@ -13,13 +13,11 @@ function makeTemplate() {
     `;
 }
 
-var totalRounds = 0;
 // class that calls the template and renders it aka inits it
 class ImageDisplay {
-    constructor(images, onSelect, totalRounds) { 
+    constructor(images, onSelect) { 
         this.images = images;
         this.onSelect = onSelect;
-        this.totalRounds++;
         // THREE IMAGES IFFFFFFFFFF TOTAL COUNT IS LESS THAN 25
     }
 
