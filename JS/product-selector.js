@@ -14,6 +14,7 @@ function getProducts() {
     while(display.length < 3) {
         let index = getRandomInt(products.length); 
         if(display.includes(products[index]) === false) {
+            products[index].views += 1;
             display.push(products[index]);
         } 
     }
@@ -37,8 +38,11 @@ class Header {
     }
     renderImages() {
         let display = getProducts();
+        console.log(display, 'display');
         for(var i = 0; i < display.length; i++) {
             const image = new Image(display[i], selected => {
+                selected.clicks += 1;
+                console.log(selected.clicks);
                 while(this.imageContainer.firstChild) {
                     this.imageContainer.removeChild(this.imageContainer.firstChild);
                 }
