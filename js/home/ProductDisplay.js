@@ -28,8 +28,8 @@ class ProductDisplay {
         }
 
         for(let i = 0; i < 3; i++) {
-            let productComp = new Product(this.products[this.randomInt()], this.onSelect, this.onView);
-            this.ul.appendChild(productComp.render());
+            this.productComp = new Product(this.products[this.randomInt()], this.onSelect, this.onView);
+            this.ul.appendChild(this.productComp.render());
         }
     }
 
