@@ -1,15 +1,7 @@
 import surveyApi from './survey-api.js';
 
-// function makeTemplate() {
-//     let html= `
-//         <canvas>
-//     `;
-    
-//     return html;
-// }
-
 class DataChart {
-    constructor() {
+    render() {
         const canvasViews = document.getElementById('views');
         const canvasClicks = document.getElementById('clicks');
 
@@ -30,9 +22,7 @@ class DataChart {
                 }
             });
             
-            console.log(products);
-            console.log(views);
-    
+            /* eslint-disable-next-line */
             this.chartViews = new Chart(ctxViews, {
                 type: 'horizontalBar',
                 data: {
@@ -58,6 +48,7 @@ class DataChart {
                 }
             });
 
+            /* eslint-disable-next-line */
             this.chartClicks = new Chart(ctxClicks, {
                 type: 'horizontalBar',
                 data: {

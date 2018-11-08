@@ -10,14 +10,11 @@ surveyApi.init();
 
 DisplayImage.constructor();
 DisplayImage.render();
-// const display = new DisplayImage();
-// display.render();
 
 Chosen.constructor();
-// chosen.render();
 
 const summary = new UserSummary();
 summary.render(false);
 
 const dataChart = new DataChart;
-// dataChart.render();
+dataChart.render();

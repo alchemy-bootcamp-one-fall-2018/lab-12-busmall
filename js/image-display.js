@@ -1,6 +1,5 @@
 import Chosen from './chosen.js';
 import surveyApi from './survey-api.js';
-// import productApi from './product-api.js';
 
 let lastImageSet = [];
 let count = 0;
@@ -31,9 +30,8 @@ const DisplayImage = {
     render() {
         const imageSection = document.getElementById('imageSection');
         let imageSet = [];
-        // this.imageList = surveyApi.getDisProds();
         
-        if(count < 4) {
+        if(count < 25) {
             while(imageSet.length < 3) {
                 let randomIndex = Math.floor(Math.random() * this.imageList.length);
                 this.imageList = surveyApi.getDisProds();

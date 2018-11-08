@@ -1,10 +1,8 @@
-// import productApi from './product-api.js';
 import DisplayImage from './image-display.js';
 import UserSummary from './user-summary.js';
 import surveyApi from './survey-api.js';
 
 let count = 0;
-// let results = [];
 
 function makeTemplate() {
     DisplayImage.render();
@@ -35,7 +33,7 @@ const Chosen = {
                 this.products[this.index].clicks = this.products[this.index].clicks + 1;
 
                 surveyApi.storeDisProd(this.products);
-                if(count > 3){
+                if(count > 24){
                     let summary = new UserSummary();
                     summary.render(true);
                 } else {
