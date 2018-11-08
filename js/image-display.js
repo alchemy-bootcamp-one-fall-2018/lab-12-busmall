@@ -1,12 +1,14 @@
 import Chosen from './chosen.js';
+import surveyApi from './survey-api.js';
+// import productApi from './product-api.js';
 
 let lastImageSet = [];
 let count = 0;
 
-function makeTemplate(imageList) {
+function makeTemplate(imageSet) {
     let html = '<h1>Choose wisely, you cannot go back!</h1>';
     
-    imageList.forEach(item => {
+    imageSet.forEach(item => {
         html += `
         <img name="${item.name}" class="product" src="${item.image_url}">`;
     });
@@ -14,31 +16,35 @@ function makeTemplate(imageList) {
     return html;
 }
 
-class DisplayImage {
-    constructor(imageList) {
-        this.imageList = imageList;
-    }
+const DisplayImage = {
+    constructor() {
+        this.imageList = surveyApi.getDisProds();
+        this.imageList = this.imageList.map(image => {
+            if(!image.views) {
+                image.views = 0;
+            }
+            return image;
+        });
+        surveyApi.storeDisProd(this.imageList);
+    },
     
     render() {
         const imageSection = document.getElementById('imageSection');
         let imageSet = [];
+        // this.imageList = surveyApi.getDisProds();
         
         if(count < 4) {
             while(imageSet.length < 3) {
                 let randomIndex = Math.floor(Math.random() * this.imageList.length);
+                this.imageList = surveyApi.getDisProds();
                 
                 if(imageSet.includes(this.imageList[randomIndex]) || lastImageSet.includes(this.imageList[randomIndex])) {
                     randomIndex = Math.floor(Math.random() * this.imageList.length);
                 } else {
                     imageSet.push(this.imageList[randomIndex]);
-    
-                    this.displayedProducts = this.imageList[randomIndex];
-    
-                    if(this.displayedProducts.views > 0) {
-                        this.displayedProducts.views = this.displayedProducts.views + 1;
-                    } else {
-                        this.displayedProducts.views = 1;
-                    }
+
+                    this.imageList[randomIndex].views = this.imageList[randomIndex].views + 1;
+                    surveyApi.storeDisProd(this.imageList);
                 }
             }
             
@@ -46,12 +52,11 @@ class DisplayImage {
             if(imageSection) {
                 imageSection.innerHTML = makeTemplate(imageSet);
             }
-            const chosen = new Chosen;
-            chosen.render();
+            
+            Chosen.render();
             count++;
-
         }
     }
-}
+};
 
 export default DisplayImage;

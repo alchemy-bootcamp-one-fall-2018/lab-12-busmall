@@ -1,7 +1,13 @@
+import productApi from './product-api.js';
+
 const surveyApi = {
 
     init(){
-        // this.store([]);
+        if(this.getDisProds()){
+            this.storeDisProd(this.getDisProds());
+        } else {
+            this.storeDisProd(productApi.getAll());
+        }
     },
 
     store(newSurveys) {
@@ -17,6 +23,14 @@ const surveyApi = {
 
     getSurveys() {
         return JSON.parse(localStorage.getItem('surveys'));
+    },
+
+    storeDisProd(newProducts) {
+        localStorage.setItem('disProds', JSON.stringify(newProducts));
+    },
+
+    getDisProds() {
+        return JSON.parse(localStorage.getItem('disProds'));
     }
 };
 

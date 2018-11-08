@@ -21,6 +21,7 @@ class UserSummary {
         
         if(resultsHtml){
             const storedResults = JSON.parse(localStorage.getItem('results'));
+            
             resultsHtml.innerHTML = makeTemplate(storedResults);
         }
     }

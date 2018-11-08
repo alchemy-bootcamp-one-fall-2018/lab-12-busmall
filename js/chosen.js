@@ -7,18 +7,24 @@ let count = 0;
 let results = [];
 
 function makeTemplate() {
-    const display = new DisplayImage(productApi.getAll());
-
-    display.render();
+    DisplayImage.render();
 }
 
-class Chosen {
+const Chosen = {
     constructor() {
-        this.surveyItems = document.querySelectorAll('.product');  
-        this.products = productApi.getAll();
-    }
+        this.products = surveyApi.getDisProds();
+        this.products = this.products.map(image => {
+            if(!image.clicks) {
+                image.clicks = 0;
+            }
+            return image;
+        });
+        surveyApi.storeDisProd(this.products);
+    },
     
     render() {
+        this.surveyItems = document.querySelectorAll('.product');  
+        this.products = surveyApi.getDisProds();
         this.surveyItems.forEach(item => {
             item.addEventListener('click', event => {
                 count++;
@@ -26,25 +32,18 @@ class Chosen {
                     return product.name === event.target.name;
                 });
 
-                this.selectedProduct = this.products[this.index];
+                this.products[this.index].clicks = this.products[this.index].clicks + 1;
 
-                if(this.selectedProduct.clicks > 0) {
-                    this.selectedProduct.clicks = this.selectedProduct.clicks + 1;
-                } else {
-                    this.selectedProduct.clicks = 1;
-                }
-
-                results.push(this.selectedProduct);
-                makeTemplate();
+                surveyApi.storeDisProd(this.products);
                 if(count > 3){
-                    localStorage.setItem('results', JSON.stringify(results));
                     let summary = new UserSummary();
                     summary.render(true);
-                    surveyApi.store(results);
+                } else {
+                    makeTemplate();
                 }
             });
         });
     }
-}
+};
 
 export default Chosen;

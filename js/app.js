@@ -1,17 +1,20 @@
-import productApi from './product-api.js';
 import DisplayImage from './image-display.js';
 import Chosen from './chosen.js';
 import surveyApi from './survey-api.js';
 import UserSummary from './user-summary.js';
 import DataChart from './data-chart.js';
 
+//correct double display of first item...?
+
 surveyApi.init();
 
-const display = new DisplayImage(productApi.getAll());
-display.render();
+DisplayImage.constructor();
+DisplayImage.render();
+// const display = new DisplayImage();
+// display.render();
 
-const chosen = new Chosen;
-chosen.render();
+Chosen.constructor();
+// chosen.render();
 
 const summary = new UserSummary();
 summary.render(false);

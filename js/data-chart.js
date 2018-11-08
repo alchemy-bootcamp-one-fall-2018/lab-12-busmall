@@ -1,4 +1,4 @@
-import suveyApi from './survey-api.js';
+import surveyApi from './survey-api.js';
 
 function makeTemplate() {
     let html= `
@@ -11,38 +11,59 @@ function makeTemplate() {
 class DataChart {
     render() {
         const canvas = document.querySelector('canvas');
-        var ctx = canvas.getContext('2d');
 
-        this.chart = new Chart(ctx, {
-            type: 'bar',
-            data: {
-                labels: ['Red', 'Blue', 'Yellow'],
-                datasets: [{
-                    label: '# of Votes',
-                    data: [12, 19, 3],
-                    backgroundColor: [
-                        'rgba(255, 99, 132, 0.2)',
-                        'rgba(54, 162, 235, 0.2)',
-                        'rgba(255, 206, 86, 0.2)',
-                    ],
-                    borderColor: 'black',
-                        
-                    borderWidth: 1
-                }]
-            },
-            options: {
-                responsive: true,
-                maintainAspectRatio: false,
-                scales: {
-                    yAxes: [{
-                        ticks: {
-                            beginAtZero:true
-                        }
+        if(canvas) {
+            const ctx = canvas.getContext('2d');
+            let surveys = surveyApi.getSurveys()[0];
+            console.log(surveys);
+    
+            let disProds = surveyApi.getDisProds();
+            let products = [];
+            let views = [];
+            let clicks = [];
+    
+            disProds.forEach(set => {
+                set.forEach(product => {
+                    if(!products.includes(product.name)) {
+                        console.log(product);
+                        products.push(product.name);
+                        views.push(product.views);
+                    }
+                });
+            });
+            
+            console.log(products);
+            console.log(views);
+    
+            this.chart = new Chart(ctx, {
+                type: 'horizontalBar',
+                data: {
+                    labels: products,
+                    datasets: [{
+                        label: '# of Votes',
+                        data: views,
+                        backgroundColor: 'rgba(54, 162, 235, 0.2)',
+                        borderColor: 'black',
+                            
+                        borderWidth: 1
                     }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    scales: {
+                        yAxes: [{
+                            ticks: {
+                                beginAtZero:true
+                            }
+                        }]
+                    }
                 }
-            }
-        });
+            });
+        }
+
     }
+
 }
 
 export default DataChart;
