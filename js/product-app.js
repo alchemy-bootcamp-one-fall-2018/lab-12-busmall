@@ -1,5 +1,9 @@
-import productsApi from '../js/product-api.js';
+import Images from '../js/images.js';
+//import ImageSelector from './display';
 
-const products = productsApi.getAll();
 
-console.log(products[2]);
+const images = new Images();
+const root = document.getElementById('root');
+root.appendChild(images.render());
+
+
