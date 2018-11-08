@@ -9,13 +9,15 @@ function getRandomInt(max) {
     return Math.floor(Math.random() * Math.floor(max));
 }
 
-let display = [];
-
-while(display.length < 3) {
-    let index = getRandomInt(products.length); 
-    if(display.includes(products[index]) === false) {
-        display.push(products[index]);
-    } 
+function getProducts() {
+    let display = [];
+    while(display.length < 3) {
+        let index = getRandomInt(products.length); 
+        if(display.includes(products[index]) === false) {
+            display.push(products[index]);
+        } 
+    }
+    return display;
 }
 
 function makeTemplate() {
@@ -30,12 +32,17 @@ class Header {
         const dom = makeTemplate();
         const imageContainer = dom.querySelector('.image-container');
 
-        const image = new Image(display[0], function(selected) {
-            console.log('image clicked', selected);
-        });
-        imageContainer.appendChild(image.render());
+        let display = getProducts();
+        for(var i = 0; i < display.length; i++) {
+            const image = new Image(display[i], function(selected) {
+                console.log('image clicked', selected);
+            });
+            imageContainer.appendChild(image.render());
+            
+        }
         return dom;
     }
+
 }
 
 
