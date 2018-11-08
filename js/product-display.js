@@ -1,26 +1,31 @@
 import html from './html.js';
-import productsApi from './products-api.js';
-
-const products = productsApi.getAll();
 
 function makeTemplate(product) {
-    console.log('test', product.name);
+    // console.log('test', product.name);
     return html`
         <li class="product-item">
             <h1>product-display</h1>
-            <p>${product.name}</p>
             <img src="assets/${product.image}">
         </li>
   `;      
 }
+
 class ProductDisplay {
-    constructor(product) {
+    constructor(product, onSelect) {
         this.product = product;
+        this.onSelect = onSelect;
     }
 
     render() {
         const dom = makeTemplate(this.product);
-        // const productItem = dom.querySelector('.product-item');
+        const listItem = dom.querySelector('li');
+        const product = this.product;
+
+        if(this.onSelect) {
+            listItem.addEventListener('click', () => {
+                this.onSelect(product);
+            });
+        }
 
         return dom;
     }

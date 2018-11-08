@@ -1,13 +1,12 @@
 import html from './html.js';
-import ProductDisplay from './product-display.js';
-import productApi from './products-api.js';
+import productsApi from './products-api.js';
+import ProductSelector from './product-selector.js';
 
-const products = productApi.getAll();
+const products = productsApi.getAll();
 
-function makeTemplate(product) {
+function makeTemplate() {
     return html`
-        <ul>${product.name}</ul>
-    <section id="image-section">
+    <section class="image-section">
         <h2>App Focus Group Product List</h2>
 
     </section>
@@ -17,6 +16,10 @@ function makeTemplate(product) {
 class App {
     render() {
         const dom = makeTemplate(); 
+ 
+        const productSelectorOnApp = dom.querySelector('.image-section');
+        const productSelector = new ProductSelector(products);
+        productSelectorOnApp.appendChild(productSelector.render());
 
         return dom;
     }
