@@ -1,13 +1,13 @@
 body {
   font-family: 'Open Sans Condensed', sans-serif;
-  background-color: lightskyblue;
+  background-color: grey;
 }
 
 .product-card {
   
-  height: 275px;
-  width: 275px;
-  /* border: 10px solid; */
+  height: 335px;
+  width: 271px;
+  border: 10px solid;
   color: darkkhaki;
   border-collapse: collapse;
 }
@@ -27,5 +27,10 @@ ul {
 }
 
 h4 {
-  padding-bottom: 20px;
+  text-align: center;
 }
+
+li {
+  list-style-type: none;
+}
+
