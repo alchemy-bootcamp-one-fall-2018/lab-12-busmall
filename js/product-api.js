@@ -82,19 +82,32 @@ let products = [
     }
 ];
 
+// const json = localStorage.getItem('products');
+// if(json) {
+//     products = JSON.parse(json);
+// }
+
 const productApi = {
     getAll() {
-        const survey = products.map(product => {
-            return {
-                name: product.name,
-                image: product.image,
-                views: 0,
-                clicks: 0
-            };
-        });
-         
-        return survey;
+        return products;
     }
+    // getSurvey() {
+    
+    //     const survey = products.map(product => {
+    //         return {
+    //             name: product.name,
+    //             image: product.image,
+    //             views: 0,
+    //             clicks: 0
+    //         };
+    //     });     
+    //     return survey;
+    // },
+    // save() {
+    //     localStorage.setItem('products', JSON.stringify(products));
+    
+    // }
+
 };
 
 export default productApi;

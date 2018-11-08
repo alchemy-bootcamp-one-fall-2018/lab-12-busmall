@@ -1,54 +1,46 @@
-import html from './html.js';
+import html from './html.js'; 
 
 function makeTemplate() {
     return html`
-    <section>
-    <img id="product-1" class="random-image">
-    <img id="product-2" class="random-image">
-    <img id="product-3" class="random-image">
-    </section>
-    `;
+        <li>
+        <img class="product">
+        </li>
+   
+    `; 
 }
+
 class ImageDisplay {
-    constructor(products, onSelect) {
-        this.products = products;
-        this.images = [];
-        this.onSelect = onSelect;
-        this.clicks = 0;
+
+    constructor(product, onSelect) {
+        this.product = product; 
+        this.randomImages = []; 
+        this.onSelect = onSelect;  
     }
-    render() {
-        const dom = makeTemplate();
 
-        const image1 = dom.getElementById('product-1');
-        const image2 = dom.getElementById('product-2');
-        const image3 = dom.getElementById('product-3');
+    render() { 
+        this.getImage(); 
+        
+        const dom = makeTemplate(this.product); 
+        const listItem = dom.querySelector('img'); 
+        listItem.addEventListener('click', () => {
+            this.onSelect(this.product); 
+        }); 
 
-        console.log(image1.onSelect);
-        this.getImage();
-        
-        image1.src = `${this.images[0].image}`;
-        image2.src = `${this.images[1].image}`;
-        image3.src = `${this.images[2].image}`;
-        
+
+        for(var i = 0; i < 3; i++) {
+            listItem.src = this.randomImages[i].image; 
+            this.randomImages[i].views++; 
+        }
+
         return dom;
     }
-
     getImage() {
         for(let i = 0; i < 3; i++) {
-            let lastNumber = 0;
-            let index = Math.floor(Math.random() * 19) + 1;
-            if(index !== lastNumber) {
-                this.images.push(this.products[index]);
-            } else {
-                index = Math.floor(Math.random() * 19) + 1;
-            }
-            lastNumber = index;
+            const index = Math.floor(Math.random() * 19) + 1;
+            this.randomImages.push(this.product[index]); 
+
         }
-    }
-
-    onSelect() {
-
-    }
+    } 
 }
 
-export default ImageDisplay;
+export default ImageDisplay; 
