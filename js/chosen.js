@@ -33,7 +33,7 @@ const Chosen = {
                 this.products[this.index].clicks = this.products[this.index].clicks + 1;
 
                 surveyApi.storeDisProd(this.products);
-                if(count > 24){
+                if(count > 3){
                     let summary = new UserSummary();
                     summary.render(true);
                 } else {

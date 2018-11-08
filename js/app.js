@@ -4,7 +4,9 @@ import surveyApi from './survey-api.js';
 import UserSummary from './user-summary.js';
 import DataChart from './data-chart.js';
 
-//correct double display of first item...?
+//correct extra display at end
+//correct duplicate images
+//merge with master
 
 surveyApi.init();
 
