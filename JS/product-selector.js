@@ -41,17 +41,17 @@ class Header {
     }
     renderImages() {
         let display = getProducts();
-        //console.log(display, 'display');
         for(var i = 0; i < display.length; i++) {
             const image = new Image(display[i], selected => {
                 selected.clicks += 1;
-                //console.log(selected, selected.clicks);
                 while(this.imageContainer.firstChild) {
                     this.imageContainer.removeChild(this.imageContainer.firstChild);
                 }
-                //console.log(selected, 'this image');
                 this.renderImages();
                 totalCount += 1;
+                if(totalCount === 5) {
+                    window.location.replace('./reports.html');
+                }
                 console.log('totalCount', totalCount);
             });
             this.imageContainer.appendChild(image.render());
