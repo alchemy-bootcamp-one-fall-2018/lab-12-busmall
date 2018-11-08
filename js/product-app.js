@@ -1,10 +1,10 @@
-import Images from '../js/images.js';
-//import ImageSelector from './display';
+import Header from './product-selector.js';
 
-
-const images = new Images();
+const header = new Header();
 const root = document.getElementById('root');
-root.appendChild(images.render());
+root.appendChild(header.render());
+
+
 
 
 

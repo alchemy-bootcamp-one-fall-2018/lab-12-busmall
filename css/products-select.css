@@ -1,6 +1,7 @@
-.display-images {
-    height: 300px;
-    width: 250px;
+img {
+    height: 200px;
+    width: 150px;
     float: left;
 };
+
 
