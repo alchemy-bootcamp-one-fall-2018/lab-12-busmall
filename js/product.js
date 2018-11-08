@@ -11,17 +11,17 @@ function makeTemplate(product) {
 export default class Product {
     constructor(product) {
         this.product = product;
-        // this.onSelect = onSelect;
+        this.onSelect = onSelect;
     }
     
     render() {
         let dom = makeTemplate(this.product);
-        // const ul = dom.querySelector('ul');
+        const ul = dom.querySelector('ul');
         
-        // this.products.forEach(product => {
-        //     let productComp = new Product(product, this.onSelect);
-        //     ul.appendChild(productComp.render());
-        // });
+        this.products.forEach(product => {
+            let productComp = new Product(product, this.onSelect);
+            ul.appendChild(productComp.render());
+        });
         
         return dom;
     }

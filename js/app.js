@@ -1,7 +1,5 @@
 
 import html from './html.js';
-
-
 import productApi from '../data-apis/product-api.js';
 import ProductSelector from './product-selector.js';
 
@@ -9,7 +7,7 @@ const products = productApi.getAll();
 
 function makeTemplate() {
     return html`
-        <h2>This lab hurts</h2>
+        <h2>Pick a Product</h2>
         <ul></ul>
         `;
 }
