@@ -1,3 +1,5 @@
+import html from './html.js';
+
 let products = [
     {
         'name': 'Bag',
@@ -57,7 +59,7 @@ let products = [
     },
     {
         'name': 'Sweep',
-        'img': '../assets/sweep.jpg'
+        'img': '../assets/sweep.png'
     },
     {
         'name': 'Tauntaun',
@@ -69,7 +71,7 @@ let products = [
     },
     {
         'name': 'USB',
-        'img': '../assets/usb.jpg'
+        'img': '../assets/usb.gif'
     },
     {
         'name': 'Water Can',
@@ -81,14 +83,32 @@ let products = [
     },
 ];
 
-const productsApi = {
-    getAll() {
-        const json = localStorage.getItem('products');
-        if(json) {
-            products = JSON.parse(json);
-        }
-        return products;
-    }
-};
+const rngPic1 = Math.floor(Math.random() * products.length);
+const rngPic2 = Math.floor(Math.random() * products.length);
+const rngPic3 = Math.floor(Math.random() * products.length);
+function makeTemplate() {
 
-export default productsApi;
+    return html`
+    <div id="random-pic-1" class="random-pics">
+        <div>${products[rngPic1].name}</div>
+        <img src="${products[rngPic1].img}" style="height: 150px">
+    </div>
+
+    <div id="random-pic-2" class="random-pics">
+        <div>${products[rngPic2].name}</div>
+        <img src="${products[rngPic2].img}" style="height: 150px">
+    </div>
+
+    <div id="random-pic-3" class="random-pics">
+        <div>${products[rngPic3].name}</div>
+        <img src="${products[rngPic3].img}" style="height: 150px">
+    </dvi>
+        `;
+}
+
+
+export default class RandomPics {
+    render() {
+        return makeTemplate();
+    }
+}
