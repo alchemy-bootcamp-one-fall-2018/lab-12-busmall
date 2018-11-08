@@ -28,26 +28,31 @@ function makeTemplate() {
     `;
 }
 
+let totalCount = 0;
+
 class Header {
     render() {
         const dom = makeTemplate();
         this.imageContainer = dom.querySelector('.image-container');
+        
 
         this.renderImages();
         return dom;
     }
     renderImages() {
         let display = getProducts();
-        console.log(display, 'display');
+        //console.log(display, 'display');
         for(var i = 0; i < display.length; i++) {
             const image = new Image(display[i], selected => {
                 selected.clicks += 1;
-                console.log(selected.clicks);
+                //console.log(selected, selected.clicks);
                 while(this.imageContainer.firstChild) {
                     this.imageContainer.removeChild(this.imageContainer.firstChild);
                 }
-                console.log(selected, 'this image');
+                //console.log(selected, 'this image');
                 this.renderImages();
+                totalCount += 1;
+                console.log('totalCount', totalCount);
             });
             this.imageContainer.appendChild(image.render());
         }
