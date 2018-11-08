@@ -84,37 +84,33 @@ let products = [
 ];
 
 function makeTemplate() {
+    var foobar = Math.floor(Math.random() * products.length);
+
     return html`
     <div id="random-pics">
         <p>Some random pictures</p>
+        <div>${products[foobar].name}</div>
+        <div>${products[foobar].img}</div>
     </div>
 `;
 }
 
 console.log(products.length, 'array length');
-function getRandomPic(banana) {
-    // A random number between [0,1) multiplied by the length of the array
-    // Then takes the floor of that decimal
-    // Ex. Math.random() = .567...
-    // products.length = 20 (because there are 20 obj in array)
-    // So, Math.random() * products.length = .567 * 20 = 11.34
-    // Now, taking the floor of that number would equal 11.
-    // Therefore, foobar (in this case) = 11.
-    // If we console log foobar, we should get 11.
+function getRandomPic() {
     var foobar = Math.floor(Math.random() * products.length);
     console.log(foobar, 'random pics');
     return products[foobar];
 }
-console.log(getRandomPic(), 'idk what this does');
-
+console.log(getRandomPic().name, '//Gets random object');
 
 export default class RandomPics {
     render() {
         for(var i = 0; i < products.length; i++) {
             products[i].name;
-            console.log(products[i].name);
+            // console.log(products[i].name);
         }
         
+
         return makeTemplate();
     }
 }
