@@ -1,5 +1,4 @@
 import html from './html.js';
-
 import ProductCard from './product-card.js';
 
 
@@ -26,13 +25,14 @@ export default class ProductSelector {
         });
     
         this.imagesPer = 3;
+        this.rounds = 25;
+
+        // this.onSelect = onSelect;
        
     }
     
     getRandomProducts() {
         const copy = this.survey.slice();
-        
-
         const randomProducts = [];
 
         for(let i = 0; i < this.imagesPer; i++){
@@ -50,10 +50,21 @@ export default class ProductSelector {
         const randomProducts = this.getRandomProducts();
         
         randomProducts.forEach(product => {
-            const productCard = new ProductCard(product);
+            const productCard = new ProductCard(product, selected => {
+                console.log(selected);
+
+                this.clearProducts();
+                this.showRandomProducts();
+            });
             this.list.appendChild(productCard.render());
         }
         ); 
+    }
+
+    clearProducts() {
+        while(this.list.lastElementChild) {
+            this.list.lastElementChild.remove();
+        }
     }
 
     render() {
@@ -66,3 +77,8 @@ export default class ProductSelector {
         
     }
 }  
+// add event listener for clicks
+// new pics each round
+// 25 rounds
+// make sure info is stored for analyzing
+// at end of 25 rounds, send to reports page
