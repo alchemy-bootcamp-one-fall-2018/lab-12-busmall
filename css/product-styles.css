@@ -12,6 +12,12 @@ h1 {
 p {
     text-align: center;
 }
+.random-pics-container {
+    margin: 0 auto;
+    border: 10px solid red;
+    display: flex;
+    justify-content: center;
+}
 .random-pics {
     display: inline-block;
     padding: 50px;
