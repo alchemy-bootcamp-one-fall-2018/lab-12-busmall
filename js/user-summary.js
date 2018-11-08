@@ -27,9 +27,18 @@ class UserSummary {
     }
     
     render(bool) {
+        const goToChart = document.getElementById('goToChart');
+        
         if(bool){
             window.location = '../html/user-summary.html';
         }
+
+        if(goToChart) {
+            goToChart.addEventListener('click', () => {
+                window.location = '../html/data-chart.html';
+            });
+        }
+
     }
 }
 

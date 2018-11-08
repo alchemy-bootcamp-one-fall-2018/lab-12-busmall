@@ -18,3 +18,7 @@ img {
 img:hover {
     border: 2px solid rgb(90, 218, 65);
 }
+
+canvas {
+    width: 30%;
+}
