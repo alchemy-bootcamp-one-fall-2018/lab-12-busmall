@@ -5,6 +5,7 @@ const productsApi = {
     getAll() {
         return products;
     }
+    
 };
 
 export default productsApi;

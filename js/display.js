@@ -1,39 +1,33 @@
+
 import html from './html.js';
-import productsApi from './products-api.js';
-
-let products = productsApi.getAll();
-
-function getRandomInt(max) {
-    return Math.floor(Math.random() * Math.floor(max));
-}
-  
-let display = [];
-
-while(display.length < 3) {
-    let index = getRandomInt(products.length);
-    if(display.includes(products[index]) === false) {
-        display.push(products[index]);
-    }
-}
-
-
-
-// once you have the display of 3 images, you can save that as the usedArray
+import Image from './image.js';
+import getImages from './product-selector.js';
 
 function makeTemplate() {
     return html`
-    <h1>Pick a product:</h1>
-    <section> <img src="${display[0].image}" class="Image"> </section>
-    <section> <img src="${display[1].image}" class="Image"> </section>
-    <section> <img src="${display[2].image}" class="Image"> </section>
+    <div class="display-div"> </div>
     `;
 }
 
-class Header {
+class ImageDisplay {
+    constructor(images, onSelect) {
+        this.images = images;
+        this.onSelect = onSelect;
+    }
+
     render() {
         const dom = makeTemplate();
+        const displayDiv = dom.querySelector('.display-div');
+        const getImagesRan = getImages();
+        console.log('image test ', getImagesRan);
+        getImagesRan.forEach(image => {
+
+            let imageComponent = new Image(image, this.onSelect);
+            console.log('image comp', imageComponent);
+            displayDiv.appendChild(imageComponent.render());
+        });
+        // this is where .views++ will go
         return dom;
     }
 }
-
-export default Header;
+export default ImageDisplay;
