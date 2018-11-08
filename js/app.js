@@ -1,4 +1,3 @@
-import products from './product-list.js';
 import html from './html.js';
 import RandomPics from './product-list.js';
 
