@@ -1,10 +1,10 @@
 //import productsApi from './products-api.js';
-import survey from './survey.js';
+import survey from './survey-app.js';
 
 survey = [];
 const surveyApi = {
     surveyApi.add(survey),
-}
+};
 
 
 export default surveyApi;

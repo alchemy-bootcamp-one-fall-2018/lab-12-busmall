@@ -1,5 +1,5 @@
 import productsMaster from './products-master.js';
-import survey from './survey.js';
+import survey from './survey-app.js';
 const productsApi = {
     getAll() {
         survey = productsMaster.map(product => {  //was: const survey =...

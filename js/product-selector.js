@@ -1,6 +1,10 @@
 import surveyApi from './survey-api.js';
 import productsApi from './products-api.js';
- 
+
+
+// products in
+// onSurvey in
+
 const survey = productsApi.index(i)
 const index = {
     function getRandomInt(min, max) {
@@ -10,4 +14,4 @@ const index = {
       }
 };
 
-
+export 
