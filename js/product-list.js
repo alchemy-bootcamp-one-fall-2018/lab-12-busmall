@@ -83,24 +83,24 @@ let products = [
     },
 ];
 
+const rngPic1 = Math.floor(Math.random() * products.length);
+const rngPic2 = Math.floor(Math.random() * products.length);
+const rngPic3 = Math.floor(Math.random() * products.length);
 function makeTemplate() {
-    var foobar = Math.floor(Math.random() * products.length);
 
     return html`
     <div id="random-pics">
         <p>Some random pictures</p>
-        <div>${products[foobar].name}</div>
-        <img src="${products[foobar].img}" style="width: 200px">
+        <div>${products[rngPic1].name}</div>
+        <div>${products[rngPic2].name}</div>
+        <div>${products[rngPic3].name}</div>
+        <img src="${products[rngPic1].img}" style="width: 200px">
+        <img src="${products[rngPic2].img}" style="width: 200px">
+        <img src="${products[rngPic3].img}" style="width: 200px">
     </div>
 `;
 }
 
-console.log(products.length, 'array length');
-function getRandomPic() {
-    var foobar = Math.floor(Math.random() * products.length);
-    return products[foobar];
-}
-// console.log(getRandomPic().name, '//Gets random object');
 
 export default class RandomPics {
     render() {
