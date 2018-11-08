@@ -5,21 +5,12 @@ const surveyApi = {
         localStorage.setItem('survey', JSON.stringify(survey));
     },
 
-    add(product) {
-
-        const itemChoice = survey.find(item => {
-            return item.name === product.name;
-        });
-        if(itemChoice) {
-            itemChoice.count++;
+    getAll() {
+        const json = localStorage.getItem('survey');
+        if(json) {
+            survey = JSON.parse(json);
         }
-        else {
-            survey.push({
-                name: product.name,
-                count: 1
-            });
-        }
-
+        return survey;
     }
 };
 

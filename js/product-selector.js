@@ -1,6 +1,7 @@
 import productsApi from './product-api.js';
 import html from './html.js';
 import Image from './images.js';
+import surveyApi from '../survey-api.js';
 
 
 let products = productsApi.getAll();
@@ -27,8 +28,9 @@ function makeTemplate() {
     <section class="image-container"></section>
     `;
 }
-
+let totalCount = 0;
 class Header {
+
     render() {
         const dom = makeTemplate();
         this.imageContainer = dom.querySelector('.image-container');
@@ -45,7 +47,13 @@ class Header {
                     this.imageContainer.removeChild(this.imageContainer.firstChild);
                 }
                 this.renderImages();
-
+                totalCount++;
+                if(totalCount === 25) {
+                    surveyApi.saveSurvey(products);
+                    
+                    window.location.replace('../reports.html');
+                    console.log(totalCount);
+                }
             });
             this.imageContainer.appendChild(image.render());
         }
