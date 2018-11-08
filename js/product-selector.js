@@ -1,5 +1,5 @@
 import html from './html.js';
-import Product from './product-card.js';
+import Product from './product.js';
 
 function makeTemplate() {
     return html`
@@ -19,7 +19,7 @@ class ProductSelector {
             this.list.appendChild(productCard.render());
 
         });
-        console.log(this.products);
+        
         return dom;
     }
 }
