@@ -17,24 +17,22 @@ class ProductDisplay {
     }
 
     render() {
-        let dom = makeTemplate();
-        const ul = dom.querySelector('ul');
-
-        for(let i = 0; i < 3; i++) {
-            let productComp = new Product(this.products[this.randomInt()], this.onSelect, this.onView, this.onUpdate);
-            ul.appendChild(productComp.render());
-        }
-        
+        const dom = makeTemplate();
+        this.ul = dom.querySelector('ul');
+        this.update();
         return dom;
     }
 
     update() {
-        let dom = makeTemplate();
-        const ul = dom.querySelector('ul');
+        
+        while(this.ul.lastElementChild) {
+            this.ul.lastElementChild.remove();
+        }
 
-        ul.removeChild(ul.childNodes[0]);
-       
-        return dom;
+        for(let i = 0; i < 3; i++) {
+            let productComp = new Product(this.products[this.randomInt()], this.onSelect, this.onView, this.onUpdate);
+            this.ul.appendChild(productComp.render());
+        }
     }
 
     randomInt() {

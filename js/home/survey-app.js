@@ -30,10 +30,8 @@ class BusmallApp {
             this.totalRounds++;
             product.clicks++;
             surveyApi.add(product);
-            // for(let i = 0; i < )
-            this.list.removeChild(this.list.childNodes[0]);
-        // this.update();
             console.log(product);
+            productDisplay.update();
         }, product => {
             product.views++;
             console.log(product.views);
