@@ -2,71 +2,42 @@
 import html from './html.js';
 
 
-function makeTemplate() {
+function makeTemplate(product) {
     return html`
-    <section>
-        <div>
-        <img id="product1">
-        </div>
-
-        <div>
-        <img id="product2">
-        </div>
-
-        <div>
-        <img id="product3">
-        </div>
-
-    </section>
-    
+    <li class="list-item">
+        <img src="${product.image}">
+    </li>
     `;
 }
 
 class ImageDisplay {
-    constructor(products){
-        this.products = products;
+    constructor(product, onSelect){
+        this.product = product;
+        this.onSelect = onSelect;
         this.randomImages = [];
+
     }
-    render() {
-        // console.log('hola', products);
-        const dom = makeTemplate();
-    
-        // console.log(dom)
-
-        const product1 = dom.getElementById('product1');
-        const product2 = dom.getElementById('product2');
-        const product3 = dom.getElementById('product3');
-
-        this.getImage();
-
-        //render the three random images
-        product1.src = `${this.randomImages[0].image}`;
-        product2.src = `${this.randomImages[1].image}`;
-        product3.src = `${this.randomImages[2].image}`;
-
-        //event listeners for click
-
-        product1.addEventListener('click', () => {
-            product1.views++;
-            product1.clicks++;
+    render() { 
+        // this.getImage();
+        const dom = makeTemplate(this.product);
+        const listItem = dom.querySelector('.list-item');
+        listItem.addEventListener('click', () => {
+            console.log('product name is ', this.product.name);
+            // product1.views++;
         });
 
-        product2.addEventListener('click', () => {
-            product2.views++;
-            product2.clicks++;
-        });
-
-        product3.addEventListener('click', () => {
-            product3.views++;
-            product3.clicks++;
-        });
-
+        
+        // for(var i = 0; i < 3; i++) {
+        //     listItem.src = this.randomImages[i].image;
+        //     this.randomImages[i].views++;
+        // }
+       
         return dom;
     }
 
     getImage() {
         for(let i = 0; i < 3; i++) {
-            const index = Math.floor(Math.random() * 19);
+            const index = Math.floor(Math.random() * 24);
             this.randomImages.push(this.products[index]);
         }
     }

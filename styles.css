@@ -4,6 +4,15 @@
 
 }
 
-#product1, #product2, #product3 {
+.image-box{
+    display:flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+
+img {
+    display:flex;
+    flex-direction: row;
     width: 100px;
 }
