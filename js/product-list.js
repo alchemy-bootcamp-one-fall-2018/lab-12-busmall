@@ -89,16 +89,21 @@ const rngPic3 = Math.floor(Math.random() * products.length);
 function makeTemplate() {
 
     return html`
-    <div id="random-pics">
-        <p>Some random pictures</p>
+    <div id="random-pic-1" class="random-pics">
         <div>${products[rngPic1].name}</div>
-        <div>${products[rngPic2].name}</div>
-        <div>${products[rngPic3].name}</div>
-        <img src="${products[rngPic1].img}" style="width: 200px">
-        <img src="${products[rngPic2].img}" style="width: 200px">
-        <img src="${products[rngPic3].img}" style="width: 200px">
+        <img src="${products[rngPic1].img}" style="height: 200px">
     </div>
-`;
+
+    <div id="random-pic-2" class="random-pics">
+        <div>${products[rngPic2].name}</div>
+        <img src="${products[rngPic2].img}" style="height: 200px">
+    </div>
+
+    <div id="random-pic-3" class="random-pics">
+        <div>${products[rngPic3].name}</div>
+        <img src="${products[rngPic3].img}" style="height: 200px">
+    </dvi>
+        `;
 }
 
 
