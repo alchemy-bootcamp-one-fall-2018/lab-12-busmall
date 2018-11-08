@@ -20,6 +20,8 @@ export default class App {
     render() {
 
         let dom = makeTemplate();
+        // let firstChannel = this.channels[0];
+        // let viewer = new VideoViewer(firstChannel);
 
 
         let imageSelector = new ImageDisplay(this.images, image =>{
