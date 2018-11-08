@@ -36,6 +36,7 @@ export default class ProductSelector {
             const index = getRandomIndex(copy.length);
             const product = copy[index];
             copy.splice(index, 1);
+            product.views++;
             randomProducts.push(product);
         }
         console.log('there are our products', randomProducts);
@@ -48,8 +49,10 @@ export default class ProductSelector {
         
         randomProducts.forEach(product => {
             const productCard = new ProductCard(product, selected => {
-                console.log(selected);
-
+                console.log('clicked', selected);
+                selected.clicks++;
+                console.log('clicked plus', selected.clicks);
+                
                 this.clearProducts();
                 this.showRandomProducts();
             });
@@ -68,7 +71,7 @@ export default class ProductSelector {
         const dom = makeTemplate();
         this.list = dom.querySelector('ul');
         this.showRandomProducts();
-        
+
         return dom;
         
     }

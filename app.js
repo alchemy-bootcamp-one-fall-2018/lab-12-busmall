@@ -21,12 +21,12 @@ class SurveyApp {
     render() {
         const dom = makeTemplate();
         const selectorSection = dom.querySelector('#product-selector');
-        // const productSelector = new ProductSelector(products);
+        const productSelector = new ProductSelector(products);
 
-        const productSelector = new ProductSelector(this.products, product => {
-            product.count++;
+        // const productSelector = new ProductSelector(this.products, product => {
+        //     product.count++;
             
-        });
+        // });
         selectorSection.appendChild(productSelector.render());
         
         
