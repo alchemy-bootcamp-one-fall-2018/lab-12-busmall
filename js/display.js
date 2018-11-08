@@ -15,12 +15,12 @@ class ImageSelector {
     }
 
     render() {
-        let dom = makeTemplate();
-        const div = dom.querySelector('div');
-        imageRandom = getImages();
-        imageRandom.forEach(image => {
-            let imageComp = new Image(image.image, this.onSelect);
-            div.appendChild(imageComp.render());
+        const dom = makeTemplate();
+        const div = dom.querySelector('.image-list');
+        const getRandom = getImages();
+        getRandom.forEach(image => {
+            let imageComponent = new Image(image, this.onSelect);
+            div.appendChild(imageComponent.render());
         });
         //.views++
         return dom;
