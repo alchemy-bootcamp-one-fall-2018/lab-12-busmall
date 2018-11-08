@@ -22,7 +22,7 @@ class ImageSelector {
             let imageComp = new Image(image.image, this.onSelect);
             div.appendChild(imageComp.render());
         });
-        .views++
+        //.views++
         return dom;
     }
 }
