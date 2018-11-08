@@ -33,7 +33,7 @@ class ProductApp {
             surveyApi.add(product);
 
             if(this.totalRounds === 25) {
-                window.location.href = '../user-summary.html';
+                window.location = './user-summary.html';
             }
             productDisplay.update();
         }, 
