@@ -1,3 +1,4 @@
+import surveyApi from './survey-api.js';
 
 function makeTemplate(results) {
     let html = '';
@@ -15,20 +16,29 @@ function makeTemplate(results) {
 }
 
 class UserSummary {
-    constructor() {
-        
+    constructor() {        
         const resultsHtml = document.getElementById('resultsHtml');
         
         if(resultsHtml){
-            const storedResults = JSON.parse(localStorage.getItem('results'));
+            const storedResults = surveyApi.getSession();
+            
             resultsHtml.innerHTML = makeTemplate(storedResults);
         }
     }
     
     render(bool) {
+        const goToChart = document.getElementById('goToChart');
+        
         if(bool){
             window.location = '../html/user-summary.html';
         }
+
+        if(goToChart) {
+            goToChart.addEventListener('click', () => {
+                window.location = '../html/data-chart.html';
+            });
+        }
+
     }
 }
 

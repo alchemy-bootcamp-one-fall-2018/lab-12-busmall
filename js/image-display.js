@@ -1,12 +1,14 @@
 import Chosen from './chosen.js';
+import surveyApi from './survey-api.js';
+import productApi from './product-api.js';
 
-let lastImageSet = [];
 let count = 0;
+let lastIndex = [];
 
-function makeTemplate(imageList) {
-    let html = '<h1>Choose Wisely, you cannot go back!</h1>';
+function makeTemplate(imageSet) {
+    let html = '<h1>Choose wisely, you cannot go back!</h1>';
     
-    imageList.forEach(item => {
+    imageSet.forEach(item => {
         html += `
         <img name="${item.name}" class="product" src="${item.image_url}">`;
     });
@@ -14,44 +16,62 @@ function makeTemplate(imageList) {
     return html;
 }
 
-class DisplayImage {
-    constructor(imageList) {
-        this.imageList = imageList;
-    }
+const DisplayImage = {
+    init() {
+        this.imageList = surveyApi.getDisProds();
+        this.imageList = this.imageList.map(image => {
+            if(!image.views) {
+                image.views = 0;
+            }
+            return image;
+        });
+        surveyApi.storeDisProd(this.imageList);
+
+        this.session = productApi.getAll();
+        
+        this.session = this.session.map(product => {
+            product.views = 0;
+            return product;
+        });
+        
+        surveyApi.storeSession(this.session);
+    },
     
     render() {
         const imageSection = document.getElementById('imageSection');
         let imageSet = [];
+        let currentIndex = [];
+        this.session = surveyApi.getSession();
         
-        if(count < 25) {
+        if(count < 4) {
             while(imageSet.length < 3) {
                 let randomIndex = Math.floor(Math.random() * this.imageList.length);
+                this.imageList = surveyApi.getDisProds();
                 
-                if(imageSet.includes(this.imageList[randomIndex]) || lastImageSet.includes(this.imageList[randomIndex])) {
+                if(currentIndex.includes(randomIndex) || lastIndex.includes(randomIndex)){
                     randomIndex = Math.floor(Math.random() * this.imageList.length);
                 } else {
+                    currentIndex.push(randomIndex);
                     imageSet.push(this.imageList[randomIndex]);
-    
-                    this.displayedProducts = this.imageList[randomIndex];
-    
-                    if(this.displayedProducts.views > 0) {
-                        this.displayedProducts.views = this.displayedProducts.views + 1;
-                    } else {
-                        this.displayedProducts.views = 1;
-                    }
+
+                    this.imageList[randomIndex].views = this.imageList[randomIndex].views + 1;
+                    surveyApi.storeDisProd(this.imageList);
+
+                    this.session[randomIndex].views++;
+                    surveyApi.storeSession(this.session);
                 }
             }
             
-            lastImageSet = imageSet;
+            lastIndex = currentIndex;
             if(imageSection) {
                 imageSection.innerHTML = makeTemplate(imageSet);
             }
-            const chosen = new Chosen;
-            chosen.render();
+            
+            Chosen.render();
             count++;
-
         }
+
     }
-}
+};
 
 export default DisplayImage;

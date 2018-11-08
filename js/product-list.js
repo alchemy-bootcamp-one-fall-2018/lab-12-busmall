@@ -1,15 +1,15 @@
 const productList = [
     {
-        'name': 'Bag',
-        'image_url': '../assets/bag.jpg'
+        name: 'Bag',
+        image_url: '../assets/bag.jpg'
     },
     {
-        'name': 'Banana',
+        name: 'Banana',
         'image_url': '../assets/banana.jpg'
     },
     {
-        'name': 'Bathroom',
-        'image_url': '../assets/bathroom.jpg'
+        name: 'Bathroom',
+        image_url: '../assets/bathroom.jpg'
     },
     {
         name: 'Boots',
