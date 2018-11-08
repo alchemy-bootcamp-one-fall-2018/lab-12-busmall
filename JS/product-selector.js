@@ -1,6 +1,7 @@
 import productsApi from './products-api.js';
 import html from './html.js';
 import Image from './image.js';
+import surveyApi from './survey-api.js';
 
 
 let products = productsApi.getAll();
@@ -49,8 +50,9 @@ class Header {
                 }
                 this.renderImages();
                 totalCount += 1;
-                if(totalCount === 5) {
-                    window.location.replace('./reports.html');
+                if(totalCount === 25) {
+                    surveyApi.saveSurvey(products);
+                    window.location.replace('../reports.html');
                 }
                 console.log('totalCount', totalCount);
             });
@@ -58,6 +60,5 @@ class Header {
         }
     }
 }
-
 
 export default Header;
