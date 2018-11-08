@@ -6,11 +6,13 @@ const products = productApi.getAll();
 
 function makeTemplate() {
     return html`
-        <h1>Pick a product!</h1>
+        <header>
+            <h1>Busmall</h1>
+        </header>
 
         <main>
             <section id="product-selector">
-                <h2>Vote for your favorite</h2>
+                <h2>Vote for your favorite product!</h2>
             </section>
         </main>
     `;

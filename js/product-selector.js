@@ -25,6 +25,7 @@ class ProductSelector {
             };
         });
         this.imagesPer = 3;
+        this.round = 0;
     }
 
     getRandomProducts() {
@@ -38,6 +39,9 @@ class ProductSelector {
             randomProducts.push(product);
             product.views++;
         }
+        this.round++;
+        console.log(this.round);
+        
         return randomProducts;
     }
 
@@ -66,6 +70,9 @@ class ProductSelector {
         const dom = makeTemplate();
         this.list = dom.querySelector('ul');
         this.showRandomProducts();
+        
+        //move the last products, splice?, so they are always random
+        //keep clicks and views in localStorage? - go look at lab; 25 rounds
 
         return dom;
     }
