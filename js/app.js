@@ -1,11 +1,35 @@
-//import productsApi from './products-api.js';
-import Header from './display.js';
-
-//const allProducts = productsApi.getAll();
-
-//console.log(allProducts);
+import productsApi from './products-api.js';
+import ImageDisplay from './display.js';
+import html from './html.js';
+import surveyApi from './survey-api.js';
 
 
-const header = new Header();
-const root = document.getElementById('root');
-root.appendChild(header.render());
+function makeTemplate() {
+    return html`
+        <h1> Survey page </h1>
+
+        <div class="image-viewer"> </div>
+
+    `;
+}
+export default class App {
+    constructor() {
+        this.images = productsApi.getAll();
+    }
+
+    render() {
+
+        let dom = makeTemplate();
+
+
+        let imageSelector = new ImageDisplay(this.images, image =>{
+            image.count++;
+            surveyApi.saveSurvey();
+        });
+
+        let imageViewer = dom.querySelector('.image-viewer');
+        imageViewer.appendChild(imageSelector.render());
+        return dom;
+    }
+
+}

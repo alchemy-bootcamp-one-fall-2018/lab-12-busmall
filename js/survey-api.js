@@ -1,18 +1,11 @@
 let survey = [];
 
-function saveSurvey() {
-    localStorage.setItem('survey', JSON.stringify(survey));
-}
-const surveyApi = {
 
-   
-    get() {
-        const json = localStorage.getItem('survey');
-        if(json) {
-            survey = JSON.parse(json);
-        }
-        return survey;
-    }, 
+const surveyApi = {
+    saveSurvey() {
+        localStorage.setItem('survey', JSON.stringify(survey));
+    },
+
 
 
     add(product) {
@@ -21,16 +14,15 @@ const surveyApi = {
             return item.name === product.name;
         });
         if(itemChoice) {
-            itemChoice.quantity++;
+            itemChoice.count++;
         }
         else {
             survey.push({
                 name: product.name,
-                quantity: 1
+                count: 1
             });
         }
 
-        saveSurvey();
     }
     
 };
