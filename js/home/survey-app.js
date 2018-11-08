@@ -4,7 +4,6 @@ import surveyApi from '../survey-api.js';
 import ProductDisplay from './ProductDisplay.js';
 import html from '../html.js';
 
-
 function makeTemplate() {
     return html`
     <header>
@@ -31,9 +30,13 @@ class BusmallApp {
             this.totalRounds++;
             product.clicks++;
             surveyApi.add(product);
+            // for(let i = 0; i < )
+            this.list.removeChild(this.list.childNodes[0]);
+        // this.update();
             console.log(product);
         }, product => {
             product.views++;
+            console.log(product.views);
         });
 
         if(this.totalRounds === 25) {
