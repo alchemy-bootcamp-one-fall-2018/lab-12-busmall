@@ -8,5 +8,20 @@ image {
 }
 
 .product-card {
-    border: 2px solid red;
+    border: 2px solid black;
+
+}
+
+ul {
+    display: inline-flex;
+    direction: row;
+    list-style: none;
+    text-align: center;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+image {
+    align-items: center;
+    padding: 20px;
 }
