@@ -15,9 +15,11 @@ function getProducts() {
     while(display.length < 3) {
         let index = getRandomInt(products.length); 
         if(display.includes(products[index]) === false) {
-            products[index].views += 1;
-            display.push(products[index]);
-        } 
+            if(hold.includes(products[index]) === false) {
+                products[index].views += 1;
+                display.push(products[index]);
+            }   
+        }
     }
     return display;
 }
@@ -29,6 +31,7 @@ function makeTemplate() {
     `;
 }
 let totalCount = 0;
+let hold = [];
 class Header {
 
     render() {
@@ -43,6 +46,8 @@ class Header {
         for(var i = 0; i < display.length; i++) {
             const image = new Image(display[i], selected => {
                 selected.clicks += 1;
+                hold = display;
+                console.log(hold);
                 while(this.imageContainer.firstChild) {
                     this.imageContainer.removeChild(this.imageContainer.firstChild);
                 }
@@ -50,7 +55,7 @@ class Header {
                 totalCount++;
                 if(totalCount === 25) {
                     surveyApi.saveSurvey(products);
-                    
+
                     window.location.replace('../reports.html');
                     console.log(totalCount);
                 }

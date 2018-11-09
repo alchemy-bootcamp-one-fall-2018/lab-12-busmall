@@ -21,7 +21,7 @@ var data = [{
 
 {
     name:'pet-sweep',
-    image: '../assets/pet-sweep.png',
+    image: '../assets/pet-sweep.jpg',
     views: 0,
     clicks: 0
 },
@@ -124,12 +124,12 @@ var data = [{
     clicks: 0
 },
 
-// {
-//     name: 'sweep',
-//     image: '../assets/sweep.jpg',
-//     views: 0,
-//     clicks: 0
-// },
+{
+    name: 'sweep',
+    image: '../assets/sweep.png',
+    views: 0,
+    clicks: 0
+},
 
 {
     
