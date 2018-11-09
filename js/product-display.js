@@ -1,5 +1,6 @@
 import html from './html.js';
 import ProductCard from './product-card.js';
+import surveyApi from './survey-api.js';
 
 function makeTemplate() {
     return html`
@@ -14,23 +15,23 @@ function getRandomIndex(length) {
 class ProductDisplay {
     constructor(products) {
         this.products = products;
-        this.survey = products.map(product => {
-            return {
-                name: product.name,
-                image: product.image,
-                views: 0,
-                clicks: 0
-            };
-        });
+        // this.survey = products.map(product => {
+        //     return {
+        //         name: product.name,
+        //         image: product.image,
+        //         views: 0,
+        //         clicks: 0
+        //     };
+        // });
         this.imagesPer = 3;
-        this.roundsPerSurvey = 5;
+        this.roundsPerSurvey = 25;
         this.totalRounds = 0;
         this.lastProducts = null;
     
     }
 
     getRandomProducts() {
-        const copy = this.survey.slice();
+        const copy = this.products.slice();
 
         if(this.lastProducts) {
             this.lastProducts.forEach(product => {
@@ -75,8 +76,12 @@ class ProductDisplay {
                 }
                 else {
                     console.log('survey count', this.totalRounds);
-                    alert('Thank you for completing the survey!');
-                    console.log();
+                    alert('Thank you for completing the survey! Click OK to see the results.');
+                    surveyApi.saveProducts(this.products);
+                    // window .redirect to report html
+                    window.location = '../user-summary.html';
+
+                    
                 }
                 
             });
