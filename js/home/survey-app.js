@@ -33,7 +33,7 @@ class BusmallApp {
             surveyApi.add(product);
 
             if(this.totalRounds === 26) {
-                window.location = '../../user.html';
+                window.location = '/user.html';
             }
 
             console.log(product);
