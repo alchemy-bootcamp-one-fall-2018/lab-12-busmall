@@ -27,12 +27,10 @@ class ProductDisplay {
             const randomIndex = this.randomInt();
             const products = this.products;
             if(randomThree.includes(products[randomIndex]) === true) {
-                console.log('duplicate found');
                 i--;
             }
             else {
                 randomThree.push(products[randomIndex]);
-                console.log('random three is', randomThree); 
             }
         }
         return randomThree;
