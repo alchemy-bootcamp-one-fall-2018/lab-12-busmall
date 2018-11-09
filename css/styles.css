@@ -1,0 +1,20 @@
+body {
+    text-align: center;
+    margin: auto;
+}
+
+#imageSection {
+    border: 2px solid black;
+    width: 90%;
+    margin: auto;
+    margin-top: 5%;
+}
+
+img {
+    width: 150px;
+    margin: 1%;
+}
+
+img:hover {
+    border: 2px solid rgb(90, 218, 65);
+}
