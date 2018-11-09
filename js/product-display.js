@@ -23,9 +23,9 @@ class ProductDisplay {
 
         divItem.addEventListener('click', () => {
             product.clicks++;
-//            console.log('hear click', product);
+            console.log('hear click', product);
         });
-                
+              
         return dom;
     }
 }

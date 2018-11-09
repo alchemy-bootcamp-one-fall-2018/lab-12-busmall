@@ -16,6 +16,7 @@ class ProductSelector {
         this.products = products;
         this.onSelect = onSelect;
         this.lastThree = [];
+        this.viewCount = 0; //
     }
 
     getRandomIndex(arrayLength) {
@@ -25,29 +26,34 @@ class ProductSelector {
     getTrio() {
         const randomProduct = []; 
         const products = this.products;
-
+        this.viewCount++;
+        console.log(this.viewCount);
         for(let i = 0; i < 3; i++) {
             const nouveauIndex = this.getRandomIndex(products.length);
 
             const product = products[nouveauIndex];
             if(randomProduct.includes(product) || this.lastThree.includes(product)) {
                 i--;
-//                console.log('dupl');
+                console.log('dupl');
             } else {
-                for(let j = 0; j < 25; j++) {
-                    randomProduct.push(products[nouveauIndex]);
+               // for(let j = 0; j < 25; j++) { // my attempt at stopping at 25
+                // while(this.viewCount < 25) {
+                    
 
-                    // product.views++;
+                // }   
+                randomProduct.push(products[nouveauIndex]);
+
+                   // product.views++;
                     // console.log('one turn', product.views);
                     // break;
-                }
+               // }
             }
         }
 
         // view count, repeat 25x then new message and new button "click to view" new pg 
         // with message w/counts in it
         this.lastThree = randomProduct;
-     //   console.log('last three', this.lastThree);
+        console.log('last three', this.lastThree);
         return randomProduct;
     }
     displayRandomThree() {
@@ -65,53 +71,9 @@ class ProductSelector {
         const dom = makeTemplate();
         this.productsList = dom.querySelector('div');
         this.displayRandomThree();
-        // for(let i = 0; i < this.products.length; i++) {
-        //     this.add(this.products[i]);
-        // }
-
+ 
         return dom;
     }
 }
 
 export default ProductSelector;
-
-// const survey = productsApi.index(i)
-// const index = {
-//     function getRandomInt(min, max) {
-//             min = Math.ceil(0);
-//             max = Math.floor(19);
-//             return Math.floor(Math.random() * (19 - 0)) + min;
-//       }
-// };
-
-
-
-//////////////////
-
-
-// import Survey from './survey-app.js';
-
-// function makeTemplate() {
-//     return html`
-//         <ul class="survey-list"></ul>
-//     `;
-// }
-
-// export default class productSelector {
-//     constructor(survey, onSelect) {
-//         this.survey = survey;
-//         this.onSelect = onSelect;
-//     }
-
-//     render() {
-//         let dom = makeTemplate();
-//         const ul = dom.querySelector('ul');
-
-//         this.survey.forEach(survey => {
-//             let surveyComp = new Survey(survey, this.onSelect);
-//             ul.appendChild(surveyComp.render());
-//         });
-        
-//         return dom;
-//     }
-// }

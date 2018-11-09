@@ -1,6 +1,6 @@
 // //import productsApi from './products-api.js';
-//import productSelector from './product-selector.js';
-//import survey from './survey-app.js';
+// import productSelector from './product-selector.js';
+// import survey from './survey-app.js';
 
 // let survey = [];
 
@@ -33,23 +33,23 @@
 
 // export default productsApi;
 
-////////////////////////////////
+// //////////////////////////////
 
 // let json = window.localStorage.getItem('survey');
 
-// const stuff = 'survey';
-// survey = null;
+// // const stuff = 'survey';
+// // survey = null;
 
-// if(json) {
-//     survey = JSON.parse(json);
-// } 
-// else {
-//     survey = createSurvey();
-// }
+// // if(json) {
+// //     survey = JSON.parse(json);
+// // } 
+// // else {
+// //     survey = createSurvey();
+// // }
 
-// function createSurvey() {
-//     return; //
-//}
+// // function createSurvey() {
+// //     return; //
+// // }
 
 // const productRange = productSelector;
 // const surveyTrio = [];
