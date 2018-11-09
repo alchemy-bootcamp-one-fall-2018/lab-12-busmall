@@ -5,6 +5,10 @@ function saveItems() {
 }
 
 const surveyApi = {
+    getAll() {
+        return products;
+    },
+
     add(product) {
         products.push(product);
         saveItems();
