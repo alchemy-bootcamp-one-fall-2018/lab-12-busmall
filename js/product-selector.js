@@ -11,40 +11,39 @@ function makeTemplate() {
     `;
 }
 
-
 let workingArray = products.getAll();
 
-
-//make product card clsss ProductCArd, constructor (product) tis.this=product on it's own page, sent product-selector
-
-function getRandomInt(max) {
+function getRandomInt() {
     return Math.floor(Math.random() * Math.floor(19));
 }
 
-let index = getRandomInt(workingArray.length);
-let selectedImage = workingArray[index];
 
-//console.log('image', selectedImage);
-
-
-
-//being run by app (the parent component)
 class ProductSelector {
-        
+    threeImages(){
+        for(let i = 0; i < 3; i++) {
+            let index = getRandomInt(workingArray.length);
+            let selectedImage = workingArray[index];
+            
+            const productCardComponent = new ProductCard(selectedImage, () => {
+                this.threeImages();
+            }); //this is this.image in product-card
+            const image = productCardComponent.render(); //aka new ProductCard (sent to productCard)
+            
+            this.productCardContainer.appendChild(image);  //(child from product-ProductCard.js)
+        }  
+
+    }
+    
     render() {
         const dom = makeTemplate();   // dom now is the html above - that whole bit
         console.log(dom.querySelector('#product-card-container'));     // targeting the place we'll put the stuff
         
-        const productCardContainer = dom.querySelector('#product-card-container'); //now have a variable that is the line above (where stuff goes)
-        const productCardComponent = new ProductCard(selectedImage);
-        const image = productCardComponent.render(); //aka new ProductCard (sent to productCard)
-        
-        productCardContainer.appendChild(image);  //(child from product-ProductCard.js)
+        this.productCardContainer = dom.querySelector('#product-card-container'); //now have a variable that is the line above (where stuff goes)
+        this.threeImages();       
 
         return dom;
     }
 
 }
-   
 
 export default ProductSelector;

@@ -7,15 +7,19 @@ function makeTemplate(image) {
 }
 
 class ProductCard {
-    constructor(image) {
+    constructor(image, onSelect) {
         this.image = image;
-       
+        this.onSelect = onSelect;
     }
 
     render() {
-        const dom = makeTemplate(this.image);
+        const dom = makeTemplate(this.image); 
+        const image = dom.querySelector('.pic');
         
-        
+        image.addEventListener('click', () => {
+            this.onSelect();
+        });
+
         
         return dom;
     }
