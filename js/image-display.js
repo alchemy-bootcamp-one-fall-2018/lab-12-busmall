@@ -10,7 +10,7 @@ function makeTemplate(imageSet) {
     
     imageSet.forEach(item => {
         html += `
-        <img name="${item.name}" class="product" src="${item.image_url}">`;
+        <img name="${item.name}" class="product" src="assets/${item.image_url}">`;
     });
 
     return html;
