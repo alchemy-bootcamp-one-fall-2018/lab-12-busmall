@@ -1,19 +1,19 @@
 import html from './html.js';
 
-function makeTemplate() {
+function makeTemplate(product) {
     return html`
         <li>
-            This is an image.
+            <img src="./${product.image}" class="product">
         </li>
-
     `;
-
 }
 
 class Image {
+    constructor(product) {
+        this.product = product;
+    }
     render() {
-        const dom = makeTemplate();
-
+        const dom = makeTemplate(this.product);
         return dom;
     }
 }
