@@ -2,9 +2,10 @@ body {
     background-color: lightblue;
 }
 .app {
-    background: lightgreen;
+    background: darkgreen;
     border: 10px solid darkblue;
     border-radius: 200px;
+    color: white;
 }
 h1 {
     text-align: center;
@@ -13,10 +14,8 @@ p {
     text-align: center;
 }
 .random-pics-container {
-    margin: 0 auto;
-    border: 10px solid red;
     display: flex;
-    justify-content: center;
+    justify-content: space-around;
 }
 .random-pics {
     display: inline-block;

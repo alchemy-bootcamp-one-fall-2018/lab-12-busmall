@@ -1,17 +1,15 @@
 import html from './html.js';
-import RandomPics from './product-list.js';
+import productApi from './products-api.js';
+import ImageSelector from './image-selector.js';
+
+const products = productApi.getAll();
 
 function makeTemplate() {
     return html`
     <div class="app">
-        <header>
-            <h1>Pick 1 of 3 :)</h1>
-        </header>
-        <p>There will be 3 random pictures shown.  Of the three pictures shown, please pick the one that you like best.</p>
+        <h1>Marketing App</h1>
+        <section class="image-selector"></section>
     </div>
-
-        
-            <section class="random-pics-container"></section>
         
 `;
 }
@@ -19,17 +17,14 @@ function makeTemplate() {
 class App {
     render() {
         const dom = makeTemplate();
-        const randomPicsContainer = dom.querySelector('.random-pics-container');
-        const randomPics = new RandomPics();
-        randomPicsContainer.appendChild(randomPics.render());
-
+        const imageSelectorContainer = dom.querySelector('.image-selector');
+        const imageSelector = new ImageSelector(products);
+        imageSelectorContainer.appendChild(imageSelector.render());
         return dom;
     }
 }
-
 
 const root = document.getElementById('root');
 const app = new App();
 const dom = app.render();
 root.appendChild(dom);
-
