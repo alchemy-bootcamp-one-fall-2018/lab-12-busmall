@@ -15,8 +15,10 @@ function getProducts() {
     while(display.length < 3) {
         let index = getRandomInt(products.length); 
         if(display.includes(products[index]) === false) {
-            products[index].views += 1;
-            display.push(products[index]);
+            if(hold.includes(products[index]) === false) {
+                products[index].views += 1;
+                display.push(products[index]);
+            }
         } 
     }
     return display;
@@ -30,13 +32,12 @@ function makeTemplate() {
 }
 
 let totalCount = 0;
+let hold = [];
 
 class Header {
     render() {
         const dom = makeTemplate();
         this.imageContainer = dom.querySelector('.image-container');
-        
-
         this.renderImages();
         return dom;
     }
@@ -44,6 +45,7 @@ class Header {
         let display = getProducts();
         for(var i = 0; i < display.length; i++) {
             const image = new Image(display[i], selected => {
+                hold = display;
                 selected.clicks += 1;
                 while(this.imageContainer.firstChild) {
                     this.imageContainer.removeChild(this.imageContainer.firstChild);
@@ -54,7 +56,6 @@ class Header {
                     surveyApi.saveSurvey(products);
                     window.location.replace('../reports.html');
                 }
-                console.log('totalCount', totalCount);
             });
             this.imageContainer.appendChild(image.render());
         }
