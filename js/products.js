@@ -13,7 +13,7 @@ export default [
     },
     {
         name: 'bathroom',
-        image: 'banana.jpg',
+        image: 'bathroom.jpg',
         clicks: 0,
         views: 0,
     },

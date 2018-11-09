@@ -26,6 +26,7 @@ export default class ProductSelector {
     
         this.imagesPer = 3;
         this.count = 0;
+        this.lastProducts = [];
         
     }
     
@@ -37,11 +38,18 @@ export default class ProductSelector {
             const index = getRandomIndex(copy.length);
             const product = copy[index];
             copy.splice(index, 1);
-            product.views++;
-        
-            randomProducts.push(product);
-            
+
+            if(this.lastProducts.includes(product)) {
+                i--;
+                continue;
+            }
+            else {
+                randomProducts.push(product);
+                // product.views++;
+            }
+            this.survey[index].views++;
         }
+        this.lastProducts = randomProducts;
         return randomProducts;
     }
 
@@ -51,7 +59,10 @@ export default class ProductSelector {
         
         randomProducts.forEach(product => {
             const productCard = new ProductCard(product, selected => {
-                selected.clicks++;
+                // selected.clicks++;
+                const index = this.survey.indexOf(selected);
+                this.survey[index].clicks++;
+                console.log('survey', this.survey);
 
                 this.count++;
                 if(this.count === 25) {
@@ -62,8 +73,7 @@ export default class ProductSelector {
                 this.showRandomProducts();
             });
             this.list.appendChild(productCard.render());
-        }
-        ); 
+        }); 
     }
 
     clearProducts() {
