@@ -1,82 +1,122 @@
 export default [
     {
-        name: 'R2D2 suitcase',  
-        image: '../../assets/bag.jpg'
+        name: 'R2D2 suitcase',
+        image: 'bag.jpg',
+        viewed: 0,
+        clicked: 0
     },
     {
         name: 'banana slicer',  
-        image: '../../assets/banana.jpg'
+        image: 'banana.jpg',
+        viewed: 0,
+        clicked: 0
     },
     {
         name: 'iPod and toilet paper holder',  
-        image: '../../assets/bathroom.jpg'
+        image: 'bathroom.jpg',
+        viewed: 0,
+        clicked: 0
     },
     {
         name: 'peeptoe rainboots',  
-        image: '../../assets/boots.jpg'
+        image: 'boots.jpg',
+        viewed: 0,
+        clicked: 0
     },
     {
         name: 'tiny breakfast kitchenette',  
-        image: '../../assets/breakfast.jpg'
+        image: 'breakfast.jpg',
+        viewed: 0,
+        clicked: 0
     },
     {
         name: 'meatball shaped bubblegum',  
-        image: '../../assets/bubblegum.jpg'
+        image: 'bubblegum.jpg',
+        viewed: 0,
+        clicked: 0
     },
     {
         name: 'chair with convex seat',  
-        image: '../../assets/chair.jpg'
+        image: 'chair.jpg',
+        viewed: 0,
+        clicked: 0
     },
     {
         name: 'cthulhu action figure',  
-        image: '../../assets/cthulhu.jpg'
+        image: 'cthulhu.jpg',
+        viewed: 0,
+        clicked: 0
     },
     {
         name: 'dogbill',  
-        image: '../../assets/dog-duck.jpg'
+        image: 'dog-duck.jpg',
+        viewed: 0,
+        clicked: 0
     },    
     {
         name: 'dragon meat',  
-        image: '../../assets/dragon.jpg'
+        image: 'dragon.jpg',
+        viewed: 0,
+        clicked: 0
     },
     {
         name: 'pen-handled utensil set',  
-        image: '../../assets/pen.jpg'
+        image: 'pen.jpg',
+        viewed: 0,
+        clicked: 0
     },
     {
         name: 'dog bootie floor sweeper',  
-        image: '../../assets/pet-sweep.jpg'
+        image: 'pet-sweep.jpg',
+        viewed: 0,
+        clicked: 0
     },
     {
         name: 'pizza cutting scissors',  
-        image: '../../assets/scissors.jpg'
+        image: 'scissors.jpg',
+        viewed: 0,
+        clicked: 0
     },
     {
         name: 'plush man-eating shark sleeping bag',  
-        image: '../../assets/shark.jpg'
+        image: 'shark.jpg',
+        viewed: 0,
+        clicked: 0
     },
     {
         name: 'baby pajamas with dusters',  
-        image: '../../assets/sweep.jpg'
+        image: 'sweep.png',
+        viewed: 0,
+        clicked: 0
     },
     {
         name: 'plush tauntaun sleeping bag',  
-        image: '../../assets/tauntaun.jpg'
+        image: 'tauntaun.jpg',
+        viewed: 0,
+        clicked: 0
     },
     {
         name: 'unicorn meat',  
-        image: '../../assets/unicorn.jpg'
+        image: 'unicorn.jpg',
+        viewed: 0,
+        clicked: 0
     },
     {
         name: 'tentacle usb',  
-        image: '../../assets/usb.gif'
+        image: 'usb.gif',
+        viewed: 0,
+        clicked: 0
     },
     {
         name: 'watering can with backwards spout',  
-        image: '../../assets/water-can.jpg'
+        image: 'water-can.jpg',
+        viewed: 0,
+        clicked: 0
     },
     {
         name: 'impossible wine glass',  
-        image: '../../assets/wine-glass.jpg'
+        image: 'wine-glass.jpg',
+        viewed: 0,
+        clicked: 0
     },
 ];
