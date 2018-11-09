@@ -18,6 +18,7 @@ class ProductCard {
         
         image.addEventListener('click', () => {
             this.onSelect();
+            window.location.reload();
         });
 
         
