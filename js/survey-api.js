@@ -7,7 +7,7 @@ function saveSurvey(survey) {
 const surveyApi = {
     add(survey) {
 
-        console.log('api surbey', survey);
+        console.log('api survey', survey);
 
         saveSurvey(survey);        
     },
@@ -21,4 +21,4 @@ const surveyApi = {
 
 };
 
-export default surveyApi; 
+export default surveyApi;
