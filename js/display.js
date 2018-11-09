@@ -60,6 +60,7 @@ class ImageDisplay {
                 while(this.displayDiv.firstChild) {
                     this.displayDiv.removeChild(this.displayDiv.firstChild);
                 }
+                console.log(surveyApi.getAll());
 
                 this.renderImages();
                 totalCount++;
