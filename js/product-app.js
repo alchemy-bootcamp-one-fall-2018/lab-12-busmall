@@ -1,5 +1,12 @@
-import productsApi from '../js/product-api.js';
+import Header from './product-selector.js';
 
-const products = productsApi.getAll();
+const header = new Header();
+const root = document.getElementById('root');
+root.appendChild(header.render());
 
-export default products;
+
+
+
+
+
+
