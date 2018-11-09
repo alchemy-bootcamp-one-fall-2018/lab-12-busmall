@@ -18,7 +18,7 @@ let workingArray = products.getAll();
 //make product card clsss ProductCArd, constructor (product) tis.this=product on it's own page, sent product-selector
 
 function getRandomInt(max) {
-    return Math.floor(Math.random() * Math.floor(max) + 1);
+    return Math.floor(Math.random() * Math.floor(19));
 }
 
 let index = getRandomInt(workingArray.length);
