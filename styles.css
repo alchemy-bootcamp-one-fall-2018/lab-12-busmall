@@ -1,0 +1,23 @@
+#root-image-display{
+    display:flex;
+    flex-direction: row;
+
+}
+
+.image-box{
+    display:flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+
+img {
+    display:flex;
+    flex-direction: row;
+    width: 100px;
+}
+
+li{
+    list-style: none;
+    display:block;
+}
