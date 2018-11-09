@@ -1,5 +1,5 @@
-import app from './chart-app.js';
+import ReportApp from './chart-app.js';
 
-const app = new App();
+const app = new ReportApp();
 const root = document.getElementById('root');
 root.appendChild(app.render());

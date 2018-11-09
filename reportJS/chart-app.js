@@ -1,6 +1,6 @@
-import surveyApi from './js/survey-api.js';
+import surveyApi from '../js/survey-api.js';
 import html from '../js/html.js';
-//next lower components
+import SurveyChart from './chart-view.js';
 
 function makeTemplate() {
     return html`
@@ -8,15 +8,20 @@ function makeTemplate() {
     <div class="chart-viewer"> </div>
     `;
 }
-export default class App{
+export default class ReportApp {
 
     constructor() {
         this.surveyData = surveyApi.getAll();
     }
 
     render() {
-        let dom =  makeTemplate();
-        let chartSection = dom.querySelector('.chart-viewer');
-        chartSection.appendChild() 
+        let dom = makeTemplate();
+
+        const chartSection = dom.querySelector('.chart-viewer');
+        const chart = new SurveyChart(this.surveyData);
+        chartSection.appendChild(chart.render());
+        return dom;
+        // new instance of child comp of chart
     }
+
 }
