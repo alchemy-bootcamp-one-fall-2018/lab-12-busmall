@@ -26,4 +26,11 @@ class ProductSelector {
         return dom;
     }
 }
+
+function showThree () {
+    var index = showThree(copy.length);
+    var product = copy[index];
+}
+
+
 export default ProductSelector;

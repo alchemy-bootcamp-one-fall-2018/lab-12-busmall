@@ -5,7 +5,7 @@ export default [
     },
     {
         name: 'banana slicer',  
-        image: '.banana.jpg'
+        image: 'banana.jpg'
     },
     {
         name: 'iPod and toilet paper holder',  
@@ -57,7 +57,7 @@ export default [
     },
     {
         name: 'baby pajamas with dusters',  
-        image: 'sweep.jpg'
+        image: 'sweep.png'
     },
     {
         name: 'plush tauntaun sleeping bag',  

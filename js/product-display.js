@@ -4,7 +4,7 @@ function makeTemplate(product) {
     // console.log('test', product.name);
     return html`
         <li class="product-item">
-            <h1>product-display</h1>
+            <h1>${product.name}</h1>
             <img src="assets/${product.image}">
         </li>
   `;      

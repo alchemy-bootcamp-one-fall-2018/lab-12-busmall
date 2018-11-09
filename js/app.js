@@ -25,5 +25,39 @@ class App {
     }
 }
 
+function getThree() {
+    var copy = products.slice();
+    function getRandomProduct() {
+        var index = getRandomIndex(copy.length);
+        var product = copy[index];
+        copy.splice(index, 1);
+        
+        return product;
+    }
+    
+    var three = [
+        getRandomProduct(),
+        getRandomProduct(),
+        getRandomProduct()
+    ];
+
+    return three;
+}
+
+console.log(getThree());
+
+var productItem = document.querySelectorAll('three');
+for(var i = 0; i < productItem.length; i++) {
+    var li = productItem[i];
+    var threeToDisplay = threeToDisplay
+}
+
+getThree()
+
+function getRandomIndex(length) {
+    return Math.floor(Math.random() * length);
+}
+
+
 const app = new App();
 document.getElementById('root').appendChild(app.render());
