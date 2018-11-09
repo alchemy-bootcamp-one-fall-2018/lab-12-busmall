@@ -58,7 +58,7 @@ export default [
     
     {
         name: 'pet-sweep',
-        image: '../assets/pen-sweep.jpg'
+        image: '../assets/pet-sweep.jpg'
     },  
     
     {
@@ -88,7 +88,7 @@ export default [
 
     {
         name: 'usb',
-        image: '../assets/usb.giv'
+        image: '../assets/usb.gif'
     },
 
     {

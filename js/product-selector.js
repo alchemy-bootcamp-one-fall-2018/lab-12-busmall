@@ -1,7 +1,16 @@
+//the wrapper around the three images I get in product-card
+
 import html from './html.js';
 import products from './product-api.js';
+import ProductCard from './product-card.js';
 
-console.log('product selector', products.getAll());
+function makeTemplate() {
+    return html`
+    <p>hello</p>
+    <section id="product-card-container"></section>
+    `;
+}
+
 
 let workingArray = products.getAll();
 
@@ -15,30 +24,27 @@ function getRandomInt(max) {
 let index = getRandomInt(workingArray.length);
 let selectedImage = workingArray[index];
 
-console.log('image', selectedImage);
+//console.log('image', selectedImage);
 
 
 
-
-function makeTemplate() {
-    return html`
-    <p>hello</p>
-    <section> <img src="./assets/bag.jpg"></section>
-    <section> <img src="./assets/bag.jpg"></section>
-    <section> <img src="./assets/bag.jpg"></section>
-    `;
-}
-
-export default class Products {
-    
-    
+//being run by app (the parent component)
+class ProductSelector {
+        
     render() {
-        const dom = makeTemplate();
+        const dom = makeTemplate();   // dom now is the html above - that whole bit
+        console.log(dom.querySelector('#product-card-container'));     // targeting the place we'll put the stuff
+        
+        const productCardContainer = dom.querySelector('#product-card-container'); //now have a variable that is the line above (where stuff goes)
+        const productCardComponent = new ProductCard(selectedImage);
+        const image = productCardComponent.render(); //aka new ProductCard (sent to productCard)
+        
+        productCardContainer.appendChild(image);  //(child from product-ProductCard.js)
 
         return dom;
     }
+
 }
+   
 
-
-
-
+export default ProductSelector;
