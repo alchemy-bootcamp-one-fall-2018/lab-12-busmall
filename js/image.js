@@ -1,6 +1,7 @@
 import html from './html.js';
 
 let template = function(image) {
+    console.log('this is an image', image);
     return html `
         <div class="single-image"> <img src="${image.image}"> </div>
     `;
@@ -14,7 +15,6 @@ export default class Image {
     }
 
     render() {
-        console.log('image test', this.image);
         let dom = template(this.image);
 
         let imageDiv = dom.querySelector('.single-image');

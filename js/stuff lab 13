@@ -1,0 +1,4 @@
+while(this.displayDiv.firstChild) {
+                    this.displayDiv.removeChild(this.displayDiv.firstChild);
+                }
+                this.renderImages();

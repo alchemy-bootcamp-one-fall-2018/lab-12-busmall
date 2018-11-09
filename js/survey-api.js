@@ -1,28 +1,19 @@
-let survey = [];
+let surveyArray = [];
 
+
+function saveSurvey() {
+    localStorage.setItem('surveyArray', JSON.stringify(surveyArray));
+}
 
 const surveyApi = {
-    saveSurvey(survey) {
-        localStorage.setItem('survey', JSON.stringify(survey));
-    },
+    add(survey) {
 
-    add(product) {
+        console.log('api surbey', survey);
+        
+        surveyArray.push(survey);
 
-        const itemChoice = survey.find(item => {
-            return item.name === product.name;
-        });
-        if(itemChoice) {
-            itemChoice.count++;
-        }
-        else {
-            survey.push({
-                name: product.name,
-                count: 1
-            });
-        }
-
+        saveSurvey();        
     }
-    
 };
 
 export default surveyApi; 

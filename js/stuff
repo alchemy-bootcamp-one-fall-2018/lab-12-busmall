@@ -1,0 +1,37 @@
+class ImageDisplay {
+
+    constructor(images, onSelect, onDone) { 
+        this.images = images;
+        this.onSelect = onSelect;
+        //record total count 
+        this.totalCount ++;
+        //increases count when rendered ???
+        this.images.view++;
+        // THREE IMAGES IF TOTAL COUNT IS LESS THAN 25
+    }
+
+    render() {
+        const dom = makeTemplate();
+        this.displayDiv = dom.querySelector('.display-div');
+        this.getImagesRan = getImages();
+
+        this.renderImages();
+        return dom;
+       
+    }
+    renderImages() {
+
+        this.getImagesRan.forEach(image => {
+                // create second callback function within that exits the loop
+            let imageComponent = new Image(image, function(onDone){
+
+            });
+            console.log('image comp', imageComponent);
+            this.renderImages();
+            
+            this.displayDiv.appendChild(imageComponent.render());
+        });
+    }
+}
+
+export default ImageDisplay;
