@@ -1,4 +1,5 @@
 import html from './html.js';
+import Image from './image.js';
 import productsApi from './products-api.js';
 import surveyApi from './survey-api.js';
 
@@ -8,14 +9,17 @@ function getRandomInt(max) {
     return Math.floor(Math.random() * Math.floor(max));
 }
 
-
-let display = [];
-
-while(display.length < 3) {
-    let index = getRandomInt(products.length); 
-    if(display.includes(products[index]) === false) {
-        display.push(products[index]);
-    } 
+function getImages() {   
+    let display = [];
+    
+    while(display.length < 3) {
+        let index = getRandomInt(products.length); 
+        if(display.includes(products[index]) === false) {
+            products[index].view++;
+            display.push(products[index]);
+        } 
+    }
+    return display;
 }
 
 
@@ -23,54 +27,52 @@ while(display.length < 3) {
 //creating template and what gets placed in template
 function makeTemplate() {
     return html`
-        <h1> Survey page </h1>
 
-        <section>
-        <div> <img src="${display[0].image}" id="imageOne"> </div>
-        <div> <img src="${display[1].image}" id="imageTwo"> </div>
-        <div> <img src="${display[2].image}" id="imageThree"> </div>
-        </section>
+        <div class="display-div"> </div>
 
     `;
 }
 
 
+let totalCount = 0;
+
 // class that calls the template and renders it aka inits it
-class Header {
+class ImageDisplay {
+
+    constructor(images, onSelect) { 
+        this.images = images;
+        this.onSelect = onSelect;
+    }
+
     render() {
         const dom = makeTemplate();
+        this.displayDiv = dom.querySelector('.display-div');
+        this.renderImages();
         return dom;
+       
+    }
+    renderImages() {
+        let display = getImages();
+                
+        for(var i = 0; i < display.length; i++){
+            let imageComponent = new Image(display[i], onClick => {
+                onClick.count += 1;
+                while(this.displayDiv.firstChild) {
+                    this.displayDiv.removeChild(this.displayDiv.firstChild);
+                }
+                console.log(surveyApi.getAll());
+
+                this.renderImages();
+                totalCount++;
+                if(totalCount === 25){
+                    surveyApi.add(products);
+                    window.location.replace('../reports.html');
+                }
+            });
+            this.displayDiv.appendChild(imageComponent.render());   
+        }
     }
 }
 
-export default Header;
 
-
-
-// event listener for on click of image
-const itemList = document.getElementById('root');
-
-
-const surveyInfo = {
-    init(survey) {
-        for(let i = 0; i < survey.length; i++){
-            const dom = makeTemplate(survey[i]);
-            dom.addEventListener('click', function() {
-                surveyApi.add(survey[i]);
-                survey.update(survey);
-            }); 
-
-            itemList.appendChild(dom);
-        }
-    },
-    update(survey) {
-        while(itemList.lastElementChild) {
-            itemList.lastElementChild.remove();
-
-        }
-        surveyInfo.init(survey);
-    }
-};
-
-
-
+export default ImageDisplay;
