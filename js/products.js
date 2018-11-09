@@ -73,7 +73,7 @@ export default [
     },
     {
         name: 'Water Can',
-        image:'assets/waster-can.jpg'
+        image:'assets/water-can.jpg'
     },
     {
         name: 'Wine Glass',
