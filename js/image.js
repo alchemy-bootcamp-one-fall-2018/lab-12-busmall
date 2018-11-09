@@ -2,6 +2,7 @@
 import html from './html.js';
 
 let template = function(image) {
+
     return html `
         <div class="single-image"> <img src="${image.image}"> </div>
     `;

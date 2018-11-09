@@ -25,8 +25,6 @@ export default class App {
 
         let imageSelector = new ImageDisplay(this.images, image => {
 
-
-            image.count++;
             surveyApi.saveSurvey(image);
         });
 
