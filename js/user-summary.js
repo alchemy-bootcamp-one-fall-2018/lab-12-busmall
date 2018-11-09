@@ -30,12 +30,12 @@ class UserSummary {
         const goToChart = document.getElementById('goToChart');
         
         if(bool){
-            window.location = '../html/user-summary.html';
+            window.location = 'html/user-summary.html';
         }
 
         if(goToChart) {
             goToChart.addEventListener('click', () => {
-                window.location = '../html/data-chart.html';
+                window.location = 'html/data-chart.html';
             });
         }
 
