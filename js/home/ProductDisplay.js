@@ -1,6 +1,8 @@
+/*eslint-disable no-console*/
 import html from '../html.js';
 import Product from './Product.js';
 
+//needed something in the array for it to start 
 let pastThree = ['duck', 'cat', 'dino'];
 
 function makeTemplate() {
@@ -26,7 +28,6 @@ class ProductDisplay {
     
     update() {
         let randomThree = [];
-        // pastThree.push(randomThree);
         for(let k = 0; k < 3; k++) {
             const randomIndex = this.randomInt();
             const products = this.products;
@@ -45,7 +46,6 @@ class ProductDisplay {
             }
         }
         return randomThree;
-        
     }
     
     showImages() {
