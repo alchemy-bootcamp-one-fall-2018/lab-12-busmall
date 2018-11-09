@@ -11,6 +11,7 @@ class ProductSelector {
     constructor(products, onSelect) {
         this.products = products;
         this.onSelect = onSelect;
+     
     }
 
     render() {
@@ -26,11 +27,5 @@ class ProductSelector {
         return dom;
     }
 }
-
-function showThree () {
-    var index = showThree(copy.length);
-    var product = copy[index];
-}
-
 
 export default ProductSelector;

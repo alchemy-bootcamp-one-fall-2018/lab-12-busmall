@@ -4,10 +4,10 @@ function makeTemplate() {
     return html`
         <table class="user-summary">
             <thead>
-                <tr class="">
+                <tr class="xxxxxxxxxx">
                     <td class="productName-cell">Product</td>
-                    <td class="displayed-cell">Number of times shown</td>
-                    <td class="selected-cell">Number of times selected</td>
+                    <td class="viewed-cell">Number of times viewed</td>
+                    <td class="clicked-cell">Number of times selected</td>
                     // <td class="percentage-cell">Percentage of times shown that image was selected</td>
                 </tr>
             </thead>
@@ -16,25 +16,31 @@ function makeTemplate() {
     `;
 }
 
+// function makeRow(user) {
+//     return html`<tr>
+//         <td>${userSummary.user.Name}</td>
+//         <td>${userSummary.viewed}</td>
+//         <td>${userSummary.clicked}</td>
+//         <td>${userSummary.percentage}</td>
+//     </tr>`;
+// }
+
 class UserSummary {
-    constructor(products, onSelect) {
-        this.products = products;
+    constructor(user, onSelect) {
+        this.user = user;
         this.onSelect = onSelect;
-        this.rows = [];
     }
 
     render() {
-        const dom = makeTemplate();
-        this.body = dom.querySelector('tbody');
+        const dom = makeTemplate(this.user);
+        const listItem = dom.querySelector('li');
+        const user = this.user;
 
-        // this.products.forEach(products => { 
-        //     const productsRow = new productsRow(products, selected => {
-        //         this.onSelect(selected);
-        //         this.rows.forEach(row => row.update(selected));
-        //     });
-        //     this.rows.push(productsRow);
-        //     this.body.appendChild(productsRow.render());
-        // });
+        if(this.onSelect) {
+            listItem.addEventListener('click', () => {
+                this.onSelect(user);
+            });
+        }
 
         return dom;
     }

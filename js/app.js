@@ -1,6 +1,7 @@
 import html from './html.js';
 import productsApi from './products-api.js';
 import ProductSelector from './product-selector.js';
+// import surveyApi from './survey-api.js';
 
 const products = productsApi.getAll();
 
@@ -43,13 +44,9 @@ function getThree() {
     return three;
 }
 
-
-
-
 function getRandomIndex(length) {
     return Math.floor(Math.random() * length);
 }
-
 
 const app = new App();
 document.getElementById('root').appendChild(app.render());

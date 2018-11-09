@@ -4,7 +4,7 @@ As a busy adult, I want to be part of a focus group to earn
 some cash.
 
 As an online shopper, I want to see what products are being
-considered by retailers, for a change to have my opinion heard.
+considered by retailers, for a chance to have my opinion heard.
 
 As part of the marketing research team, I want fast and
 accurate data to aide me in determining our final product 

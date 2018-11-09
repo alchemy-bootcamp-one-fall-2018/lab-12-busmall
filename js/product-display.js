@@ -4,11 +4,22 @@ function makeTemplate(product) {
     return html`
         <li class="product-item">
             <h1>${product.name}</h1>
-            <button onclick="select"><img src="assets/${product.image}"></button>S
+            <button onclick="select"><img src="assets/${product.image}"></button>
         </li>
-
   `;      
 }
+
+// let viewedSelector = new viewedSelector this.vieweds => {
+//     viewedSelector.count++;
+//     this.viewedCount++;
+//     // ?????userSummary?????.update(viewed);
+// }
+
+// let clickedSelector = new clickedSelector this.clickeds => {
+//     clickedSelector.count++;
+//     this.clickedCount++;
+//     // ?????userSummary?????.update(displayed);
+// }
 
 class ProductDisplay {
     constructor(product, onSelect) {
