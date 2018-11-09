@@ -23,35 +23,70 @@ class ProductDisplay {
             };
         });
         this.imagesPer = 3;
+        this.roundsPerSurvey = 5;
+        this.totalRounds = 0;
+        this.lastProducts = null;
+    
     }
 
     getRandomProducts() {
         const copy = this.survey.slice();
 
+        if(this.lastProducts) {
+            this.lastProducts.forEach(product => {
+                const index = copy.indexOf(product);
+                copy.splice(index, 1);
+            });
+        }
+
         const randomProducts = [];
 
         for(let i = 0; i < this.imagesPer; i++) {
             const index = getRandomIndex(copy.length);
-            console.log(index);
+            // console.log(index);
             const product = copy[index];
             copy.splice(index, 1);
+            
+            // console.log(this.survey[index].name, this.survey[index].views);
             randomProducts.push(product);
+            
         } 
+        this.lastProducts = randomProducts;
         console.log('random products selected', randomProducts);
         return randomProducts;
     }
 
     showRandomProducts() {
         const randomProducts = this.getRandomProducts();
+
+        
         randomProducts.forEach(product => {
-            const productCard = new ProductCard(product);
+            product.views++;
+
+            const productCard = new ProductCard(product, selected => {
+                selected.clicks++;
+                this.totalRounds++;
+                
+                console.log('survey', this.survey);
+
+                if(this.totalRounds < this.roundsPerSurvey) {
+                    this.clearProduct();
+                    this.showRandomProducts();
+                }
+                else {
+                    console.log('survey count', this.totalRounds);
+                    alert('Thank you for completing the survey!');
+                    console.log();
+                }
+                
+            });
             this.list.appendChild(productCard.render());
         }
         );
     }
 
     clearProduct() {
-        while(this.list.lastElementChild()) {
+        while(this.list.lastElementChild) {
             this.list.lastElementChild.remove();
         }
     }
