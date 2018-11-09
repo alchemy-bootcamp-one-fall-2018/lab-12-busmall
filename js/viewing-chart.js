@@ -2,9 +2,9 @@ import html from './html.js';
 
 function makeTemplate() {
     return html`
-        <h2>Chart</h2>
+        <h2>Survey Chart</h2>
         <div class="chart-container">
-            <canvas width="600"></canvas>
+            <canvas width="600" height="500"></canvas>      
         </div>
     `;
 }
@@ -32,6 +32,7 @@ export default class ProductChart {
             data1.push(products[i].views);
             data2.push(products[i].clicks);
         }
+        console.log(labels);
 
         this.chart = new Chart(ctx, {
             type: 'bar',
@@ -59,6 +60,11 @@ export default class ProductChart {
                     yAxes: [{
                         ticks: {
                             beginAtZero:true
+                        }
+                    }],
+                    xAxes: [{
+                        ticks: {
+                            autoSkip: false
                         }
                     }]
                 }
