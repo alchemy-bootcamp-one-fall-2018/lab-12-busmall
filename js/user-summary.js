@@ -35,7 +35,7 @@ class UserSummary {
 
         if(goToChart) {
             goToChart.addEventListener('click', () => {
-                window.location = 'html/data-chart.html';
+                window.location = 'data-chart.html';
             });
         }
 
