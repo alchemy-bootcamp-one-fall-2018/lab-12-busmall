@@ -20,19 +20,18 @@ class ImageDisplay {
         this.update();
         return dom;
     }
-
+    
     update() {
-        
         while(this.ul.lastElementChild) {
             this.ul.lastElementChild.remove();
         }
-
         for(let i = 0; i < 3; i++) {
+            
             let randomProduct = new Product(this.products[this.randomInt()], this.onSelect, this.onView);
             this.ul.appendChild(randomProduct.render());
         }
     }
-
+    
     randomInt() {
         const index = Math.floor(Math.random() * Math.floor(19));
         return index;

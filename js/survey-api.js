@@ -8,7 +8,11 @@ const surveyApi = {
     add(product) {
         products.push(product);
         saveItems();
+    },
+    getAll() {
+        return products;
     }
+    
 };
 
 export default surveyApi;
