@@ -52,3 +52,10 @@ class BusmallApp {
 const busmallApp = new BusmallApp();
 
 document.getElementById('root').appendChild(busmallApp.render());
+
+
+// if(pastThree[k].includes(randomThree[k])) {
+//     console.log('repeats from prior round');
+//     k--;
+// }
+// else {

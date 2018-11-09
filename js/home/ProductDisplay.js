@@ -1,6 +1,8 @@
 import html from '../html.js';
 import Product from './Product.js';
 
+let pastThree = ['duck', 'cat', 'dino'];
+
 function makeTemplate() {
     return html`
         <ul class="product-list"></ul>
@@ -17,23 +19,33 @@ class ProductDisplay {
     render() {
         const dom = makeTemplate();
         this.ul = dom.querySelector('ul');
+        this.productComp = this.pastThree;
         this.showImages();
         return dom;
     }
-
+    
     update() {
         let randomThree = [];
-        for(let i = 0; i < 3; i++) {
+        // pastThree.push(randomThree);
+        for(let k = 0; k < 3; k++) {
             const randomIndex = this.randomInt();
             const products = this.products;
+            
             if(randomThree.includes(products[randomIndex]) === true) {
-                i--;
+                k--;
             }
             else {
-                randomThree.push(products[randomIndex]);
+                if(pastThree.includes(products[randomIndex]) === false) {
+                    randomThree.push(products[randomIndex]);
+                }
+                else {
+                    console.log('duplicate found');
+                    k--; 
+                }
             }
         }
         return randomThree;
+        
     }
     
     showImages() {
@@ -44,6 +56,7 @@ class ProductDisplay {
         threeProducts.forEach(product => {
             let productComp = new Product(product, this.onSelect, this.onView);
             this.ul.appendChild(productComp.render());
+            pastThree = threeProducts;
         });
     }
 
