@@ -7,8 +7,7 @@ const products = productsApi.getAll();
 function makeTemplate() {
     return html`
     <section class="image-section">
-        <h2>App Focus Group Product List</h2>
-
+        <h2>Product List for Focus Group</h2>
     </section>
 `;
 }
@@ -18,7 +17,7 @@ class App {
         const dom = makeTemplate(); 
  
         const productSelectorOnApp = dom.querySelector('.image-section');
-        const productSelector = new ProductSelector(products);
+        const productSelector = new ProductSelector(getThree());
         productSelectorOnApp.appendChild(productSelector.render());
 
         return dom;
@@ -44,15 +43,8 @@ function getThree() {
     return three;
 }
 
-console.log(getThree());
 
-var productItem = document.querySelectorAll('three');
-for(var i = 0; i < productItem.length; i++) {
-    var li = productItem[i];
-    var threeToDisplay = threeToDisplay
-}
 
-getThree()
 
 function getRandomIndex(length) {
     return Math.floor(Math.random() * length);

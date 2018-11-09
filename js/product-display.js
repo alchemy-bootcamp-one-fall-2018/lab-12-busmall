@@ -1,12 +1,12 @@
 import html from './html.js';
 
 function makeTemplate(product) {
-    // console.log('test', product.name);
     return html`
         <li class="product-item">
             <h1>${product.name}</h1>
-            <img src="assets/${product.image}">
+            <button onclick="select"><img src="assets/${product.image}"></button>S
         </li>
+
   `;      
 }
 
