@@ -14,7 +14,6 @@
 import html from './html.js';
 import productsApi from './products-api.js';
 import ProductSelector from './product-selector.js';
-import productDisplay from './product-display.js';
 
 const products = productsApi.getAll();
 

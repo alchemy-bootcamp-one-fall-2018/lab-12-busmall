@@ -1,5 +1,3 @@
-// import surveyApi from './survey-api.js';
-// import productsApi from './products-api.js';
 import html from './html.js';
 import ProductDisplay from './product-display.js';
 
@@ -17,18 +15,59 @@ class ProductSelector {
     constructor(products, onSelect) {
         this.products = products;
         this.onSelect = onSelect;
+        this.lastThree = [];
     }
-    add(product) {
-        const productDisplay = new ProductDisplay(product, this.products, this.onSelect);
-        this.productsList.appendChild(productDisplay.render());
+
+    getRandomIndex(arrayLength) {
+        return Math.floor(Math.random() * arrayLength); 
     }
+
+    getTrio() {
+        const randomProduct = []; 
+        const products = this.products;
+
+        for(let i = 0; i < 3; i++) {
+            const nouveauIndex = this.getRandomIndex(products.length);
+
+            const product = products[nouveauIndex];
+            if(randomProduct.includes(product) || this.lastThree.includes(product)) {
+                i--;
+//                console.log('dupl');
+            } else {
+                for(let j = 0; j < 25; j++) {
+                    randomProduct.push(products[nouveauIndex]);
+
+                    // product.views++;
+                    // console.log('one turn', product.views);
+                    // break;
+                }
+            }
+        }
+
+        // view count, repeat 25x then new message and new button "click to view" new pg 
+        // with message w/counts in it
+        this.lastThree = randomProduct;
+     //   console.log('last three', this.lastThree);
+        return randomProduct;
+    }
+    displayRandomThree() {
+        const randomProduct = this.getTrio();
+        randomProduct.forEach(product => {
+            const productDisplay = new ProductDisplay(product, this.onSelect);
+            this.productsList.appendChild(productDisplay.render());
+            // product = productDisplay.product;
+            // product.views++;
+            // console.log('views', product.views);
+        });
+    }
+
     render() {
         const dom = makeTemplate();
         this.productsList = dom.querySelector('div');
-
-        for(let i = 0; i < this.products.length; i++) {
-            this.add(this.products[i]);
-        }
+        this.displayRandomThree();
+        // for(let i = 0; i < this.products.length; i++) {
+        //     this.add(this.products[i]);
+        // }
 
         return dom;
     }

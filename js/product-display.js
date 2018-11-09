@@ -1,4 +1,3 @@
-//import productsApi from './products-api.js';
 import html from './html.js';
 
 let template = function(product) {
@@ -21,11 +20,12 @@ class ProductDisplay {
         const divItem = dom.querySelector('div');
         const product = this.product;
 
-        if(this.onSelect) {
-            divItem.addEventListener('click', () => {
-                this.onSelect(product);
-            });
-        }        
+
+        divItem.addEventListener('click', () => {
+            product.clicks++;
+//            console.log('hear click', product);
+        });
+                
         return dom;
     }
 }
