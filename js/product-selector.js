@@ -62,6 +62,7 @@ export default class ProductSelector {
                 // selected.clicks++;
                 const index = this.survey.indexOf(selected);
                 this.survey[index].clicks++;
+                
                 console.log('survey', this.survey);
 
                 this.count++;
