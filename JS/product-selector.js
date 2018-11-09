@@ -54,7 +54,7 @@ class Header {
                 totalCount += 1;
                 if(totalCount === 25) {
                     surveyApi.saveSurvey(products);
-                    window.location.replace('../reports.html');
+                    window.location.replace('../user-summary.html');
                 }
             });
             this.imageContainer.appendChild(image.render());
