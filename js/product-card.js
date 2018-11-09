@@ -20,9 +20,7 @@ class Product {
             this.onSelect(this.product);
             console.log('I am clicked!');
         });
-
         return dom;
-
     }
 }
 

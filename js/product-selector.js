@@ -12,7 +12,6 @@ function getRandomIndex(length) {
     return Math.floor(Math.random() * length);
 }
 
-
 class ProductSelector {
     constructor(products){
         this.products = products;
@@ -26,26 +25,35 @@ class ProductSelector {
         });
         this.imagesPer = 3;
         this.round = -1;
+        this.lastProducts = [];
     }
 
     getRandomProducts() {
         const copy = this.survey.slice();
-        const randomProducts = [];
+        console.log('this is your copy', copy);
+        let randomProducts = [];
 
         for(let i = 0; i < this.imagesPer; i++){
             const index = getRandomIndex(copy.length);
             const product = copy[index];
             copy.splice(index, 1);
-            randomProducts.push(product);
-            product.views++;
+            if(this.lastProducts.includes(product)){
+                i--; 
+                continue;
+            }
+            else {
+                randomProducts.push(product);
+                product.views++;
+            }
             
             if(this.round === 24){
                 window.location = 'user-summary.html';
             }
         }
         this.round++;
-        console.log(this.round);
-        
+        this.lastProducts = randomProducts;
+        console.log(this.lastProducts);
+        // console.log(this.round);
         return randomProducts;
     }
 
@@ -56,12 +64,12 @@ class ProductSelector {
                 selected.clicks++;
                 this.clearProducts();
                 this.showRandomProducts();
-                console.log(selected);
-                console.log(randomProducts);
+                randomProducts.splice(1);
+                
             }); 
             this.list.appendChild(productCard.render());
-        } 
-        );
+        });
+
     }
     
     clearProducts() {
