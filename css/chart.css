@@ -1,0 +1,11 @@
+canvas {
+    width: 100%;
+    margin-right: 20px;
+    margin-left: 20px;
+}
+
+body {
+    margin-right: 20px;
+    margin-left: 20px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
