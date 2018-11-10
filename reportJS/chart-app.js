@@ -4,7 +4,9 @@ import SurveyChart from './chart-view.js';
 
 function makeTemplate() {
     return html`
+    <header>
     <h1> Report Page </h1>
+    </header>
     <div class="chart-viewer"> </div>
     `;
 }

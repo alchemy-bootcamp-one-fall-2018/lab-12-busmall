@@ -115,6 +115,30 @@ const products = [
         count: 0,
         view: 0
 
+    }, 
+    {
+        name: 'scissors',
+        image: '../assets/scissors.jpg',
+        count: 0,
+        view: 0
+    },
+    {
+        name: 'shark',
+        image: '../assets/shark.jpg',
+        count: 0,
+        view: 0
+    },
+    {
+        name: 'sweep',
+        image: '../assets/sweep.jpg',
+        count: 0,
+        view: 0
+    },
+    {
+        name: 'tauntaun',
+        image: '../assets/tauntaun.jpg',
+        count: 0,
+        view: 0
     }
 
 

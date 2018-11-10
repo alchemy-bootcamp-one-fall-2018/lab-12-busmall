@@ -20,10 +20,12 @@ export default class SurveyChart {
 
         let labels = [];
         let data = [];
+        let views = [];
         for(let i = 0; i < this.surveyData.length; i++) {
             const survey = this.surveyData[i]; 
             labels.push(survey.name);
             data.push(survey.count);
+            views.push(survey.view);
         }
         console.log('data', data);
         this.chart = new Chart(ctx, {
@@ -34,6 +36,13 @@ export default class SurveyChart {
                     labels: 'Number of Clicks', 
                     data: data,
                     backgroundColor: 'rgba(54, 162, 235, 0.2)',
+                    borderColor: 'rgba(54, 162, 235, 1)',
+                    borderWidth: 1
+                },
+                {
+                    labels: 'Number of Clicks', 
+                    data: views,
+                    backgroundColor: 'rgba(54, 180 , 180, 0.2)',
                     borderColor: 'rgba(54, 162, 235, 1)',
                     borderWidth: 1
                 }]

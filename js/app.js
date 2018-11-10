@@ -6,8 +6,9 @@ import surveyApi from './survey-api.js';
 
 function makeTemplate() {
     return html`
+        <header>
         <h1> Survey page</h1>
-
+        </header>
         <div class="image-viewer"> </div>
 
     `;
