@@ -39,3 +39,8 @@ p {
   text-align: center;
 }
 
+.products {
+  display: flex;
+  margin: 0 auto;
+  padding: 0;
+}
