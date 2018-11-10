@@ -11,16 +11,16 @@ class ProductCard {
         this.image = image;
         this.onSelect = onSelect;
     }
-
+    
     render() {
         const dom = makeTemplate(this.image); 
         const image = dom.querySelector('.pic');
         
         image.addEventListener('click', () => {
+            // window.location.reload();
             this.onSelect();
-            window.location.reload();
         });
-
+        
         
         return dom;
     }
