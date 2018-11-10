@@ -1,28 +1,32 @@
-import html from './html.js';
+// import html from './html.js';
 
-function makeTemplate(product) {
-    return html`
-    <li class="product-card">
-    <img id="product" src="./${product.image}">
-    </li>
-    `;
-}
+// function makeTemplate(product) {
+//     return html`
+//     <li class="product-card">
+//     <img id="product" src="./${product.image}">
+//     </li>
+//     `;
+// }
 
-export default class Product {
-    constructor(product) {
-        this.product = product;
-        this.onSelect = onSelect;
-    }
-    
-    render() {
-        let dom = makeTemplate(this.product);
-        const ul = dom.querySelector('ul');
+// export default class Product {
+//     constructor(product, onSelect) {
+//         this.product = product;
+//         this.onSelect = onSelect;
         
-        this.products.forEach(product => {
-            let productComp = new Product(product, this.onSelect);
-            ul.appendChild(productComp.render());
-        });
+//         this.totalViews = 0;
+//     }
+//     update(){
+//         let productUpdate;
+//     }
+//     render() {
+//         let dom = makeTemplate(this.product);
+//         const ul = dom.querySelector('ul');
         
-        return dom;
-    }
-}
+//         this.products.forEach(product => {
+//             let productComp = new Product(product, this.onSelect);
+//             ul.appendChild(productComp.render());
+//         });
+        
+//         return dom;
+//     }
+// }

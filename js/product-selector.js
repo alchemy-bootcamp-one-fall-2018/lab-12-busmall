@@ -1,17 +1,18 @@
 import html from './html.js';
-import Product from './product.js';
+import Product from './product-card.js';
+import productApi from '../data-apis/product-api.js';
 
 function makeTemplate() {
     return html`
-        <ul class="products"></ul>
-    `;
+            <ul class="products"></ul>
+    `;  
 }
-
 function getRandomIndex(length) {
     return Math.floor(Math.random() * length);
 }
 class ProductSelector {
-    constructor(products){
+    constructor(products, onSelect) {
+        this.onSelect = onSelect;
         this.products = products;
         this.survery = products.map(product => {
             return {
@@ -22,37 +23,53 @@ class ProductSelector {
             };
         });
         this.imagesPer = 3;
-
+        this.round = -1;
+        this.lastProducts = [];
     } 
-    get RandomProducts() {
+    getRandomProducts() {
         const copy = this.survery.slice();
-        const randomProducts = [];
+        let randomProducts = [];
 
         for(let i = 0; i < this.imagesPer; i++){
             const index = getRandomIndex(copy.length);
             const product = copy[index];
             copy.splice(index, 1);
-            randomProducts.push(product);
-            product.views++;
+            if(this.lastProducts.includes(product)){
+                i--;
+                continue;
+            }
+            else {
+                randomProducts.push(product);
+            }
+            this.survey[index].views++;
+            }
+            if(this.round === 24){
+                window.location = 'survey.html';
+                productApi.saveSurvey(this.survey);
+            }
         }
+        this.round++;
+        this.lastProducts = randomProducts;
         return randomProducts;
+        
     }
 
     showRandomProducts() {
         const randomProducts = this.getRandomProducts();
         randomProducts.forEach(product => {
             const productCard = new Product(product, selected => {
-                selected.clicks++;
+                const index = this.survey.indexOf(selected);
+                this.survey[index].clicks++;
                 this.clearProducts();
                 this.showRandomProducts();
-                
-
+                // randomProducts.splice(1);
             });
             this.list.appendChild(productCard.render());
-        }
-        );
+        });
     }
-
+        
+    // showrandomProducts.push(product);
+    // product.views++;
 
     clearProducts() {
         while(this.list.lastElementChild) {
@@ -63,30 +80,9 @@ class ProductSelector {
         const dom = makeTemplate();
         this.list = dom.querySelector('ul');
         this.showRandomProducts();
-        
-        
+            
         return dom;
     }
 }
 
 export default ProductSelector;
-
-
-
-// class {
-//     render(){
-//         const dom = makeTemplate();
-//         comst ProductContainer = dom.querySelector('product-container');
-
-//         let display = getProducts();
-//         for(var i = 0; i < display.length; i++) {
-//             const product = new Product(display[i], selected => {
-//                 this.renderProducts
-//             }
-
-//         });
-//         this.productContainer.appendChild(image.render());
-//     }
-// }
-
-// export default ProductSelector;

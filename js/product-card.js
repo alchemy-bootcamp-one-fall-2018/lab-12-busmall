@@ -1,5 +1,5 @@
 import html from './html.js'; 
-import Product from './product.js';
+// import Product from './product.js';
 
 function makeTemplate(product) {
     return html`
@@ -9,25 +9,21 @@ function makeTemplate(product) {
     `;
 
 }
-export default class ProductCard {
-    constructor(products, onSelect) {
-        this.products = products;
+class Product {
+    constructor(product, onSelect) {
+        this.product = product;
         this.onSelect = onSelect;
     }
-
     render() {
-        let dom = makeTemplate();
-        const ul = dom.querySelector('ul');
-
-        this.products.forEach(product => {
-            let productComp = new Product(product, this.onSelect);
-            ul.appendChild(productComp.render());
+        const dom = makeTemplate(this.product);
+        const li = dom.querySelector('li');
+        li.addEventListener('click', () => {
+            this.onSelect(this.product);
         });
-        
         return dom;
     }
 }
-
+export default Product;
 
 
 

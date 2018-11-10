@@ -7,29 +7,28 @@ const products = productApi.getAll();
 
 function makeTemplate() {
     return html`
-        <h2>Pick a Product</h2>
-        <ul></ul>
+        <header>
+            <h1>Pick a Product</h1>
+        </header>
+
+        <main>
+            <section id="product-selector">
+                <h2>Vote for your favorite</h2>
+            </section>
+        </main>
         `;
 }
         
 class SurveyApp {
     render() {
-        
         const dom = makeTemplate();
-        const list = dom.querySelector('ul');
+        const selectorSection = dom.querySelector('#product-selector');
         const productSelector = new ProductSelector(products);
-        list.appendChild(productSelector.render());
-        
+        selectorSection.appendChild(productSelector.render());
         return dom;
     }
 }
 
-const surveyApp = new SurveyApp();
+const surveyApp = new SurveyApp;
 const root = document.getElementById('root');
 root.appendChild(surveyApp.render());
-
-
-// let productSelector = new productSelector(this.products, prodcut => {
-//     product.count ++;
-//     this.total
-// }
