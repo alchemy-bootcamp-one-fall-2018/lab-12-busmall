@@ -18,7 +18,6 @@ class Product {
         const li = dom.querySelector('li');
         li.addEventListener('click', () => {
             this.onSelect(this.product);
-            console.log('I am clicked!');
         });
         return dom;
     }

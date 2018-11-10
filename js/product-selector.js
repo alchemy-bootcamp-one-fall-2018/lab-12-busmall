@@ -1,9 +1,10 @@
 import html from './html.js';
 import Product from './product-card.js';
+import productApi from './data-apis/product-api.js';
 
 function makeTemplate() {
     return html`
-        <ul class="products"></ul>
+    <ul class="products"></ul>
     `;
 }
 
@@ -27,45 +28,44 @@ class ProductSelector {
         this.round = -1;
         this.lastProducts = [];
     }
-
+    
     getRandomProducts() {
         const copy = this.survey.slice();
-        console.log('this is your copy', copy);
         let randomProducts = [];
-
+        
         for(let i = 0; i < this.imagesPer; i++){
             const index = getRandomIndex(copy.length);
             const product = copy[index];
             copy.splice(index, 1);
+            
             if(this.lastProducts.includes(product)){
                 i--; 
-                continue;
+                continue; //ryan helped me with this part
             }
             else {
                 randomProducts.push(product);
-                product.views++;
             }
+            this.survey[index].views++;
+            console.log('survey', this.survey[index]);
             
             if(this.round === 24){
                 window.location = 'user-summary.html';
+                productApi.saveSurvey(this.survey);
             }
         }
         this.round++;
         this.lastProducts = randomProducts;
-        console.log(this.lastProducts);
-        // console.log(this.round);
         return randomProducts;
     }
-
+    
     showRandomProducts() {
         const randomProducts = this.getRandomProducts();
         randomProducts.forEach(product => {
             const productCard = new Product(product, selected => {
-                selected.clicks++;
+                const index = this.survey.indexOf(selected);
+                this.survey[index].clicks++;
                 this.clearProducts();
                 this.showRandomProducts();
-                randomProducts.splice(1);
-                
             }); 
             this.list.appendChild(productCard.render());
         });
@@ -82,10 +82,6 @@ class ProductSelector {
         const dom = makeTemplate();
         this.list = dom.querySelector('ul');
         this.showRandomProducts();
-        
-        //move the last products, splice?, so they are always random
-        //keep clicks and views in localStorage? - go look at lab; 25 rounds
-
         return dom;
     }
 }
