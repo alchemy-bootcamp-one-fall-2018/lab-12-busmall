@@ -21,18 +21,21 @@ export default class ViewChart {
         
         let label = [];
         let data = [];
+        let info = [];
+        
         
         for(let i = 0; i < this.results.length; i++) {
             const card = this.results[i];
-            
+           
             label.push(card.name);
-            data.push(card.count);
+            data.push(card.views);
+            info.push(card.clicks);
         }
 
         this.chart = new Chart(ctx, {
             type: 'bar',
             data: {
-                labels: name,
+                labels: label,
                 datasets: [{
                     label: '# of Views',
                     data: data,
