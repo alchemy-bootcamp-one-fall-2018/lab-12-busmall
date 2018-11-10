@@ -9,7 +9,7 @@ function makeTemplate() {
     `;
 }
 
-export default class ViewingChart {
+export default class ViewChart {
     constructor(results) {
         this.results = results;
     }
@@ -53,5 +53,6 @@ export default class ViewingChart {
                 }
             }
         });
+        return dom;
     }
 }
