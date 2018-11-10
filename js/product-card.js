@@ -9,7 +9,6 @@ function makeTemplate(product) {
     `;
 }
 
-
 class ProductCard {
     constructor(product, onSelect) {
         this.product = product;

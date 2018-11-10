@@ -1,3 +1,4 @@
+/*eslint-disable no-console*/
 import SurveyApi from './survey-api.js';
 import html from './html.js';
 import SurveyDisplay from './survey-display.js';
@@ -22,20 +23,15 @@ function makeTemplate() {
 class SurveyApp {
     render() {
         const dom = makeTemplate();
-      
         const list = dom.querySelector('.products');
-
         console.log(products);
       
         products.forEach(product => {
             const productSurvey = new SurveyDisplay(product);
             list.appendChild(productSurvey.render());
         });
-     
-      
-      
+           
         return dom;
-      
     }
 }
 

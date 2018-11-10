@@ -1,3 +1,4 @@
+/*eslint-disable no-console*/
 import productApi from './products-api.js';
 import html from './html.js';
 import ProductDisplay from './product-display.js';

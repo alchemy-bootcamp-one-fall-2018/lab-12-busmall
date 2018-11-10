@@ -1,0 +1,16 @@
+body {
+  font-family: 'Open Sans Condensed', sans-serif;
+  background-color: gray;
+}
+
+.products {
+  height: 700px;
+  width: 271px;
+  border: 10px solid;
+  color: darkkhaki;
+  border-collapse: collapse;
+}
+
+p {
+  color: black;
+}

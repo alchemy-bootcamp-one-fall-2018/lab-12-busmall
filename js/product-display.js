@@ -1,3 +1,4 @@
+/*eslint-disable no-console*/
 import html from './html.js';
 import ProductCard from './product-card.js';
 import surveyApi from './survey-api.js';
@@ -36,11 +37,9 @@ class ProductDisplay {
 
         for(let i = 0; i < this.imagesPer; i++) {
             const index = getRandomIndex(copy.length);
-            // console.log(index);
             const product = copy[index];
             copy.splice(index, 1);
             
-            // console.log(this.survey[index].name, this.survey[index].views);
             randomProducts.push(product);
             
         } 
@@ -52,7 +51,6 @@ class ProductDisplay {
     showRandomProducts() {
         const randomProducts = this.getRandomProducts();
 
-        
         randomProducts.forEach(product => {
             product.views++;
 
@@ -70,7 +68,6 @@ class ProductDisplay {
                     console.log('survey count', this.totalRounds);
                     alert('Thank you for completing the survey! Click OK to see the results.');
                     surveyApi.saveProducts(this.products);
-                    // window .redirect to report html
                     window.location = './user-summary.html';
 
                     
@@ -96,6 +93,5 @@ class ProductDisplay {
     }
 
 }
-
 
 export default ProductDisplay;

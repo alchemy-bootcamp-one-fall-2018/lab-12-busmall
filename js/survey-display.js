@@ -1,7 +1,5 @@
 import html from './html.js';
 
-
-
 function makeTemplate(product) {
     return html`
       <li class="product-survey">
@@ -9,7 +7,6 @@ function makeTemplate(product) {
               ${product.views}   views and 
               ${product.clicks}  clicks  
           </p>
-      
       </li>
   `;    
 }
@@ -20,11 +17,9 @@ class SurveyDisplay {
     }
 
     render() {
-        
         return makeTemplate(this.product);
-       
-
     }
+    
 }
 
 export default SurveyDisplay;
