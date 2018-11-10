@@ -17,11 +17,9 @@ class ProductCard {
         const image = dom.querySelector('.pic');
         
         image.addEventListener('click', () => {
-            // window.location.reload();
-            this.onSelect();
+            this.onSelect(this.image);
         });
-        
-        
+
         return dom;
     }
 }

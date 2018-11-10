@@ -13,8 +13,6 @@ function makeTemplate() {
 
 let workingArray = products.getAll();
 
-
-
 class ProductSelector {
     constructor() {
         this.lastThree = [];
@@ -23,9 +21,10 @@ class ProductSelector {
     getRandomInt() {
         return Math.floor(Math.random() * Math.floor(19));
     }
-    threeImages(){
-        this.clearProducts();
+    
+    getThreeImages(){
         const currentSet = [];
+        
         for(let i = 0; i < 3; i++) {
             let index = this.getRandomInt(workingArray.length);
             let selectedImage = workingArray[index];
@@ -34,25 +33,33 @@ class ProductSelector {
                 i--;
             } else {
                 currentSet.push(selectedImage); //holds the set of three, for checking for duplicates
+                selectedImage.views++;
             }
         }  
-        this.lastThree = currentSet;    
+        this.lastThree = currentSet; 
+        return currentSet;   
+    }
+    
+    showThreeProducts() {
+        let currentSet = this.getThreeImages();
+        this.clearProducts();
         currentSet.forEach(product => {
-            const productCardComponent = new ProductCard(product, () => {
-                this.threeImages();
+            const productCardComponent = new ProductCard(product, selected => {
+                this.showThreeProducts();
+                selected.votes++;
+                console.log('selected', selected);
+                
             }); //this is this.image in product-card
             const image = productCardComponent.render(); //aka new ProductCard (sent to productCard)
             
             this.productCardContainer.appendChild(image);  //(child from product-ProductCard.js)
-
-        });
-        
+        });   
     }
+    
     clearProducts() {
         while(this.productCardContainer.lastElementChild) {
             this.productCardContainer.lastElementChild.remove();
         }
-
     }
 
     render() {
@@ -60,11 +67,10 @@ class ProductSelector {
         console.log(dom.querySelector('#product-card-container'));     // targeting the place we'll put the stuff
         
         this.productCardContainer = dom.querySelector('#product-card-container'); //now have a variable that is the line above (where stuff goes)
-        this.threeImages();       
+        this.showThreeProducts();       
 
         return dom;
     }
-
 }
 
 export default ProductSelector;
