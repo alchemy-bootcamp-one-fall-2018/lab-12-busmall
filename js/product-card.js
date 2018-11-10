@@ -11,19 +11,21 @@ function makeTemplate(product) {
 
 
 class ProductCard {
-    constructor(product) {
+    constructor(product, onSelect) {
         this.product = product;
+        this.onSelect = onSelect;
     }
 
     render() {
         const dom = makeTemplate(this.product);
-        // const card = dom.querySelector('li');
-
-      
-       
+        const card = dom.querySelector('li');
+        
+        card.addEventListener('click', () => {
+            this.onSelect(this.product);
+        });
+        
         return dom;
     }
-
 }
 
 export default ProductCard;
