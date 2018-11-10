@@ -7,6 +7,7 @@ function makeTemplate() {
     return html` 
         <main>
             <section class="survey-chart"></section>
+            <h2>Product Report</h2>
             <section class="product-report"></section>
         </main>
     `;
