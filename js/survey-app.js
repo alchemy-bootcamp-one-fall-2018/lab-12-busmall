@@ -2,7 +2,6 @@ import html from './html.js';
 import productApi from '../api/product-api.js';
 import surveyApi from '../api/survey-api.js';
 import ProductSelector from './product-selector.js';
-import SurveyChart from '../js/survey-chart.js';
 
 const products = productApi.getAll();
 
@@ -17,10 +16,6 @@ function makeTemplate() {
             </nav>
         </header>
         <main> 
-            <section>  
-                <h2>Product Survey</h2>
-            </section>
-            <section class="survey-chart"></section>
         </main>`;
 }
 

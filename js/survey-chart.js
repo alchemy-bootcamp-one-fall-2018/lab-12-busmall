@@ -4,7 +4,7 @@ function makeTemplate() {
     return html`
         <h2>Chart</h2>
         <div class="chart-container">
-            <canvas width="400"></canvas>
+            <canvas width="400" height="600"></canvas>
         </div>
     `;
 }
@@ -24,18 +24,18 @@ export default class SurveyChart {
         let clicks = [];
         let views = [];
 
-        const survey = JSON.parse(localStorage.getItem('surveys'));
+        const products = JSON.parse(localStorage.getItem('surveys'));
 
-        for(let i = 0; i < this.results.length; i++) {
-            labels.push(survey[i].clicks);
-            clicks.push(survey[i].clicks);
-            views.push(survey[i].views);
+        for(let i = 0; i < this.results[0].length; i++) {
+            labels.push(this.results[0][i].name);
+            clicks.push(this.results[0][i].clicks);
+            views.push(this.results[0][i].views);
         }
         
         this.chart = new Chart(ctx, {
             type: 'bar',
             data: {
-                label: labels,
+                labels: labels,
                 datasets: [{
                     label: '# of views',
                     data: views
@@ -49,6 +49,10 @@ export default class SurveyChart {
             options: {
                 responsive: true,
                 maintainAspectRatio: false,
+                title: {
+                    display: true,
+                    text: 'Survey Results'
+                },
                 scales: {
                     yAxes: [{
                         ticks: {
