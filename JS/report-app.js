@@ -6,7 +6,7 @@ function makeTemplate() {
     return html`
         <header>
             <div>
-                <h1>Alchemy Survey Reports</h1>
+                <h1>Your Survey Results</h1>
             </div>
         </header>
         <main>
@@ -24,7 +24,6 @@ export default class ReportApp {
         const chartSection = dom.querySelector('.viewing-chart');
         const chart = new SurveyChart(this.surveyData);
         chartSection.appendChild(chart.render());
-        
         return dom;
     }
 }
