@@ -5,6 +5,7 @@ let template = function(image) {
         <div class="product-image">
             <img src="${image}">
         </div>
+        
     `;
 };
 

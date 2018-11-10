@@ -1,7 +1,7 @@
 import productsApi from './product-api.js';
 import html from './html.js';
 import Image from './images.js';
-import surveyApi from '../survey-api.js';
+import surveyApi from './survey-api.js';
 
 
 let products = productsApi.getAll();
@@ -47,7 +47,6 @@ class Header {
             const image = new Image(display[i], selected => {
                 selected.clicks += 1;
                 hold = display;
-                console.log(hold);
                 while(this.imageContainer.firstChild) {
                     this.imageContainer.removeChild(this.imageContainer.firstChild);
                 }
@@ -56,8 +55,7 @@ class Header {
                 if(totalCount === 25) {
                     surveyApi.saveSurvey(products);
 
-                    window.location.replace('../reports.html');
-                    console.log(totalCount);
+                    window.location.replace('../user-summary.html');
                 }
             });
             this.imageContainer.appendChild(image.render());
