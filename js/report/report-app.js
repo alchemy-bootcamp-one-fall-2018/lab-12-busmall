@@ -20,10 +20,10 @@ export default class ReportApp {
     }
     render() {
         const dom = makeTemplate();
-        const reportChartContainer = dom.querySelector('.report-survey');
-        const reportChart = new ReportChart();
-        reportChartContainer.appendChild(reportChart.render());
 
+        const chartSection = dom.querySelector('.report-survey');
+        const reportChart = new ReportChart(this.surveyData);
+        chartSection.appendChild(reportChart.render());
         return dom;
     }
 }
