@@ -6,7 +6,8 @@ function saveItems() {
 
 const surveyApi = {
     getAll() {
-        return products;
+        return JSON.parse(localStorage.getItem('products'));
+        
     },
 
     add(product) {

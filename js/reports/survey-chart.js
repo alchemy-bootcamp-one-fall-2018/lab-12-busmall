@@ -58,6 +58,7 @@ export default class SurveyChart {
                     display: true,
                     text: 'Busmall Survey Results',
                     fontFamily: 'Verdana',
+                    fontSize: 18
                 },
                 scales: {
                     yAxes: [{
@@ -74,7 +75,6 @@ export default class SurveyChart {
                 }
             }
         });
-
         return dom;
     }
 }
