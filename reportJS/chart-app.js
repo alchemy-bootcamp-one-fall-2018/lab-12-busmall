@@ -16,12 +16,12 @@ export default class ReportApp {
 
     render() {
         let dom = makeTemplate();
+        console.log('survey data', this.surveyData);
 
         const chartSection = dom.querySelector('.chart-viewer');
         const chart = new SurveyChart(this.surveyData);
         chartSection.appendChild(chart.render());
         return dom;
-        // new instance of child comp of chart
     }
 
 }

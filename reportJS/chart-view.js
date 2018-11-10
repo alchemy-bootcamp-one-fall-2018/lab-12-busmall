@@ -2,7 +2,7 @@ import html from '../js/html.js';
 
 function makeTemplate() {
     return html`
-    <h1> Survey Data </h1>
+    <h2> Survey Data </h2>
     <div class="chart-container">
         <canvas width="400"> </canvas>
     </div>
@@ -10,8 +10,8 @@ function makeTemplate() {
 }
 
 export default class SurveyChart {
-    constructor(results) {
-        this.results = results;
+    constructor(surveyData) {
+        this.surveyData = surveyData;
     }
     render() {
         let dom = makeTemplate();
@@ -20,16 +20,17 @@ export default class SurveyChart {
 
         let labels = [];
         let data = [];
-        for(let i = 0; i < this.results.length; i++) {
-            const survey = this.results[i]; 
+        for(let i = 0; i < this.surveyData.length; i++) {
+            const survey = this.surveyData[i]; 
             labels.push(survey.name);
             data.push(survey.count);
         }
+        console.log('data', data);
         this.chart = new Chart(ctx, {
             type: 'bar',
             data: {
                 labels: labels, 
-                dataset: [{
+                datasets: [{
                     labels: 'Number of Clicks', 
                     data: data,
                     backgroundColor: 'rgba(54, 162, 235, 0.2)',
