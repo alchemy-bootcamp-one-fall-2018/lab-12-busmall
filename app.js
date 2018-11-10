@@ -2,7 +2,6 @@ import html from './js/html.js';
 import productApi from './js/product-api.js';
 import ProductSelector from './js/product-selector.js';
 
-
 const products = productApi.getAll();
 
 function makeTemplate() {
@@ -10,7 +9,7 @@ function makeTemplate() {
         <main>
             <section id="product-selector">
                 <h2>Vote for your favorite</h2>
-                <p> Click on your favourite image</p>
+                <p> Click on your favourite</p>
             </section>
         </main>
     `;
@@ -21,7 +20,6 @@ class SurveyApp {
         const dom = makeTemplate();
         const selectorSection = dom.querySelector('#product-selector');
         const productSelector = new ProductSelector(products);
-        
         
         selectorSection.appendChild(productSelector.render());
         return dom;

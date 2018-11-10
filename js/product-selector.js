@@ -2,7 +2,6 @@ import html from './html.js';
 import ProductCard from './product-card.js';
 import productApi from './product-api.js';
 
-
 function makeTemplate() {
     return html`
     <ul class="products"></ul>
@@ -64,9 +63,6 @@ export default class ProductSelector {
                 // selected.clicks++;
                 const index = this.survey.indexOf(selected);
                 this.survey[index].clicks++;
-                
-                console.log('survey', this.survey);
-
                 this.count++;
                 if(this.count === 25) {
                     window.location = './user-summary.html';
@@ -94,5 +90,4 @@ export default class ProductSelector {
         
         return dom;
     }
-
 }  

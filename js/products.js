@@ -95,5 +95,29 @@ export default [
         image: 'tauntaun.jpg',
         clicks: 0,
         views: 0,
+    },
+    {
+        name: 'unicorn',
+        image: 'unicorn.jpg',
+        clicks: 0,
+        views: 0,
+    },
+    {
+        name: 'usb',
+        image: 'usb.gif',
+        clicks: 0,
+        views: 0,
+    },
+    {
+        name: 'water-can',
+        image: 'water-can.jpg',
+        clicks: 0,
+        views: 0,
+    },
+    {
+        name: 'wine-glass',
+        image: 'wine-glass.jpg',
+        clicks: 0,
+        views: 0,
     }
 ];

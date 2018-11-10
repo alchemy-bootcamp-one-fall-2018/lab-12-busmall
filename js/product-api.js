@@ -1,6 +1,5 @@
 import products from './products.js';
 
-
 const productApi = {
     saveSurvey(survey) {
         localStorage.setItem('saveSurvey', JSON.stringify(survey));
@@ -9,5 +8,4 @@ const productApi = {
         return products;
     }
 };
-
 export default productApi;
