@@ -7,7 +7,7 @@ function makeTemplate() {
         <header>
             <h1>Marketing App</h1>
         </header>
-        <p>There will be 3 random pictures shown.  Of the three pictures shown, please pick the one that you like best.</p>
+        <p>Please pick the one that you like best.</p>
     </div>
     <div>
         <section class="random-pics-container"></section>
