@@ -109,9 +109,19 @@ function makeTemplate() {
 export default class ImageSelector {
     render() {
         const dom = makeTemplate();
-        const imageContainer = dom.getElementById('random-pic-1');
-        imageContainer.addEventListener('click', function() {
-            console.log('clicked!');
+        const imageContainerOne = dom.getElementById('random-pic-1');
+        imageContainerOne.addEventListener('click', function() {
+            console.log('clicked 1');
+            // event.preventDefault();
+        });
+        const imageContainerTwo = dom.getElementById('random-pic-2');
+        imageContainerTwo.addEventListener('click', function() {
+            console.log('clicked 2');
+            // event.preventDefault();
+        });
+        const imageContainerThree = dom.getElementById('random-pic-3');
+        imageContainerThree.addEventListener('click', function() {
+            console.log('clicked 3');
             // event.preventDefault();
         });
         return dom;
