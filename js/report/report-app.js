@@ -1,11 +1,11 @@
-import SurveyChart from './survey-chart.js';
-import html from './html.js';
+import html from '../html.js';
 import surveyApi from '../data-apis/survey-api.js';
+import ReportChart from '../report/report-chart.js';
 
 function makeTemplate() {
     return html`
         <div class="app">
-        <header>Insert header here</header>
+        <header>User Summary</header>
         <main>
             <section class="report-survey"></section>
             <section class="user-report"></section>
@@ -14,15 +14,15 @@ function makeTemplate() {
     `;
 }
 
-export default class SurveyApp {
+export default class ReportApp {
     constructor() {
         this.surveyData = surveyApi.getAll();
     }
     render() {
         const dom = makeTemplate();
         const chartSection = dom.querySelector('.report-survey');
-        const surveyChart = new SurveyChart(this.surveyData);
-        chartSection.appendChild(surveyChart.render());
+        const reportChart = new ReportChart(this.surveyData);
+        chartSection.appendChild(reportChart.render());
         return dom;        
     }
 }

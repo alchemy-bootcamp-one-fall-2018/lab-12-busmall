@@ -1,7 +1,6 @@
 
-import SurveyApp from './survey-app.js';
+import ReportApp from './report-app.js';
 
 const root = document.getElementById('root');
-const app = new SurveyApp();
+const app = new ReportApp();
 root.appendChild(app.render());
-       

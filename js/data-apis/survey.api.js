@@ -5,9 +5,9 @@ const surveyApi = {
         const json = localStorage.getItem('saveSurvey');
         if(json) {
             return survey;
-
         }
     },
+    
     add(survey) {
         return survey;
     }

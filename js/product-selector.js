@@ -1,10 +1,10 @@
 import html from './html.js';
 import Product from './product-card.js';
-import productApi from '../data-apis/product-api.js';
+import productApi from './data-apis/product-api.js';
 
 function makeTemplate() {
     return html`
-            <ul class="products"></ul>
+    <ul class="products"></ul>
     `;  
 }
 function getRandomIndex(length) {
@@ -13,7 +13,7 @@ function getRandomIndex(length) {
 class ProductSelector {
     constructor(products) {
         this.products = products;
-        this.survery = products.map(product => {
+        this.survey = products.map(product => {
             return {
                 name: product.name,
                 image: product.image,
@@ -26,7 +26,7 @@ class ProductSelector {
         this.lastProducts = [];
     } 
     getRandomProducts() {
-        const copy = this.survery.slice();
+        const copy = this.survey.slice();
         let randomProducts = [];
 
         for(let i = 0; i < this.imagesPer; i++){
@@ -41,10 +41,11 @@ class ProductSelector {
             else {
                 randomProducts.push(product);
             }
+            console.log(this.survey);
             this.survey[index].views++;
             
             if(this.round === 24){
-                window.location = 'survey.html';
+                window.location = 'user-summary.html';
                 productApi.saveSurvey(this.survey);
             }
         }
@@ -68,9 +69,6 @@ class ProductSelector {
         });
     }
         
-    // showrandomProducts.push(product);
-    // product.views++;
-
     clearProducts() {
         while(this.list.lastElementChild) {
             this.list.lastElementChild.remove();

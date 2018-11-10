@@ -10,7 +10,7 @@ export default [
 
     {
         name: 'banana',
-        image: './assets/banana.jpg',
+        image: 'banana.jpg',
         clicks: 0,
         views: 0
     },
@@ -18,7 +18,7 @@ export default [
 
     {
         name: 'bathroom',
-        image: './assets/bathroom.jpg',
+        image: 'bathroom.jpg',
         clicks: 0,
         views: 0
     },
@@ -27,14 +27,14 @@ export default [
     {
 
         name: 'boots',
-        image: '../assets/boots.jpg',
+        image: 'boots.jpg',
         clicks: 0,
         views: 0
     },    
 
     {
         name: 'breakfast',
-        image: '../assets/breakfast.jpg',
+        image: 'breakfast.jpg',
         clicks: 0,
         views: 0
     },
@@ -42,7 +42,7 @@ export default [
 
     {
         name: 'bubblegum',
-        image: '../assets/bubblegum.jpg',
+        image: 'bubblegum.jpg',
         clicks: 0,
         views: 0
     },
@@ -50,84 +50,84 @@ export default [
 
     {
         name: 'chair',
-        image: '../assets/chair.jpg',
+        image: 'chair.jpg',
         clicks: 0,
         views: 0
     },
 
     {
         name: 'cthulhu',
-        image: '../assets/cthulhu.jpg',
+        image: 'cthulhu.jpg',
         clicks: 0,
         views: 0
     },
     {
         name: 'dog-duck',
-        image: '../assets/dog-duck.jpg',
+        image: 'dog-duck.jpg',
         clicks: 0,
         views: 0
     },
     {
         name: 'dragon',
-        image: '../assets/dragon.jpg',
+        image: 'dragon.jpg',
         clicks: 0,
         views: 0
     },
     {
         name: 'pen',
-        image: '../assets/pen.jpg',
+        image: 'pen.jpg',
         clicks: 0,
         views: 0
     },
     {
         name: 'pet-sweep',
-        image: '../assets/pet-sweep.jpg',
+        image: 'pet-sweep.jpg',
         clicks: 0,
         views: 0
     },
     {
         name: 'scissors',
-        image: '../assets/scissors.jpg',
+        image: 'scissors.jpg',
         clicks: 0,
         views: 0
     },
     {
         name: 'shark',
-        image: '../assets/shark.jpg',
+        image: 'shark.jpg',
         clicks: 0,
         views: 0
     },
     {
         name: 'sweep',
-        image: '../assets/sweep.jpg',
+        image: 'sweep.jpg',
         clicks: 0,
         views: 0
     },
     {
         name: 'tauntaun',
-        image: '../assets/tauntaun.jpg'
+        image: 'tauntaun.jpg'
     },
     {
         name: 'unicorn',
-        image: '../assets/unicorn.jpg',
+        image: 'unicorn.jpg',
         clicks: 0,
         views: 0
     },
     {
         name: 'usb',
-        image: '../assets/usb.jpg',
+        image: 'usb.jpg',
         clicks: 0,
         views: 0
     },
     {
         name: 'water-can',
-        image: '../assets/water-can.jpg',
+        image: 'water-can.jpg',
         clicks: 0,
         views: 0
     },
     {
         name: 'wine-glass',
-        image: '../assets/wine-glass.jpg',
+        image: 'wine-glass.jpg',
         clicks: 0,
         views: 0
     },

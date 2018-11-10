@@ -1,14 +1,14 @@
-import html from './html.js';
+import html from '../html.js';
 
 function makeTemplate() {
     return html`
-        <div class="survey-chart">
+        <div class="report-chart">
             <canvas width="1200" height="400"></canvas>
         </div>
     `;
 }
 
-export default class SurveyChart {
+export default class ReportChart {
     constructor(results) {
         this.results = results;
     }
@@ -29,7 +29,7 @@ export default class SurveyChart {
             viewCount.push(products[i].views);
         }
 
-        this.chart = new Chart(ctx, {
+        this.chart = new ReportChart(ctx, {
             type: 'bar',
             data: {
                 labels: labels,
