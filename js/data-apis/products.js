@@ -2,7 +2,7 @@ export default [
 
     {
         name: 'bag',
-        image: './assets/bag.jpg',
+        image: 'bag.jpg',
         clicks: 0,
         views: 0
     },

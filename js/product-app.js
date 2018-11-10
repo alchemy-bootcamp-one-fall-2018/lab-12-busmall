@@ -1,6 +1,6 @@
 
 import html from './html.js';
-import productApi from '../data-apis/product-api.js';
+import productApi from './data-apis/product-api.js';
 import ProductSelector from './product-selector.js';
 
 const products = productApi.getAll();
@@ -13,7 +13,7 @@ function makeTemplate() {
 
         <main>
             <section id="product-selector">
-                <h2>Vote for your favorite</h2>
+                <h2>Choose your favorite product.</h2>
             </section>
         </main>
         `;
