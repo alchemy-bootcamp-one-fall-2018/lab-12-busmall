@@ -1,7 +1,16 @@
-// import ProductDisplay from '/.product-display.js';
-import productApi from './product-api,js';
+let survey = [];
 
-// let products = productApi.getAll();
 const surveyApi = {
-    if(this)
-}
+    getAll() {
+        const json = localStorage.getItem('saveSurvey');
+        if(json) {
+            return survey;
+
+        }
+    },
+    add(survey) {
+        return survey;
+    }
+};
+
+export default surveyApi;

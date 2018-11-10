@@ -15,7 +15,7 @@ function makeTemplate() {
 }
 
 export default class SurveyApp {
-    constructor() {git add .
+    constructor() {
         this.surveyData = surveyApi.getAll();
     }
     render() {

@@ -11,8 +11,7 @@ function getRandomIndex(length) {
     return Math.floor(Math.random() * length);
 }
 class ProductSelector {
-    constructor(products, onSelect) {
-        this.onSelect = onSelect;
+    constructor(products) {
         this.products = products;
         this.survery = products.map(product => {
             return {
@@ -34,6 +33,7 @@ class ProductSelector {
             const index = getRandomIndex(copy.length);
             const product = copy[index];
             copy.splice(index, 1);
+
             if(this.lastProducts.includes(product)){
                 i--;
                 continue;
@@ -42,7 +42,7 @@ class ProductSelector {
                 randomProducts.push(product);
             }
             this.survey[index].views++;
-            }
+            
             if(this.round === 24){
                 window.location = 'survey.html';
                 productApi.saveSurvey(this.survey);
