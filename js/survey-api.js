@@ -1,6 +1,5 @@
 let survey = [];
 
-
 const surveyApi = {
     getAll() {
         const json = localStorage.getItem('saveSurvey');
@@ -9,10 +8,8 @@ const surveyApi = {
         }
     },
     add(survey) {
-        
         return survey;
     }
-    
 };
 
 export default surveyApi;
