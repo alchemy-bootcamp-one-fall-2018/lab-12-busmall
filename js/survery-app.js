@@ -5,20 +5,21 @@ function makeTemplate() {
     return html`
         <div class="app">
         <header>Insert header here</header>
-
-
-        <main>Main</main>
-
+        <main>
+            <section class="report-survey"></section>
+            <section class="user-report"></section>
+        </main>
         </div>
     `;
 }
 
-export default class App {
+export default class SurveyApp {
     constructor() {
         this.surveyData = surveyApi.getAll();
     }
     render() {
         const dom = makeTemplate();
+        const chartsection = dom.querySelector(',r')
         return dom;        
     }
 }
