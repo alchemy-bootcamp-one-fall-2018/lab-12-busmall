@@ -1,10 +1,6 @@
 import html from './html.js';
-import productApi from '../api/product-api.js';
 import surveyApi from '../api/survey-api.js';
-import ProductSelector from './product-selector.js';
 import SurveyChart from '../js/survey-chart.js';
-
-const products = productApi.getAll();
 
 function makeTemplate() {
     return html`
@@ -24,26 +20,22 @@ function makeTemplate() {
         </main>`;
 }
 
-class SurveyApp {
+export default class ReportApp {
     constructor() {
-        this.surveyChart = surveyApi.getAll();
+        this.surveyData = surveyApi.getAll();
     }
 
     render() {
         const dom = makeTemplate();
 
-        const mainSection = dom.querySelector('main');
-        
-        const productSelector = new ProductSelector(products, survey => {
-            surveyApi.add(survey);
-            window.location = './report.html';
-        });
-
-        mainSection.appendChild(productSelector.render());
+        const chartSection = dom.querySelector('.survey-chart');
+        const chart = new SurveyChart(this.surveyData);
+        chartSection.appendChild(chart.render());
 
         return dom;
     }
 }
 
-const surveyApp = new SurveyApp();
-document.getElementById('root').appendChild(surveyApp.render());
+const app = new ReportApp();
+const root = document.getElementById('root');
+root.appendChild(app.render());

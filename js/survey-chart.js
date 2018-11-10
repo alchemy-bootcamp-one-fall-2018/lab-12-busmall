@@ -21,33 +21,44 @@ export default class SurveyChart {
         const ctx = canvas.getContext('2d');
 
         let labels = [];
-        let data = [];
+        let clicks = [];
+        let views = [];
 
-        for (let i = 0; i < this.results.length; i++) {
-            const survey = this.results[i];
-            labels.push(survey.clicks);
-            data.push(survey.views);
+        const survey = JSON.parse(localStorage.getItem('surveys'));
+
+        for(let i = 0; i < this.results.length; i++) {
+            labels.push(survey[i].clicks);
+            clicks.push(survey[i].clicks);
+            views.push(survey[i].views);
         }
         
         this.chart = new Chart(ctx, {
             type: 'bar',
-            labels: labels,
-            datasets: [{
-                label: '# of views',
-                data: data,
-            }]
-        },
-        options: {
-            responsive: true,
-            maintainAspectRatio: false,
-            scales: {
-                yAxes: [{
-                    ticks: {
-                        beginAtZero: true
-                    }
+            data: {
+                label: labels,
+                datasets: [{
+                    label: '# of views',
+                    data: views
+                },
+                {
+                    label: '# of clicks',
+                    data: clicks
                 }]
+           
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                scales: {
+                    yAxes: [{
+                        ticks: {
+                            beginAtZero: true
+                        }
+                    }]
+                }
             }
+          
         });
-    return dom;    
+        return dom; 
     }
 }
