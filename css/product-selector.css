@@ -1,0 +1,21 @@
+.product-image {
+    width: 200px;
+
+}
+
+ul {
+    list-style-type: none;
+    margin: 50px;
+}
+
+.products {
+    text-align: center;
+    display: flex;
+    justify-content: space-around;
+    background-color: lavender;
+}
+
+
+.productCard {
+    
+}

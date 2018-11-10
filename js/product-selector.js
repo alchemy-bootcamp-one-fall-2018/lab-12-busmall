@@ -5,7 +5,7 @@ import productApi from './product-api.js';
 
 function makeTemplate() {
     return html`
-    <ul class="products">Product Selector</ul>
+    <ul class="products"></ul>
     `;
 }
 

@@ -2,7 +2,7 @@ import html from '../../js/html.js';
 
 function makeTemplate() {
     return html`
-        <h2> Pretty Chart </h2>
+        <h2> Survey Report </h2>
         <div class="chart-container">
             <canvas width="400"></canvas>
         </div>
@@ -41,16 +41,16 @@ export default class ViewChart {
                     data: viewCount,
 
                     
-                    backgroundColor: 'rgba(54, 162, 235, 0.2)',
-                    borderColor: 'rgba(54, 162, 235, 1)',
+                    backgroundColor: 'gray',
+                    borderColor: 'white',
                     borderWidth: 1
                 },
                 {
                     label: '# of Clicks',
                     data: clickCount,
 
-                    backgroundColor: 'rgba(54, 162, 235, 0.2)',
-                    borderColor: 'rgba(54, 162, 235, 1)',
+                    backgroundColor: 'lightpink',
+                    borderColor: 'white',
                     borderWidth: 1
 
                 }]

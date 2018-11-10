@@ -7,7 +7,6 @@ import ViewChart from './view-chart.js';
 function makeTemplate() {
     return html`
         <main>
-            Report Summary
             <section class="chart"></section>
         </main>
     `;

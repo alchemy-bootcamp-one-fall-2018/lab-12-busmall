@@ -7,14 +7,11 @@ const products = productApi.getAll();
 
 function makeTemplate() {
     return html`
-        <h1>Pick a Product!</h1>
-
         <main>
             <section id="product-selector">
-                <h2>Vote for your favourite</h2>
-                <p> Click on your favourite!</p>
+                <h2>Vote for your favorite</h2>
+                <p> Click on your favourite image</p>
             </section>
-            
         </main>
     `;
 }
