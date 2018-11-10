@@ -1,6 +1,5 @@
 import productApi from './products-api.js';
 import html from './html.js';
-// import Header from './header.js';
 import ProductDisplay from './product-display.js';
 
 const products = productApi.getAll();
@@ -14,6 +13,7 @@ function makeTemplate() {
         <main>
             <section id="product-display">
                 <h3>Select A Product</h3>
+                <p> You would be most likely to purchase </p>
             </section>
         </main>
     `;
@@ -22,23 +22,12 @@ function makeTemplate() {
 class ProductsApp {
     render() {
         const dom = makeTemplate();
-        
-        // reference section elements
-        // const headerSection = dom.querySelector('header');
-        const productDisplaySection = dom.querySelector('#product-display');
-        
-        // header
-        // const header = new Header();
-        // headerSection.appendChild(header.render());
-         
-        // product display
-        const productDisplay = new ProductDisplay(products);
        
+        const productDisplaySection = dom.querySelector('#product-display');
+        const productDisplay = new ProductDisplay(products);
         productDisplaySection.appendChild(productDisplay.render());
         
-        
         return dom;
-        
     }
 }
 

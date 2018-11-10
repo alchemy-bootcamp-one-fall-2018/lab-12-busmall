@@ -9,13 +9,11 @@ function makeTemplate() {
         <header>
             <h1>BusMall Products Survey Results</h1>
         </header>
-        <p>Survey complete! Thank you for your participation!</p>
+        <h3>Survey complete. Thank you for your participation! </h3>
+        <h4>Below are the results of your selection.</h4>
         <main>
             <section id="product-survey">
-             
-                <ul class="products"></ul>
-                    
-
+                <ol class="products"></ol>
             </section>
         </main>
     `;

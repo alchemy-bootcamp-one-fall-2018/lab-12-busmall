@@ -15,14 +15,6 @@ function getRandomIndex(length) {
 class ProductDisplay {
     constructor(products) {
         this.products = products;
-        // this.survey = products.map(product => {
-        //     return {
-        //         name: product.name,
-        //         image: product.image,
-        //         views: 0,
-        //         clicks: 0
-        //     };
-        // });
         this.imagesPer = 3;
         this.roundsPerSurvey = 25;
         this.totalRounds = 0;
