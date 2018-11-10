@@ -1,5 +1,5 @@
 import html from './html.js';
-import ImageSelector from './product-list.js';
+import ImageSelector from './products-api.js';
 
 function makeTemplate() {
     return html`
