@@ -8,7 +8,7 @@ image {
 }
 
 .product-card {
-    border: 2px solid black;
+    border: 3px solid black;
 
 }
 
@@ -17,11 +17,9 @@ ul {
     direction: row;
     list-style: none;
     text-align: center;
-    padding-left: 20px;
-    padding-right: 20px;
 }
 
 image {
     align-items: center;
-    padding: 20px;
+    border: 20px;
 }

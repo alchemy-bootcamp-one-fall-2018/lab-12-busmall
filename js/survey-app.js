@@ -30,7 +30,7 @@ class SurveyApp {
         
         const productSelector = new ProductSelector(products, survey => {
             surveyApi.add(survey);
-            window.location = './complete.html';
+            window.location = './report.html';
         });
 
         mainSection.appendChild(productSelector.render());
