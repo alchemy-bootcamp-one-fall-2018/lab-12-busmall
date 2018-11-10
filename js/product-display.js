@@ -79,7 +79,7 @@ class ProductDisplay {
                     alert('Thank you for completing the survey! Click OK to see the results.');
                     surveyApi.saveProducts(this.products);
                     // window .redirect to report html
-                    window.location = '../user-summary.html';
+                    window.location = './user-summary.html';
 
                     
                 }
