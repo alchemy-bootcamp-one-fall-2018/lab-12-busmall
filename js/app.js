@@ -1,27 +1,26 @@
 import html from './html.js';
-import RandomPics from './product-list.js';
+import ImageSelector from './product-list.js';
 
 function makeTemplate() {
     return html`
     <div class="app">
         <header>
-            <h1>Pick 1 of 3 :)</h1>
+            <h1>Marketing App</h1>
         </header>
         <p>There will be 3 random pictures shown.  Of the three pictures shown, please pick the one that you like best.</p>
     </div>
-
-        
-            <section class="random-pics-container"></section>
-        
+    <div>
+        <section class="random-pics-container"></section>
+    </div>
 `;
 }
 
 class App {
     render() {
         const dom = makeTemplate();
-        const randomPicsContainer = dom.querySelector('.random-pics-container');
-        const randomPics = new RandomPics();
-        randomPicsContainer.appendChild(randomPics.render());
+        const imageSelectorContainer = dom.querySelector('.random-pics-container');
+        const imageSelector = new ImageSelector();
+        imageSelectorContainer.appendChild(imageSelector.render());
 
         return dom;
     }

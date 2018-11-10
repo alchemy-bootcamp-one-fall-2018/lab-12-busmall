@@ -86,8 +86,8 @@ let products = [
 const rngPic1 = Math.floor(Math.random() * products.length);
 const rngPic2 = Math.floor(Math.random() * products.length);
 const rngPic3 = Math.floor(Math.random() * products.length);
-function makeTemplate() {
 
+function makeTemplate() {
     return html`
     <div id="random-pic-1" class="random-pics">
         <div>${products[rngPic1].name}</div>
@@ -106,9 +106,14 @@ function makeTemplate() {
         `;
 }
 
-
-export default class RandomPics {
+export default class ImageSelector {
     render() {
-        return makeTemplate();
+        const dom = makeTemplate();
+        const imageContainer = dom.getElementById('random-pic-1');
+        imageContainer.addEventListener('click', function() {
+            console.log('clicked!');
+            // event.preventDefault();
+        });
+        return dom;
     }
 }
