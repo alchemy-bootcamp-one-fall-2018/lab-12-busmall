@@ -1,3 +1,4 @@
+import SurveyChart from './survey-chart.js';
 import html from './html.js';
 import surveyApi from '../data-apis/survey-api.js';
 
@@ -14,12 +15,14 @@ function makeTemplate() {
 }
 
 export default class SurveyApp {
-    constructor() {
+    constructor() {git add .
         this.surveyData = surveyApi.getAll();
     }
     render() {
         const dom = makeTemplate();
-        const chartsection = dom.querySelector(',r')
+        const chartSection = dom.querySelector('.report-survey');
+        const surveyChart = new SurveyChart(this.surveyData);
+        chartSection.appendChild(surveyChart.render());
         return dom;        
     }
 }

@@ -1,14 +1,14 @@
-import html from '../html.js';
+import html from './html.js';
 
 function makeTemplate() {
     return html`
-        <div class="report-chart">
+        <div class="survey-chart">
             <canvas width="1200" height="400"></canvas>
         </div>
     `;
 }
 
-export default class ReportChart {
+export default class SurveyChart {
     constructor(results) {
         this.results = results;
     }
