@@ -17,7 +17,10 @@ class ImageApp {
     render() {
         const dom = makeTemplate();
         const productsSection = dom.querySelector('.products-section');
-        const productSelector = new ProductSelector(products);
+        const productSelector = new ProductSelector(products, survey => {
+            console.log('heya', survey);
+            window.location.href = '/user_summary.html';
+        });
 
         productsSection.appendChild(productSelector.render());
         return dom;

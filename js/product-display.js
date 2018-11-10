@@ -2,7 +2,7 @@ import html from './html.js';
 
 let template = function(product) {
     return html`
-        <div class="product-shown">
+        <div ref name="anyClick" class="product-shown"> 
             <h2 class="product-name">${product.name}</h2>
             <img src="../assets/${product.image}">        
         </div>
@@ -19,11 +19,10 @@ class ProductDisplay {
         const dom = template(this.product);
         const divItem = dom.querySelector('div');
         const product = this.product;
-
+        product.views++;
 
         divItem.addEventListener('click', () => {
-            product.clicks++;
-            console.log('hear click', product);
+            this.onSelect(product);
         });
               
         return dom;

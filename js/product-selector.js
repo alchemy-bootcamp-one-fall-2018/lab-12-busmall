@@ -1,6 +1,6 @@
 import html from './html.js';
 import ProductDisplay from './product-display.js';
-
+// import productViews from './products-api';
 // products in
 // onSurvey in
 
@@ -12,11 +12,11 @@ function makeTemplate() {
 }
 
 class ProductSelector {
-    constructor(products, onSelect) {
+    constructor(products, onComplete) {
         this.products = products;
-        this.onSelect = onSelect;
+        this.onComplete = onComplete;
         this.lastThree = [];
-        this.viewCount = 0; //
+        this.viewCount = 0;
     }
 
     getRandomIndex(arrayLength) {
@@ -26,52 +26,52 @@ class ProductSelector {
     getTrio() {
         const randomProduct = []; 
         const products = this.products;
-        this.viewCount++;
-        console.log(this.viewCount);
+
         for(let i = 0; i < 3; i++) {
             const nouveauIndex = this.getRandomIndex(products.length);
 
             const product = products[nouveauIndex];
             if(randomProduct.includes(product) || this.lastThree.includes(product)) {
                 i--;
-                console.log('dupl');
             } else {
-               // for(let j = 0; j < 25; j++) { // my attempt at stopping at 25
-                // while(this.viewCount < 25) {
-                    
 
-                // }   
                 randomProduct.push(products[nouveauIndex]);
-
-                   // product.views++;
-                    // console.log('one turn', product.views);
-                    // break;
-               // }
             }
         }
 
-        // view count, repeat 25x then new message and new button "click to view" new pg 
-        // with message w/counts in it
         this.lastThree = randomProduct;
-        console.log('last three', this.lastThree);
         return randomProduct;
     }
+
     displayRandomThree() {
         const randomProduct = this.getTrio();
-        randomProduct.forEach(product => {
-            const productDisplay = new ProductDisplay(product, this.onSelect);
-            this.productsList.appendChild(productDisplay.render());
-            // product = productDisplay.product;
-            // product.views++;
-            // console.log('views', product.views);
-        });
+        if(this.viewCount < 25) {
+            randomProduct.forEach(product => {
+                const productDisplay = new ProductDisplay(product, selected => {
+                    this.viewCount++;
+                    selected.clicks++;
+                    this.clearImages();
+                    this.displayRandomThree();
+                });
+                this.productsList.appendChild(productDisplay.render());
+            });
+        }
+        else {
+            this.onComplete(this.products);
+        }
+    }
+
+    clearImages() {
+        while(this.productsList.lastElementChild) {
+            this.productsList.lastElementChild.remove();
+        }
     }
 
     render() {
         const dom = makeTemplate();
         this.productsList = dom.querySelector('div');
         this.displayRandomThree();
- 
+        
         return dom;
     }
 }
