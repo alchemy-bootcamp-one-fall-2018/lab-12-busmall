@@ -24,6 +24,7 @@ export default class SurveyChart {
         let clicks = [];
         let views = [];
 
+        // eslint-disable-next-line
         const products = JSON.parse(localStorage.getItem('surveys'));
 
         for(let i = 0; i < this.results[0].length; i++) {
@@ -32,6 +33,7 @@ export default class SurveyChart {
             views.push(this.results[0][i].views);
         }
         
+        // eslint-disable-next-line
         this.chart = new Chart(ctx, {
             type: 'bar',
             data: {

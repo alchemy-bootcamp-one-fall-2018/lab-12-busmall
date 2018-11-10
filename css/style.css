@@ -23,3 +23,7 @@ image {
     align-items: center;
     border: 20px;
 }
+
+clicks {
+    color: steelblue;
+}
