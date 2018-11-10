@@ -4,6 +4,15 @@
 
 }
 
+.image-display{
+    display:flex;
+}
+
+.list-item{
+    border: 2px solid grey;
+    margin-right: 10px;
+}
+
 .image-box{
     display:flex;
     flex-direction: row;
