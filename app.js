@@ -2,6 +2,7 @@ import html from './js/html.js';
 import productApi from './js/product-api.js';
 import ProductSelector from './js/product-selector.js';
 
+
 const products = productApi.getAll();
 
 function makeTemplate() {
@@ -18,18 +19,14 @@ function makeTemplate() {
     `;
 }
 class SurveyApp {
+    
     render() {
         const dom = makeTemplate();
         const selectorSection = dom.querySelector('#product-selector');
         const productSelector = new ProductSelector(products);
-
-        // const productSelector = new ProductSelector(this.products, product => {
-        //     product.count++;
-            
-        // });
+        
+        
         selectorSection.appendChild(productSelector.render());
-        
-        
         return dom;
     }
 }

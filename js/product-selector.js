@@ -1,5 +1,6 @@
 import html from './html.js';
 import ProductCard from './product-card.js';
+import productApi from './product-api.js';
 
 
 function makeTemplate() {
@@ -14,6 +15,7 @@ function getRandomIndex(length) {
 
 export default class ProductSelector {
     constructor(products){
+        // let surveyResults = this.survey;
         this.products = products;
         this.survey = products.map(product => {
             return {
@@ -27,9 +29,9 @@ export default class ProductSelector {
         this.imagesPer = 3;
         this.count = 0;
         this.lastProducts = [];
-        
+        // this.survey.push(surveyResults);
     }
-    
+
     getRandomProducts() {
         const copy = this.survey.slice();
         const randomProducts = [];
@@ -67,14 +69,16 @@ export default class ProductSelector {
 
                 this.count++;
                 if(this.count === 25) {
-                    window.location = 'report.html';
+                    window.location = './user-summary.html';
+                    productApi.saveSurvey(this.survey);
                 }
-
+                
                 this.clearProducts();
                 this.showRandomProducts();
             });
             this.list.appendChild(productCard.render());
         }); 
+
     }
 
     clearProducts() {
@@ -87,7 +91,8 @@ export default class ProductSelector {
         const dom = makeTemplate();
         this.list = dom.querySelector('ul');
         this.showRandomProducts();
-
+        
         return dom;
     }
+
 }  
