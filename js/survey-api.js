@@ -1,38 +1,24 @@
-let survey = [];
 
-function saveSurvey() {
-    localStorage.setItem('survey', JSON.stringify(survey));
+function saveSurvey(survey) {
+    localStorage.setItem('surveyArray', JSON.stringify(survey));
 }
+
+
 const surveyApi = {
+    add(survey) {
 
-   
-    get() {
-        const json = localStorage.getItem('survey');
-        if(json) {
-            survey = JSON.parse(json);
-        }
-        return survey;
-    }, 
+        console.log('api survey', survey);
 
+        saveSurvey(survey);        
+    },
 
-    add(product) {
+    getAll() {
+        
+        const json = localStorage.getItem('surveyArray');
 
-        const itemChoice = survey.find(item => {
-            return item.name === product.name;
-        });
-        if(itemChoice) {
-            itemChoice.quantity++;
-        }
-        else {
-            survey.push({
-                name: product.name,
-                quantity: 1
-            });
-        }
-
-        saveSurvey();
+        return JSON.parse(json);
     }
-    
+
 };
 
 export default surveyApi; 
