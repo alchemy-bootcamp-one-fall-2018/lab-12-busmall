@@ -13,19 +13,19 @@ export default class ViewChart {
     constructor(results) {
         this.results = results;
     }
-
     render() {
         let dom = makeTemplate();
 
         const canvas = dom.querySelector('canvas');
         const ctx = canvas.getContext('2d');
-
-        let name = [];
+        
+        let label = [];
         let data = [];
-
+        
         for(let i = 0; i < this.results.length; i++) {
             const card = this.results[i];
-            name.push(card.name);
+            
+            label.push(card.name);
             data.push(card.count);
         }
 

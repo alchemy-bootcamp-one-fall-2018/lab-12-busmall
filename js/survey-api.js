@@ -1,10 +1,10 @@
 let survey = [];
-
+// console.log('hello teonna', localStorage.getItem('saveSurvey'));
 const surveyApi = {
     getAll() {
         const json = localStorage.getItem('saveSurvey');
         if(json) {
-            return survey;
+            return JSON.parse(json);
         }
     },
     add(survey) {

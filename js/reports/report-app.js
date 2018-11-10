@@ -22,6 +22,7 @@ export default class ReportApp {
 
         const chartSection = dom.querySelector('.chart');
         const chart = new ViewChart(this.surveyData);
+        
         chartSection.appendChild(chart.render());
         
         return dom;
