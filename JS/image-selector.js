@@ -17,7 +17,7 @@ export default class ImageSelector {
 
     render() {
         let dom = makeTemplate();
-        this.list = dom.querySelector('ul');
+        this.ul = dom.querySelector('ul');
         this.update();
 
         return dom;
@@ -26,14 +26,14 @@ export default class ImageSelector {
 
     update(){
         while(this.ul.lastElementChild){
-            this.ul.lastElementChild.remove;
+            this.ul.lastElementChild.remove();
         }
     
 
         for(let i = 0; i < 3; i++) {
             let index = this.getImage();
             let imageDisplay = new ImageDisplay(this.products[index], this.onSelect);
-            this.products[index].views++;
+            // this.products[index].views++;
 
             this.ul.appendChild(imageDisplay.render());
         } 

@@ -6,13 +6,12 @@ import surveyApi from './survey-api.js';
 
 function makeTemplate() {
     return html`
-    <header>
-        <div> 
-            <h1>Please select a product</h1>
-        </div>
-    </header>
+    <header> Please select the most appealing product :) </header>
+    
     <main>
         <section class="product-selector"></section>
+        <ul class="products"></ul>
+        <section class="update"></section>
     </main>
     `;
 }
