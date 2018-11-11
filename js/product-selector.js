@@ -12,11 +12,13 @@ function makeTemplate() {
 }
 
 let workingArray = products.getAll();
+// let completeSet = [];
 
 class ProductSelector {
     constructor() {
         this.lastThree = [];
     }
+    
     
     getRandomInt() {
         return Math.floor(Math.random() * Math.floor(19));
@@ -39,7 +41,7 @@ class ProductSelector {
         this.lastThree = currentSet; 
         return currentSet;   
     }
-    
+    ////////////////////////////////////////////////////////////////////////////////////////////
     showThreeProducts() {
         let currentSet = this.getThreeImages();
         this.clearProducts();
@@ -49,14 +51,30 @@ class ProductSelector {
                 selected.votes++;
                 console.log('selected', selected);
                 
-            }); //this is this.image in product-card
+            });                  //this is this.image in product-card
             const image = productCardComponent.render(); //aka new ProductCard (sent to productCard)
             
             this.productCardContainer.appendChild(image);  //(child from product-ProductCard.js)
-        });   
+            
+        }); 
     }
     
+    // getCompleteSet() {
+    //     let completeSet;
+    //     for(let i = 0 )
+    //         console.log('current set', currentSet);
+
+    //     }
+        
+    // }
+
+    // getCompleteSet() {
+    //     completeSet.push(this.productCardContainer);
+    //     console.log('current set', completeSet);
+    // }
+
     clearProducts() {
+        console.log('prodct container', this.productCardContainer);
         while(this.productCardContainer.lastElementChild) {
             this.productCardContainer.lastElementChild.remove();
         }
@@ -68,9 +86,20 @@ class ProductSelector {
         
         this.productCardContainer = dom.querySelector('#product-card-container'); //now have a variable that is the line above (where stuff goes)
         this.showThreeProducts();       
-
+        
         return dom;
     }
 }
 
+// getCompleteSet() {
+//     const completeSet = [];
+//     for(let i = 0; i < 25; i++) {
+//         
+
+//          completeSet.push(currentSet);
+//         this.currentSet = completeSet;
+//         return completeSet;
+//         console.log('completeSet', completeSet);
+//     }
+// }
 export default ProductSelector;
