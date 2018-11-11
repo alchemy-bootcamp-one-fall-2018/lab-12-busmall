@@ -40,7 +40,7 @@ export default class ImageSelector {
     } 
 
     getImage() {
-        const index = Math.floor(Math.random() * 24);
+        const index = Math.floor(Math.random() * 20);
         return index;
     }
 }

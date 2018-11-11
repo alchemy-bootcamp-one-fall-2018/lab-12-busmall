@@ -24,7 +24,7 @@ class ImageDisplay {
         });
 
         // eslint-disable-next-line no-console
-        console.log('got here', this.product.image);
+        console.log('got here', this.product);
         listItem.src = this.product.image;
 
         return dom;

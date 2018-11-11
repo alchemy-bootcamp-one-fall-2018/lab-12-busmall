@@ -23,7 +23,7 @@ let products = [
     {
         name:'All in One Breakfast',
         image:'./assets/breakfast-machine.jpg'
-    },
+    }, 
 
     {
         name:'Meatball Bubble Gum',
