@@ -34,6 +34,7 @@ const surveyApi = {
     },
     addView(viewedPicture) {
         if(surveyResults.length === 0) {
+            
             for(let i = 0; i < survey.length; i++) {
                 if(survey[i].name === viewedPicture.name) {
                     survey[i].views++;

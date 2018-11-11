@@ -35,6 +35,7 @@ export default class Survey {
         this.votes = 0;
     }
     render() {
+        localStorage.clear();
         let dom = makeTemplate();
         this.productsContainer = dom.getElementById('products');
         this.showProducts();
