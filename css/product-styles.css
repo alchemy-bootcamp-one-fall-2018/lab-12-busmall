@@ -1,29 +1,27 @@
 body {
-    background-color: lightblue;
+    background-color: lightgoldenrodyellow;
 }
 .app {
-    background: lightgreen;
+    background: darkslategray;
     border: 10px solid darkblue;
-    border-radius: 200px;
+    border-radius: 5px;
+    color: lightgoldenrodyellow
 }
 h1 {
     text-align: center;
 }
-p {
+/* p {
     text-align: center;
-}
+} */
 .random-pics-container {
-    margin: 0 auto;
-    
     display: flex;
-    justify-content: center;
+    justify-content: space-evenly;
 }
 .random-pics {
-    display: inline-block;
     padding: 50px;
     margin-top: 20px;
     border: 5px solid darkblue;
-    border-radius: 20px;
+    border-radius: 5px;
     background: lightsteelblue;
     text-align: center;
     font-size: 1.5em;
