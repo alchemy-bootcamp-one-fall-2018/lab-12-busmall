@@ -6,7 +6,7 @@ let products = productsApi.getAll();
 const survey = products.map(product => {
     return {
         name: product.name,
-        image: product.img,
+        img: product.img,
         views: 0,
         clicks: 0
     };
@@ -22,8 +22,7 @@ function getRandomIndex(length) {
     return Math.floor(Math.random() * length);
 }
 
-function makeThreePictures() {
-    let copy = products.slice();
+function makeThreePictures(copy) {
 
     function getRandomImg() {
         const index = getRandomIndex(copy.length);
@@ -41,14 +40,27 @@ function makeThreePictures() {
 }
 
 export default class Survey {
+    constructor() {
+    
+    }
     render() {
         let dom = makeTemplate();
-        const productsContainer = dom.getElementById('products');
-        const threePictures = makeThreePictures();
-        for(let i = 0; i < 3; i++) {
-            const productCard = new ProductCard(threePictures[i]);
-            productsContainer.appendChild(productCard.render(threePictures[i]));
-        }
+        this.productsContainer = dom.getElementById('products');
+        this.showProducts();
         return dom;
     }
+
+    showProducts() {
+        const threePictures = makeThreePictures(survey);
+        for(let i = 0; i < 3; i++) {
+            const productCard = new ProductCard(threePictures[i], () => {
+                this.productsContainer.innerHTML = '';
+                console.log('parent');
+                this.showProducts();
+            });
+            this.productsContainer.appendChild(productCard.render(threePictures[i]));
+        }
+        
+    }
 }
+

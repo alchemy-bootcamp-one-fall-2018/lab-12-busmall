@@ -1,5 +1,6 @@
 import html from './html.js';
 
+
 function makeTemplate(product) {
     return html `
     <div>
@@ -10,7 +11,8 @@ function makeTemplate(product) {
 }
 
 export default class ProductCard {
-    constructor(product) {
+    constructor(product, onSelect) {
+        this.onSelect = onSelect;
         this.name = product.name;
         this.image = product.img;
     }
@@ -19,6 +21,7 @@ export default class ProductCard {
         const clickPicture = dom.querySelector('div');
 
         clickPicture.addEventListener('click', () => {
+            this.onSelect(this.product);
             console.log(this);
         });
         return dom;
