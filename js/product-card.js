@@ -1,6 +1,5 @@
 import html from './html.js';
 
-
 function makeTemplate(product) {
     return html `
     <div>
