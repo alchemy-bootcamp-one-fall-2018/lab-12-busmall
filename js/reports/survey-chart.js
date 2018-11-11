@@ -27,14 +27,14 @@ export default class SurveyChart {
         let dataViews = [];
         let dataClicks = [];
 
-
+        
         for(let i = 0; i < products.length; i++) {
             labels.push(products[i].name);
             dataViews.push(products[i].views);
             dataClicks.push(products[i].clicks);
         }
 
-        this.chart = new SurveyChart(ctx, {
+        this.chart = new Chart(ctx, {
             type: 'bar',
             data: {
                 labels: labels,
