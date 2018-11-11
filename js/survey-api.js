@@ -16,7 +16,14 @@ function saveResults(banana) {
 }
 
 const surveyApi = {
-    
+    getAll() {
+        const json = localStorage.getItem('results');
+        if(json) {
+            return JSON.parse(json);
+        } else {
+            return survey;
+        }
+    },
     add(clickedPicture) {
         if(surveyResults.length === 0) {
             saveResults(survey);
@@ -24,19 +31,19 @@ const surveyApi = {
                 surveyResults.push(survey[i]);
             }
             // console.log('string if');
-        } else {
-            console.log('else');
-            for(let i = 0; i < surveyResults.length; i++) {
-                // saveResults(survey);
-                // console.log('for', surveyResults[i].name);
-                // console.log('for', clickedPicture.name);
-                if(surveyResults[i].name === clickedPicture.name) {
-                    surveyResults[i].clicks++;
-                    console.log(surveyResults[i].clicks);
-                    saveResults(surveyResults);
-                }
+        }
+        console.log('else');
+        for(let i = 0; i < surveyResults.length; i++) {
+            // saveResults(survey);
+            // console.log('for', surveyResults[i].name);
+            // console.log('for', clickedPicture.name);
+            if(surveyResults[i].name === clickedPicture.name) {
+                surveyResults[i].clicks++;
+                console.log(surveyResults[i].clicks);
+                saveResults(surveyResults);
             }
         }
+        
     }
 };
 

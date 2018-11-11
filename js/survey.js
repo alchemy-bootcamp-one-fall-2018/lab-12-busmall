@@ -3,9 +3,6 @@ import html from './html.js';
 import ProductCard from './product-card.js';
 import surveyApi from './survey-api.js';
 
-let products = productsApi.getAll();
-
-
 function makeTemplate() {
     return html `
         <div id="products"></div>
@@ -45,9 +42,9 @@ export default class Survey {
     }
 
     showProducts() {
-        let copy = productsApi.getAll().slice();
+        let copy = surveyApi.getAll().slice();
         const threePictures = makeThreePictures(copy);
-        console.log(productsApi.getAll());
+        console.log(surveyApi.getAll());
         for(let i = 0; i < 3; i++) {
             const productCard = new ProductCard(threePictures[i], () => {
                 console.log(productCard.name);
