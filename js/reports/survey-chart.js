@@ -34,6 +34,7 @@ export default class SurveyChart {
             dataClicks.push(products[i].clicks);
         }
 
+         /* eslint-disable-next-line */
         this.chart = new Chart(ctx, {
             type: 'bar',
             data: {
