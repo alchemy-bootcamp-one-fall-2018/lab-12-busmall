@@ -22,7 +22,6 @@ export default class ProductCard {
 
         clickPicture.addEventListener('click', () => {
             this.onSelect(this.product);
-            console.log(this);
         });
         return dom;
     }

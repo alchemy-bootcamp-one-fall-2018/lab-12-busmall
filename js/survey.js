@@ -3,14 +3,7 @@ import html from './html.js';
 import ProductCard from './product-card.js';
 
 let products = productsApi.getAll();
-const survey = products.map(product => {
-    return {
-        name: product.name,
-        img: product.img,
-        views: 0,
-        clicks: 0
-    };
-});
+
 
 function makeTemplate() {
     return html `
@@ -41,7 +34,7 @@ function makeThreePictures(copy) {
 
 export default class Survey {
     constructor() {
-    
+        this.votes = 0;
     }
     render() {
         let dom = makeTemplate();
@@ -51,11 +44,22 @@ export default class Survey {
     }
 
     showProducts() {
+        const survey = products.map(product => {
+            return {
+                name: product.name,
+                img: product.img,
+                views: 0,
+                clicks: 0
+            };
+        });
         const threePictures = makeThreePictures(survey);
         for(let i = 0; i < 3; i++) {
             const productCard = new ProductCard(threePictures[i], () => {
+                this.votes++;
+                if(this.votes === 25) {
+                    console.log('huzzah!');
+                }
                 this.productsContainer.innerHTML = '';
-                console.log('parent');
                 this.showProducts();
             });
             this.productsContainer.appendChild(productCard.render(threePictures[i]));
