@@ -57,7 +57,7 @@ export default class Survey {
             const productCard = new ProductCard(threePictures[i], () => {
                 this.votes++;
                 if(this.votes === 25) {
-                    console.log('huzzah!');
+                    window.location.href = './../user-summary.html';
                 }
                 this.productsContainer.innerHTML = '';
                 this.showProducts();
