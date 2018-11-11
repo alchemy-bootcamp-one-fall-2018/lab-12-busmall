@@ -1,4 +1,3 @@
-import productsApi from './products-api.js';
 import html from './html.js';
 import ProductCard from './product-card.js';
 import surveyApi from './survey-api.js';
