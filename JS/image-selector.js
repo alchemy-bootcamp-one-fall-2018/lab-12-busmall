@@ -33,7 +33,7 @@ export default class ImageSelector {
         for(let i = 0; i < 3; i++) {
             let index = this.getImage();
             let imageDisplay = new ImageDisplay(this.products[index], this.onSelect);
-            // this.products[index].views++;
+            
 
             this.ul.appendChild(imageDisplay.render());
         } 

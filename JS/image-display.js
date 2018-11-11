@@ -1,5 +1,4 @@
 
-// import productApi from './product-api.js';
 import html from './html.js';
 
 
@@ -24,7 +23,8 @@ class ImageDisplay {
             this.onSelect(this.product);
         });
 
-    //display the image property of product
+        // eslint-disable-next-line no-console
+        console.log('got here', this.product.image);
         listItem.src = this.product.image;
 
         return dom;
