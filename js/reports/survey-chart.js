@@ -34,7 +34,7 @@ export default class SurveyChart {
             dataClicks.push(products[i].clicks);
         }
 
-        this.chart = new Chart(ctx, {
+        this.chart = new SurveyChart(ctx, {
             type: 'bar',
             data: {
                 labels: labels,

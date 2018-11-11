@@ -1,0 +1,40 @@
+body {
+  font-family: 'Open Sans Condensed', sans-serif;
+  background-color: grey;
+}
+
+.views {
+  color:lightblue;
+}
+
+.clicks {
+  color: orange;
+}
+
+li {
+  list-style-type: none;
+  margin-left: 10px;
+  max-width: 60px;
+}
+
+h1 {
+  text-align: center;
+}
+
+p {
+  font-size: 8pt;
+}
+
+ul {
+  display: inline-flex;
+  flex-direction: row;
+  justify-content: space-around;  
+  padding: 0;
+  margin-top: 0;
+}
+
+h6 {
+  text-align: center;
+  margin-bottom: 0;
+}
+
