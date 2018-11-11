@@ -1,5 +1,5 @@
 
-export default [
+let products = [
     {
         name:'R2D2 Bag',
         image:'./assets/r2d2-bag.jpg'
@@ -102,4 +102,6 @@ export default [
 
     
 ];
+
+export default products;
     

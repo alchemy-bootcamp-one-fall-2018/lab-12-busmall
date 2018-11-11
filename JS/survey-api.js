@@ -1,26 +1,17 @@
-// import ImageDisplay from './image-display.js';
-// import productApi from './product-api.js';
-// import html from './html.js';
+let imagesArray = [];
 
-// function makeTemplate() {
-//     return html`
-//     <ul class="products"></ul>
-//     `;
-// }
+const surveyApi = {
+    saveProducts() {
+        window.localStorage.setItem('products', JSON.stringify(imagesArray));
+    },
 
-// class ImageDisplay {
-//     constructor
-// }
+    getAll(){
+        return JSON.parse(window.localStorage.getItem('products'));
+    },
 
+    add(product){
+        imagesArray.push(product);
+    },
+};
 
-
-// let products = productApi.getAll();
-
-// const survey = products.map(product => {
-//     return {
-//         name: product.name,
-//         image: product.image,
-//         views: 0,
-//         clicks: 0
-//     };
-// });
+export default surveyApi;

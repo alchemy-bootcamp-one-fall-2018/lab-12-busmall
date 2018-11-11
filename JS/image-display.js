@@ -3,10 +3,10 @@
 import html from './html.js';
 
 
-function makeTemplate(product) {
+function makeTemplate() {
     return html`
-    <li class="list-item">
-        <img src="${product.image}">
+    <li>
+        <img class="product">
     </li>
     `;
 }
@@ -15,15 +15,17 @@ class ImageDisplay {
     constructor(product, onSelect){
         this.product = product;
         this.onSelect = onSelect;
-        this.randomImages = [];
 
     }
     render() { 
-        const dom = makeTemplate(this.product);
-        const listItem = dom.querySelector('.list-item');
+        const dom = makeTemplate();
+        const listItem = dom.querySelector('img');
         listItem.addEventListener('click', () => {
-            console.log('product name is ', this.product.name);
+            this.onSelect(this.product);
         });
+
+    //display the image property of product
+        listItem.src = this.product.image;
 
         return dom;
   

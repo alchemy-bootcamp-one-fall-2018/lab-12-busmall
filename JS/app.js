@@ -1,6 +1,7 @@
 import productApi from './product-api.js';
 import ImageSelector from './image-selector.js';
 import html from './html.js';
+import surveyApi from './survey-api.js';
 
 
 function makeTemplate() {
@@ -19,25 +20,30 @@ function makeTemplate() {
 
 export default class App {
     constructor(products, onSelect) {
-        this.products = productApi.getAll();
         this.onSelect = onSelect;
+        this.products = productApi.getAll();
         this.totalCount = 0;
     }
 
     render() {
         
         const dom = makeTemplate();
-        // this.totalCount++;
+        this.list = dom.querySelector('ul');
 
         let imageSelector = new ImageSelector(this.products, product => {
-            product.count++;
-                // this.totalCount++;
-            productApi.save();
+            const index = this.products.indexOf(product);
+            this.products[index].clicks++;
+            surveyApi.add(product);
+            this.totalCount++;
+            imageSelector.update();
+            if(this.totalCount === 25) {
+                surveyApi.saveProducts();
+                window.location.replace('./user-summary.html');
+            }
+            
         });
-        let productSection = dom.querySelector('.product-selector');
-        productSection.appendChild(imageSelector.render());
 
-        
+        this.list.appendChild(imageSelector.render());
         return dom;
     }
 }
@@ -46,20 +52,3 @@ const productApp = new App();
 document.getElementById('root').appendChild(productApp.render());
 
 
-
-
-
-
-
-
-
-
-// const products = productApi.getAll();
-
-// // console.log('hello its me', products);
-
-// let imageDisplay = new ImageDisplay(products);
-
-// let imageBox = document.getElementById('root-image-display');
-
-// imageBox.appendChild(imageDisplay.render());
