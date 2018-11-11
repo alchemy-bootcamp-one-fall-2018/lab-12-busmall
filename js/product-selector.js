@@ -41,8 +41,9 @@ class ProductSelector {
             else {
                 randomProducts.push(product);
             }
-            console.log(this.survey);
+        
             this.survey[index].views++;
+            // console.log('survey', this.survey[index]);
             
             if(this.round === 24){
                 window.location = 'user-summary.html';

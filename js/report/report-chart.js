@@ -29,7 +29,7 @@ export default class ReportChart {
             viewCount.push(products[i].views);
         }
 
-        this.chart = new ReportChart(ctx, {
+        this.chart = new Chart(ctx, {
             type: 'bar',
             data: {
                 labels: labels,
