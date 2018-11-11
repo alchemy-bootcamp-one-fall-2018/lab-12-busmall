@@ -1,7 +1,7 @@
 import html from '../html.js';
 import surveyApi from '../survey-api.js'; 
 import SurveyChart from './survey-chart.js';
-import SurveyReport from './survey-report.js';
+// import SurveyReport from './survey-report.js';
 
 function makeTemplate() {
     return html`
@@ -26,9 +26,9 @@ export default class ReportApp {
         const chart = new SurveyChart(this.surveyData);
         chartSection.appendChild(chart.render());
 
-        const reportSection = dom.querySelector('.survey-report');
-        const report = new SurveyReport(this.surveyData);
-        reportSection.appendChild(report.render());
+        // const reportSection = dom.querySelector('.survey-report');
+        // const report = new SurveyReport(this.surveyData);
+        // reportSection.appendChild(report.render());
 
         return dom;
     }
