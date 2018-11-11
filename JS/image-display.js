@@ -21,10 +21,10 @@ class ImageDisplay {
         const listItem = dom.querySelector('img');
         listItem.addEventListener('click', () => {
             this.onSelect(this.product);
+
         });
 
-        // eslint-disable-next-line no-console
-        console.log('got here', this.product);
+      
         listItem.src = this.product.image;
 
         return dom;

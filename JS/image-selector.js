@@ -15,6 +15,8 @@ export default class ImageSelector {
     }
 
 
+
+
     render() {
         let dom = makeTemplate();
         this.ul = dom.querySelector('ul');
@@ -33,14 +35,14 @@ export default class ImageSelector {
         for(let i = 0; i < 3; i++) {
             let index = this.getImage();
             let imageDisplay = new ImageDisplay(this.products[index], this.onSelect);
-            
+            this.products[index].views++;
 
             this.ul.appendChild(imageDisplay.render());
         } 
     } 
 
     getImage() {
-        const index = Math.floor(Math.random() * 20);
+        const index = Math.floor(Math.random() * 19);
         return index;
     }
 }
