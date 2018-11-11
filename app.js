@@ -9,7 +9,7 @@ function makeTemplate() {
         <main>
             <section id="product-selector">
                 <h2>Vote for your favorite</h2>
-                <p> Click on your favourite</p>
+                <p> Click on your favorite</p>
             </section>
         </main>
     `;

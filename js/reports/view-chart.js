@@ -23,7 +23,6 @@ export default class ViewChart {
         let viewCount = [];
         let clickCount = [];
         
-        
         for(let i = 0; i < this.results.length; i++) {
             const card = this.results[i];
            
@@ -31,7 +30,7 @@ export default class ViewChart {
             viewCount.push(card.views);
             clickCount.push(card.clicks);
         }
-
+        // eslint-disable-next-line
         this.chart = new Chart(ctx, {
             type: 'bar',
             data: {
