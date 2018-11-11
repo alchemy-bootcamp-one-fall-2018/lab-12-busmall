@@ -15,6 +15,8 @@ export default class ProductCard {
         this.onSelect = onSelect;
         this.name = product.name;
         this.image = product.img;
+        this.clicks = product.clicks;
+        this.views = product.views;
     }
     render(product) {
         let dom = makeTemplate(product);

@@ -1,8 +1,8 @@
-import products from './product-list.js';
-
+import productsList from './product-list.js';
+let products = [];
 const productsApi = {
     getAll() {
-        const json = localStorage.getItem('products');
+        const json = localStorage.getItem('results');
         if(json) {
             products = JSON.parse(json);
         }

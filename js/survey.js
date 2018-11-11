@@ -1,6 +1,7 @@
 import productsApi from './products-api.js';
 import html from './html.js';
 import ProductCard from './product-card.js';
+import surveyApi from './survey-api.js';
 
 let products = productsApi.getAll();
 
@@ -44,19 +45,15 @@ export default class Survey {
     }
 
     showProducts() {
-        const survey = products.map(product => {
-            return {
-                name: product.name,
-                img: product.img,
-                views: 0,
-                clicks: 0
-            };
-        });
-        const threePictures = makeThreePictures(survey);
+        let copy = productsApi.getAll().slice();
+        const threePictures = makeThreePictures(copy);
+        console.log(productsApi.getAll());
         for(let i = 0; i < 3; i++) {
             const productCard = new ProductCard(threePictures[i], () => {
+                console.log(productCard.name);
+                surveyApi.add(productCard);
                 this.votes++;
-                if(this.votes === 25) {
+                if(this.votes === 9) {
                     window.location.href = './../user-summary.html';
                 }
                 this.productsContainer.innerHTML = '';
