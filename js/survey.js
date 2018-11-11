@@ -44,18 +44,17 @@ export default class Survey {
     showProducts() {
         let copy = surveyApi.getAll().slice();
         const threePictures = makeThreePictures(copy);
-        console.log(surveyApi.getAll());
         for(let i = 0; i < 3; i++) {
             const productCard = new ProductCard(threePictures[i], () => {
-                console.log(productCard.name);
                 surveyApi.add(productCard);
                 this.votes++;
-                if(this.votes === 9) {
+                if(this.votes === 25) {
                     window.location.href = './../user-summary.html';
                 }
                 this.productsContainer.innerHTML = '';
                 this.showProducts();
             });
+            surveyApi.addView(productCard);
             this.productsContainer.appendChild(productCard.render(threePictures[i]));
         }
         

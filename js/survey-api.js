@@ -25,25 +25,31 @@ const surveyApi = {
         }
     },
     add(clickedPicture) {
-        if(surveyResults.length === 0) {
-            saveResults(survey);
-            for(let i = 0; i < survey.length; i++) {
-                surveyResults.push(survey[i]);
-            }
-            // console.log('string if');
-        }
-        console.log('else');
         for(let i = 0; i < surveyResults.length; i++) {
-            // saveResults(survey);
-            // console.log('for', surveyResults[i].name);
-            // console.log('for', clickedPicture.name);
             if(surveyResults[i].name === clickedPicture.name) {
                 surveyResults[i].clicks++;
-                console.log(surveyResults[i].clicks);
                 saveResults(surveyResults);
             }
         }
-        
+    },
+    addView(viewedPicture) {
+        if(surveyResults.length === 0) {
+            for(let i = 0; i < survey.length; i++) {
+                if(survey[i].name === viewedPicture.name) {
+                    survey[i].views++;
+                    // saveResults(surveyResults);
+                }
+                surveyResults.push(survey[i]);
+            }
+            saveResults(survey);
+        } else {
+            for(let i = 0; i < surveyResults.length; i++) {
+                if(surveyResults[i].name === viewedPicture.name) {
+                    surveyResults[i].views++;
+                    saveResults(surveyResults);
+                }
+            }
+        }
     }
 };
 
