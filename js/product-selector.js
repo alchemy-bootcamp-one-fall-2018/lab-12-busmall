@@ -6,7 +6,6 @@ import ProductCard from './product-card.js';
 
 function makeTemplate() {
     return html`
-    <p>hello</p>
     <section id="product-card-container"></section>
     `;
 }

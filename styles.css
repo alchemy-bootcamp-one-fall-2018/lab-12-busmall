@@ -1,4 +1,41 @@
 img {
-    width: 250px;
+    width: 200px;
     border: 3px solid black;
+    border-radius: 125px;
 }
+
+header {
+    background-image: url("./assets/fancybus.jpg");
+    background-color: black;
+    border: 5px solid black;
+    height: 400px;
+    /* display: inline-block; */
+    background-repeat: no-repeat;
+    /* background-attachment: fixed; */
+    background-position: center;
+}
+
+body {
+    background-color:rgb(45, 126, 115);
+    text-align: center;
+}
+
+
+h1 {
+    color: white;
+    font-size: 72px;
+    text-align: center;
+    text-shadow: 
+        -2px -2px 0 #000,
+        2px -2px 0 #000,
+        -2px 2px 0 #000,
+        2px 2px 0 #000;
+
+}
+
+#root {
+    align-content: space-around;
+}
+
+/* header text outline courtesy of: https://wpshout.com/quick-guides/create-text-outline-css/ */
+/* header image courtesy of: https://www.pexels.com/photo/people-sitting-inside-bus-1360254/ */
