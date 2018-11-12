@@ -4,6 +4,7 @@ import productsApi from './products-api.js';
 import ProductSelector from './product-selector.js';
 
 const products = productsApi.getAll();
+//console.log(products);
 
 function makeTemplate() {
     return html`
@@ -16,7 +17,7 @@ class ImageApp {
     render() {
         const dom = makeTemplate();
         const productsSection = dom.querySelector('.products-section');
-        const productSelector = new ProductSelector(products, survey => {
+        const productSelector = new ProductSelector(products, () => {
             window.location.href = '/user_summary.html';
         });
 
