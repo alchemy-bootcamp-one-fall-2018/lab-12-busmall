@@ -1,12 +1,11 @@
 
-// import productApi from './product-api.js';
 import html from './html.js';
 
 
-function makeTemplate(product) {
+function makeTemplate() {
     return html`
-    <li class="list-item">
-        <img src="${product.image}">
+    <li>
+        <img class="product">
     </li>
     `;
 }
@@ -15,30 +14,22 @@ class ImageDisplay {
     constructor(product, onSelect){
         this.product = product;
         this.onSelect = onSelect;
-        this.randomImages = [];
 
     }
     render() { 
-        // this.getImage();
-        const dom = makeTemplate(this.product);
-        const listItem = dom.querySelector('.list-item');
+        const dom = makeTemplate();
+        const listItem = dom.querySelector('img');
         listItem.addEventListener('click', () => {
-            // eslint-disable-next-line no-console
-            console.log('product name is ', this.product.name);
-            
-        });
-  
-     
-        return dom;
-    }
+            this.onSelect(this.product);
 
-    // getImage() {
-    //     for(let i = 0; i < 3; i++) {
-    //         const index = Math.floor(Math.random() * 25);
-            // let imi
-    //     }
-    // }
-}
-        
-          
+        });
+
+      
+        listItem.src = this.product.image;
+
+        return dom;
+  
+    }
+} 
+
 export default ImageDisplay;
