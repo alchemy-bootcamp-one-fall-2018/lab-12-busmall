@@ -1,24 +1,28 @@
 import html from '../html.js';
+import ReportItem from './report-item.js';
 
-let template = function(product) {
-
-    let name = product.name;
-    let clicks = product.clicks;
-    let views = product.views;
-
+function makeTemplate() {
     return html`
-        <li>${name} resulted in ${clicks} clicks and ${views} views. </li>
-    `;
-};
+    <ul class="product-list"></ul>
+`;
+}
+    
 
 export default class ViewingReport {
 
-    constructor(product) {
-        this.product = product;
+    constructor(results) {
+        this.results = results;
     }
 
     render() {
-        let dom = template(this.product);
+        const dom = makeTemplate();
+        const list = dom.querySelector('.product-list');
+
+        this.results.forEach(product => {
+            const reportItem = new ReportItem(product);
+            list.appendChild(reportItem.render());
+        });
+
         return dom;
     }
 }

@@ -1,13 +1,14 @@
-import html from './html.js';
-import surveyApi from './survey-api.js';
+import html from '../html.js';
+import surveyApi from '../survey-api.js';
 import ViewingReport from './viewing-report.js';
+import SurveyChart from './survey-chart.js';
 
 function makeTemplate() {
     return html`
         <main>
-            <section class="viewing-report">
-            <ul id="product-report"></ul>
-            </section>
+            <section class="survey-chart"></section>
+            <h2>Product Selection Report</h2>
+            <section class="product-report"></section>
         </main>
     `;
 }
@@ -19,13 +20,20 @@ export default class ReportApp {
 
     render() {
         const dom = makeTemplate();
-        const reportSection = dom.querySelector('#product-report');
 
-        this.surveyData.forEach(product => {
-            const report = new ViewingReport(product);
-            reportSection.appendChild(report.render());
-        });
+        const chartSection = dom.querySelector('.survey-chart');
+        const chart = new SurveyChart(this.surveyData);
+        chartSection.appendChild(chart.render());
 
+        const reportSection = dom.querySelector('.product-report');
+        const report = new ViewingReport(this.surveyData);
+        reportSection.appendChild(report.render());
+        
         return dom;
     }
 }
+
+const app = new ReportApp();
+const root = document.getElementById('report-root');
+root.appendChild(app.render());
+
