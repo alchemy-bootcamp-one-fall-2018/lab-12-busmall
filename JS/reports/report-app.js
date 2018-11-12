@@ -28,7 +28,7 @@ export default class ReportApp {
     }
 }
 
-// const app = new ReportApp();
-// const root = document.getElementById('report-root');
-// root.appendChild(app.render());
+const app = new ReportApp();
+const root = document.getElementById('root');
+root.appendChild(app.render());
 
