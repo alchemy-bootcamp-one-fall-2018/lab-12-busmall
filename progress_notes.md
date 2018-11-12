@@ -4,6 +4,8 @@ don't forget a custom font, color palette, layout with semantic HTML, and so on
 Status:
 Survey works - 3 random images, when one clicked, it's counted & 3 more appear, until 25x
 on click #25, user is bumped to user_summary.html. User summary is now an empty table with column headings.
+*restarted user summary page completely, reverting @5 hours...
+
 
 Next to do:
 * code to populate table (views, clicks, item name)
@@ -20,8 +22,3 @@ Separate html page and app js for report page (and index js if using that) 2pts
 Correctly wiring app and chart components(s) 2pts
 Chart setup (functionally correct) 2pts
 Chart style and visualization 2pts
-
-Done:
-added developer notes (this file)
-cleaned up code
-linked user_summary.html to script properly (user-summary-app.js)

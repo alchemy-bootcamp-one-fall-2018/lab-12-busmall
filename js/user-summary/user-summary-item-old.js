@@ -40,14 +40,14 @@
     // `;
 
 
-export default class ProductReport {
-    constructor(product) {
-        this.product = product;
-    }
+// export default class ProductReport {
+//     constructor(product) {
+//         this.product = product;
+//     }
 
-    render() {
-        let dom = template(this.product);
-        return dom;
-    }
-}
+//     render() {
+//         let dom = template(this.product);
+//         return dom;
+//     }
+// }
 //console.log(ProductReport);
