@@ -40,7 +40,7 @@ export default class SurveyChart {
                     borderWidth: 1
                 },
                 {
-                    labels: 'Number of Clicks', 
+                    labels: 'Number of views', 
                     data: views,
                     backgroundColor: 'rgba(54, 180 , 180, 0.2)',
                     borderColor: 'rgba(54, 162, 235, 1)',

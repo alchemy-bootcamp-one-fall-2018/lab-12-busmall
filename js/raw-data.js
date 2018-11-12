@@ -130,7 +130,7 @@ const products = [
     },
     {
         name: 'sweep',
-        image: '../assets/sweep.jpg',
+        image: '../assets/sweep.png',
         count: 0,
         view: 0
     },
