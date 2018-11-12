@@ -39,9 +39,11 @@ class ProductSelector {
             }
         }  
         this.lastThree = currentSet; 
+
+        console.log('current set', currentSet);
         return currentSet;   
     }
-    ////////////////////////////////////////////////////////////////////////////////////////////
+  
     showThreeProducts() {
         let currentSet = this.getThreeImages();
         this.clearProducts();
@@ -59,6 +61,10 @@ class ProductSelector {
         }); 
     }
     
+
+    getCompleteSet() {
+        
+    }
     // getCompleteSet() {
     //     let completeSet;
     //     for(let i = 0 )
@@ -74,7 +80,6 @@ class ProductSelector {
     // }
 
     clearProducts() {
-        console.log('prodct container', this.productCardContainer);
         while(this.productCardContainer.lastElementChild) {
             this.productCardContainer.lastElementChild.remove();
         }
