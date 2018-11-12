@@ -38,7 +38,7 @@ export default class App {
             if(this.totalCount === 25) {
                 surveyApi.saveProducts();
                 window.location.replace('./report.html');
-                // window.location.replace('./user-summary.html');
+            
             }
             
         });
