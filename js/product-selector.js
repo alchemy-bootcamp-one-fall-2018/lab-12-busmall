@@ -1,8 +1,5 @@
 import html from './html.js';
 import ProductDisplay from './product-display.js';
-// import productViews from './products-api';
-// products in
-// onSurvey in
 
 function makeTemplate() {
     return html`

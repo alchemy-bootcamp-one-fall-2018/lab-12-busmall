@@ -8,7 +8,6 @@ const products = productsApi.getAll();
 function makeTemplate() {
     return html`
     <header class="products-section">
-        Products here
     </header>
 `;
 }
@@ -18,7 +17,6 @@ class ImageApp {
         const dom = makeTemplate();
         const productsSection = dom.querySelector('.products-section');
         const productSelector = new ProductSelector(products, survey => {
-            console.log('heya', survey);
             window.location.href = '/user_summary.html';
         });
 

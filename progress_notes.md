@@ -9,6 +9,8 @@ Next to do:
 * code to populate table (views, clicks, item name)
 * code to calculate % and populate table
 
+fix survey-app "survey" not used
+
 CSS
 * chart
 
@@ -18,3 +20,8 @@ Separate html page and app js for report page (and index js if using that) 2pts
 Correctly wiring app and chart components(s) 2pts
 Chart setup (functionally correct) 2pts
 Chart style and visualization 2pts
+
+Done:
+added developer notes (this file)
+cleaned up code
+linked user_summary.html to script properly (user-summary-app.js)
