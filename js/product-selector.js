@@ -60,7 +60,6 @@ export default class ProductSelector {
         
         randomProducts.forEach(product => {
             const productCard = new ProductCard(product, selected => {
-                // selected.clicks++;
                 const index = this.survey.indexOf(selected);
                 this.survey[index].clicks++;
                 this.count++;
