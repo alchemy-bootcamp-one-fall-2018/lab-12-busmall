@@ -68,7 +68,7 @@ class ProductDisplay {
                     console.log('survey count', this.totalRounds);
                     alert('Thank you for completing the survey! Click OK to see the results.');
                     surveyApi.saveProducts(this.products);
-                    window.location = './user-summary.html';
+                    window.location = './report.html';
 
                     
                 }
