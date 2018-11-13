@@ -1,0 +1,19 @@
+.product-image {
+    height: 200px;
+    width: 200px;
+}
+
+ul {
+    list-style-type: none;
+}
+
+.products {
+    display: flex;
+    justify-content: space-around;
+    background-color: lavender;
+}
+
+
+.productCard {
+    margin: 100px;
+}
