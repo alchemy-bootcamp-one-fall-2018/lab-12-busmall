@@ -8,5 +8,22 @@ image {
 }
 
 .product-card {
-    border: 2px solid red;
+    border: 3px solid black;
+
+}
+
+ul {
+    display: inline-flex;
+    direction: row;
+    list-style: none;
+    text-align: center;
+}
+
+image {
+    align-items: center;
+    border: 20px;
+}
+
+clicks {
+    color: steelblue;
 }

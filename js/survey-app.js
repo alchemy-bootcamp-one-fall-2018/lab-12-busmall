@@ -16,13 +16,14 @@ function makeTemplate() {
             </nav>
         </header>
         <main> 
-            <section>  
-                <h2>Product Survey</h2>
-            </section>
         </main>`;
 }
 
 class SurveyApp {
+    constructor() {
+        this.surveyChart = surveyApi.getAll();
+    }
+
     render() {
         const dom = makeTemplate();
 
@@ -30,7 +31,7 @@ class SurveyApp {
         
         const productSelector = new ProductSelector(products, survey => {
             surveyApi.add(survey);
-            window.location = './complete.html';
+            window.location = './report.html';
         });
 
         mainSection.appendChild(productSelector.render());
