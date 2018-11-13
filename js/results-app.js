@@ -30,9 +30,3 @@ for(let i = 0; i < results.length; i++){
     const resultList = new ResultList();
     ul.appendChild(resultList.render(results[i]));
 }
-
-// const reportChart = new ReportChart(results);
-// const chartLocation = document.getElementById('chart-goes-here');
-// console.log(reportChart);
-// chartLocation.appendChild(reportChart.render());
-// console.log(surveyApi.getAll());

@@ -29,7 +29,34 @@ export default class ReportChart {
 
         this.chart = new Chart(ctx, {
             type: 'bar',
-            data: [10, 20]
+            data: {
+                labels: labels,
+                datasets: [{
+                    label: '# of Views',
+                    data: viewCount,
+                    backgroundColor: 'rgba(54, 162, 235, 0.2)',
+                    borderColor: 'rgba(54, 162, 235, 1)',
+                    borderWidth: 1
+                },
+                {
+                    label: '# of Clicks',
+                    data: clickCount,
+                    backgroundColor: 'rgba(54, 162, 235, 0.2)',
+                    borderColor: 'rgba(54, 162, 235, 1)',
+                    borderWidth: 1
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                scales: {
+                    yAxes: [{
+                        ticks: {
+                            beginAtZero:true
+                        }
+                    }]
+                }
+            }
         });
 
         return dom;
