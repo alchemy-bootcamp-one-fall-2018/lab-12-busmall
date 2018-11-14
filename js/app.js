@@ -1,30 +1,5 @@
-import html from './html.js';
-import productApi from './products-api.js';
-import ImageSelector from './image-selector.js';
+import Survey from './survey.js';
 
-const products = productApi.getAll();
-
-function makeTemplate() {
-    return html`
-    <div class="app">
-        <h1>Marketing App</h1>
-        <section class="image-selector"></section>
-    </div>
-        
-`;
-}
-
-class App {
-    render() {
-        const dom = makeTemplate();
-        const imageSelectorContainer = dom.querySelector('.image-selector');
-        const imageSelector = new ImageSelector(products);
-        imageSelectorContainer.appendChild(imageSelector.render());
-        return dom;
-    }
-}
-
+const survey = new Survey('showProducts');
 const root = document.getElementById('root');
-const app = new App();
-const dom = app.render();
-root.appendChild(dom);
+root.appendChild(survey.render());
