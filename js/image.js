@@ -11,7 +11,6 @@ function makeTemplate() {
 export default class Image {
     render() {
         const dom = makeTemplate();
-        console.log(products.img);
         return dom;
     }
 }
