@@ -16,6 +16,13 @@ h1 {
     border: 5px solid steelblue;
     border-radius: 10px;
 }
+p {
+    text-align: center;
+}
+.random-pics-container {
+    display: flex;
+    justify-content: space-around;
+}
 #name {
     background-color: blue;
     color: white;
