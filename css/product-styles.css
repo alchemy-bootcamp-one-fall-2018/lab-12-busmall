@@ -10,31 +10,15 @@ body {
 h1 {
     text-align: center;
 }
-/* p {
+#three-pictures {
+    float: left;
+    margin-left: 150px;
+    border: 5px solid steelblue;
+    border-radius: 10px;
+}
+#name {
+    background-color: blue;
+    color: white;
     text-align: center;
-} */
-.random-pics-container {
-    display: flex;
-    justify-content: space-evenly;
-}
-.random-pics {
-    padding: 50px;
-    margin-top: 20px;
-    border: 5px solid darkblue;
-    border-radius: 5px;
-    background: lightsteelblue;
-    text-align: center;
-    font-size: 1.5em;
-}
-#random-pic-1:hover {
-    background: darkblue;
-    color: white;
-}
-#random-pic-2:hover {
-    background: darkblue;
-    color: white;
-}
-#random-pic-3:hover {
-    background: darkblue;
-    color: white;
+    padding: 10px
 }

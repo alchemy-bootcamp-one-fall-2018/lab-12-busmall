@@ -38,7 +38,6 @@ const surveyApi = {
             for(let i = 0; i < survey.length; i++) {
                 if(survey[i].name === viewedPicture.name) {
                     survey[i].views++;
-                    // saveResults(surveyResults);
                 }
                 surveyResults.push(survey[i]);
             }

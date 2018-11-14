@@ -2,9 +2,9 @@ import html from './html.js';
 
 function makeTemplate(product) {
     return html `
-    <div>
-        <p>${product.name}</p>
-        <img src="/${product.img}" style="height: 250px">
+    <div id="three-pictures">
+        <p id="name">${product.name}</p>
+        <img src="/${product.img}" style="height: 200px">
     </div>
     `;
 }

@@ -3,7 +3,6 @@ import ResultList from './results.js';
 import ReportChart from './chart.js';
 import html from './html.js';
 
-
 function makeTemplate() {
     return html`
         <div id="this-is-the-chart"></div>
