@@ -1,0 +1,33 @@
+header {
+    background-color: rgb(199, 32, 32);
+    padding: 20px;
+    color: black;
+    text-transform: uppercase;
+    font-size: 1.5em;
+}
+
+#product {
+    height: 150px;
+}
+
+li {
+    list-style: none;
+    margin: 10px;
+}
+
+#root {
+    background-color: rgb(196, 147, 147);
+}
+
+.products {
+    border: 2px dotted dodgerblue;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.product-card {
+    border: 2px solid red;
+    background-color: white;
+
+}
